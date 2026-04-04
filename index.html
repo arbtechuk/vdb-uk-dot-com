@@ -2057,8 +2057,7 @@
 
     // ─── Theme Toggle ───
     const savedTheme = localStorage.getItem('vdb-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    const initialTheme = savedTheme || 'dark';
 
     const themeBtns = document.querySelectorAll('[data-set-theme]');
 
