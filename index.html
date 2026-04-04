@@ -2040,6 +2040,21 @@
       btn.addEventListener('click', () => setLang(btn.dataset.setLang));
     });
 
+    // ─── Header Background on Scroll ───
+    const header = document.querySelector('.header');
+    function updateHeaderScroll() {
+      const scrolled = window.scrollY > 50;
+      const isLight = html.getAttribute('data-theme') === 'light';
+      if (scrolled) {
+        header.style.background = isLight ? 'rgba(255,255,255,0.95)' : 'rgba(15,17,24,0.95)';
+        header.style.backdropFilter = 'blur(12px)';
+      } else {
+        header.style.background = '';
+        header.style.backdropFilter = '';
+      }
+    }
+    window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+
     // ─── Theme Toggle ───
     const savedTheme = localStorage.getItem('vdb-theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -2081,21 +2096,6 @@
     }, { threshold: 0.15 });
 
     reveals.forEach(el => observer.observe(el));
-
-    // ─── Header Background on Scroll ───
-    const header = document.querySelector('.header');
-    function updateHeaderScroll() {
-      const scrolled = window.scrollY > 50;
-      const isLight = html.getAttribute('data-theme') === 'light';
-      if (scrolled) {
-        header.style.background = isLight ? 'rgba(255,255,255,0.95)' : 'rgba(15,17,24,0.95)';
-        header.style.backdropFilter = 'blur(12px)';
-      } else {
-        header.style.background = '';
-        header.style.backdropFilter = '';
-      }
-    }
-    window.addEventListener('scroll', updateHeaderScroll, { passive: true });
 
     // ─── Smooth Scroll for Anchor Links ───
     document.querySelectorAll('a[href^="#"]').forEach(link => {
