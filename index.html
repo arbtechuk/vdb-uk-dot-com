@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VDB UK — Validate. Develop. Build.</title>
+  <meta name="description" content="VDB UK unlocks funding, builds collaborations, and delivers innovation for UK public and private sector projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       CSS CUSTOM PROPERTIES
+       Welsh Slate palette — institutional
+       warmth meets modern consultancy
+       ═══════════════════════════════════════ */
+    :root {
+      /* Core palette */
+      --slate-950: #0f1118;
+      --slate-900: #1a1d2b;
+      --slate-800: #252838;
+      --slate-700: #363a4d;
+      --slate-600: #4a4f66;
+      --slate-400: #8b91a8;
+      --slate-300: #b0b5c8;
+      --slate-200: #d4d7e3;
+      --slate-100: #ecedf3;
+      --slate-50: #f6f7fa;
+
+      /* Welsh red — deeper, more sophisticated than flag red */
+      --red-700: #8b1a2b;
+      --red-600: #a82135;
+      --red-500: #c8283f;
+      --red-400: #d94a5e;
+      --red-100: #fce8eb;
+
+      /* Warm gold accent */
+      --gold-600: #b8860b;
+      --gold-500: #d4a017;
+      --gold-400: #e8b82f;
+      --gold-300: #f0cc5a;
+      --gold-100: #fdf6e3;
+
+      /* Stone / cream for warm backgrounds */
+      --stone-100: #f8f6f1;
+      --stone-200: #efeade;
+      --stone-300: #e2dac8;
+      --stone-50: #fcfbf8;
+
+      /* Typography */
+      --font-display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+      --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Spacing scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+      --space-4xl: 6rem;
+      --space-5xl: 8rem;
+
+      /* Layout */
+      --max-width: 1200px;
+      --header-height: 72px;
+    }
+
+    /* ═══════════════════════════════════════
+       RESET & BASE
+       ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--slate-800);
+      background: var(--stone-50);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* ═══════════════════════════════════════
+       TYPOGRAPHY
+       ═══════════════════════════════════════ */
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+    }
+
+    .label--gold { color: var(--gold-500); }
+    .label--red { color: var(--red-500); }
+
+    /* ═══════════════════════════════════════
+       LAYOUT UTILITIES
+       ═══════════════════════════════════════ */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+
+    .section {
+      padding: var(--space-5xl) 0;
+    }
+
+    .section--dark {
+      background: var(--slate-900);
+      color: var(--slate-100);
+    }
+
+    .section--stone {
+      background: var(--stone-100);
+    }
+
+    .section--red {
+      background: var(--red-700);
+      color: white;
+    }
+
+    /* ═══════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--header-height);
+      background: var(--slate-950);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s ease;
+    }
+
+    .header__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .header__logo svg { height: 36px; width: auto; }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xl);
+    }
+
+    .header__links {
+      display: flex;
+      gap: var(--space-lg);
+      list-style: none;
+    }
+
+    .header__links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--slate-300);
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .header__links a:hover { color: white; }
+
+    .header__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--red-500);
+      transition: width 0.3s ease;
+    }
+
+    .header__links a:hover::after { width: 100%; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: var(--slate-800);
+      border-radius: 6px;
+      padding: 2px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .lang-toggle__btn {
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: var(--slate-400);
+      transition: all 0.2s;
+    }
+
+    .lang-toggle__btn--active {
+      background: var(--red-600);
+      color: white;
+    }
+
+    .header__cta {
+      padding: 8px 20px;
+      background: var(--red-600);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .header__cta:hover { background: var(--red-500); }
+
+    /* ═══════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════ */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: var(--slate-950);
+      overflow: hidden;
+      padding-top: var(--header-height);
+    }
+
+    /* Geometric pattern background — Welsh slate inspired */
+    .hero__pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image:
+        linear-gradient(30deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(150deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(30deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(150deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(60deg, var(--slate-600) 25%, transparent 25.5%, transparent 75%, var(--slate-600) 75%, var(--slate-600)),
+        linear-gradient(60deg, var(--slate-600) 25%, transparent 25.5%, transparent 75%, var(--slate-600) 75%, var(--slate-600));
+      background-size: 80px 140px;
+      background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+
+    /* Red diagonal accent line */
+    .hero__accent {
+      position: absolute;
+      top: 0;
+      right: 15%;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--red-600), transparent);
+      opacity: 0.4;
+      transform: skewX(-15deg);
+    }
+
+    .hero__accent--2 {
+      right: 14.5%;
+      width: 1px;
+      opacity: 0.2;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-4xl) var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4xl);
+      align-items: center;
+    }
+
+    .hero__text { color: white; }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero__eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--red-500);
+    }
+
+    .hero h1 {
+      margin-bottom: var(--space-lg);
+      color: white;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-400);
+    }
+
+    .hero__desc {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--slate-300);
+      max-width: 520px;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: var(--space-md);
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .btn--primary {
+      background: var(--red-600);
+      color: white;
+    }
+
+    .btn--primary:hover {
+      background: var(--red-500);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(200, 40, 63, 0.3);
+    }
+
+    .btn--ghost {
+      border: 1px solid var(--slate-600);
+      color: var(--slate-300);
+    }
+
+    .btn--ghost:hover {
+      border-color: var(--slate-400);
+      color: white;
+    }
+
+    .btn__arrow {
+      transition: transform 0.2s;
+    }
+
+    .btn:hover .btn__arrow {
+      transform: translateX(3px);
+    }
+
+    /* Hero stat cards */
+    .hero__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: var(--space-xl);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.3s;
+    }
+
+    .stat-card:hover {
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .stat-card__number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: var(--space-xs);
+    }
+
+    .stat-card__number--gold { color: var(--gold-400); }
+    .stat-card__number--red { color: var(--red-400); }
+    .stat-card__number--white { color: white; }
+
+    .stat-card__label {
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════════
+       PARTNERS STRIP
+       ═══════════════════════════════════════ */
+    .partners {
+      background: var(--slate-900);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: var(--space-xl) 0;
+    }
+
+    .partners__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xl);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .partners__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+      white-space: nowrap;
+    }
+
+    .partners__logos {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xl);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .partners__logos span {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--slate-300);
+      letter-spacing: 0.04em;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .partners__logos span:hover { opacity: 1; }
+
+    /* ═══════════════════════════════════════
+       CAPABILITIES SECTION
+       ═══════════════════════════════════════ */
+    .capabilities {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-50);
+    }
+
+    .capabilities__header {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .capabilities__header h2 {
+      color: var(--slate-900);
+      margin-top: var(--space-sm);
+    }
+
+    .capabilities__subtitle {
+      font-size: 1.05rem;
+      color: var(--slate-600);
+      max-width: 560px;
+      margin-top: var(--space-md);
+    }
+
+    .capabilities__grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .cap-card {
+      position: relative;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: var(--space-2xl);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .cap-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--slate-200);
+      transition: background 0.3s;
+    }
+
+    .cap-card:hover {
+      border-color: var(--slate-300);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .cap-card:hover::before {
+      background: var(--red-500);
+    }
+
+    .cap-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-lg);
+      font-size: 1.4rem;
+    }
+
+    .cap-card__icon--red { background: var(--red-100); color: var(--red-600); }
+    .cap-card__icon--gold { background: var(--gold-100); color: var(--gold-600); }
+    .cap-card__icon--slate { background: var(--slate-100); color: var(--slate-700); }
+
+    .cap-card h3 {
+      color: var(--slate-900);
+      margin-bottom: var(--space-sm);
+    }
+
+    .cap-card__desc {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: var(--space-lg);
+    }
+
+    .cap-card__link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--red-600);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .cap-card:hover .cap-card__link { gap: 10px; }
+
+    /* ═══════════════════════════════════════
+       APPROACH SECTION (V-D-B pillars)
+       ═══════════════════════════════════════ */
+    .approach {
+      padding: var(--space-5xl) 0;
+      background: var(--slate-900);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .approach__bg {
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,40,63,0.06) 0%, transparent 70%);
+    }
+
+    .approach__header {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      margin-bottom: var(--space-3xl);
+      position: relative;
+      z-index: 1;
+    }
+
+    .approach__header h2 {
+      color: white;
+      margin-top: var(--space-sm);
+    }
+
+    .approach__pillars {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pillar {
+      background: var(--slate-900);
+      padding: var(--space-3xl) var(--space-2xl);
+      position: relative;
+    }
+
+    .pillar__number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: var(--space-lg);
+    }
+
+    .pillar:nth-child(1) .pillar__number { color: var(--red-500); }
+    .pillar:nth-child(2) .pillar__number { color: var(--gold-400); }
+    .pillar:nth-child(3) .pillar__number { color: var(--slate-400); }
+
+    .pillar h3 {
+      color: white;
+      font-size: 1.6rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .pillar__desc {
+      color: var(--slate-400);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: var(--space-xl);
+    }
+
+    .pillar__list {
+      list-style: none;
+    }
+
+    .pillar__list li {
+      font-size: 0.88rem;
+      color: var(--slate-300);
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    .pillar__list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .pillar:nth-child(1) .pillar__list li::before { background: var(--red-500); }
+    .pillar:nth-child(2) .pillar__list li::before { background: var(--gold-400); }
+    .pillar:nth-child(3) .pillar__list li::before { background: var(--slate-500); }
+
+    /* ═══════════════════════════════════════
+       PROJECTS SECTION
+       ═══════════════════════════════════════ */
+    .projects {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-100);
+    }
+
+    .projects__header {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .projects__header h2 {
+      color: var(--slate-900);
+      margin-top: var(--space-sm);
+    }
+
+    .projects__grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--slate-300);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .project-card__image {
+      background: var(--slate-200);
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--slate-400);
+      text-align: center;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .project-card__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-700) 100%);
+      opacity: 0.35;
+      z-index: 1;
+    }
+
+    .project-card__image span {
+      position: relative;
+      z-index: 2;
+      color: var(--slate-300);
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: var(--space-md);
+    }
+
+    .project-card:nth-child(1) .project-card__image::after { background: linear-gradient(135deg, #1a3a2a, #2d5a3e); opacity: 0.35; }
+    .project-card:nth-child(2) .project-card__image::after { background: linear-gradient(135deg, #1a2a3a, #2d4a5e); opacity: 0.35; }
+    .project-card:nth-child(3) .project-card__image::after { background: linear-gradient(135deg, #2a1a3a, #4a2d5e); opacity: 0.35; }
+    .project-card:nth-child(4) .project-card__image::after { background: linear-gradient(135deg, #3a2a1a, #5e4a2d); opacity: 0.35; }
+
+    .project-card__body {
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card__partner {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red-600);
+      margin-bottom: var(--space-sm);
+    }
+
+    .project-card__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--slate-900);
+      margin-bottom: var(--space-sm);
+      line-height: 1.3;
+    }
+
+    .project-card__desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .project-card__stat {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--slate-100);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold-600);
+    }
+
+    /* ═══════════════════════════════════════
+       FEATURED — SECRETARIAT CTA
+       ═══════════════════════════════════════ */
+    .featured {
+      padding: var(--space-5xl) 0;
+      background: white;
+    }
+
+    .featured__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4xl);
+      align-items: center;
+    }
+
+    .featured__image {
+      aspect-ratio: 4/3;
+      background: var(--slate-200);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .featured__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--red-700) 0%, var(--slate-900) 100%);
+      opacity: 0.25;
+      border-radius: 16px;
+    }
+
+    .featured__text h2 {
+      color: var(--slate-900);
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .featured__desc {
+      font-size: 1.05rem;
+      color: var(--slate-600);
+      line-height: 1.7;
+      margin-bottom: var(--space-xl);
+    }
+
+    .featured__checklist {
+      list-style: none;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .featured__checklist li {
+      font-size: 0.92rem;
+      color: var(--slate-700);
+      padding: var(--space-sm) 0;
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .featured__checklist li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--red-100);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .featured__checklist li::after {
+      content: '';
+      position: absolute;
+      /* checkmark via border trick */
+    }
+
+    /* ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ */
+    .cta-banner {
+      padding: var(--space-5xl) 0;
+      background: var(--red-700);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner__pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.1) 40px,
+          rgba(255,255,255,0.1) 42px
+        );
+    }
+
+    .cta-banner__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-banner h2 {
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-banner__desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto var(--space-2xl);
+    }
+
+    .btn--white {
+      background: white;
+      color: var(--red-700);
+    }
+
+    .btn--white:hover {
+      background: var(--stone-50);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ */
+    .footer {
+      background: var(--slate-950);
+      padding: var(--space-3xl) 0 var(--space-xl);
+      color: var(--slate-400);
+    }
+
+    .footer__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--space-3xl);
+      padding-bottom: var(--space-2xl);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer__brand p {
+      font-size: 0.9rem;
+      color: var(--slate-500);
+      max-width: 280px;
+      margin-top: var(--space-md);
+      line-height: 1.6;
+    }
+
+    .footer__col h4 {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer__col ul {
+      list-style: none;
+    }
+
+    .footer__col li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer__col a {
+      font-size: 0.88rem;
+      color: var(--slate-400);
+      transition: color 0.2s;
+    }
+
+    .footer__col a:hover { color: white; }
+
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: var(--space-xl);
+      font-size: 0.8rem;
+      color: var(--slate-600);
+    }
+
+    .footer__bottom-links {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    .footer__bottom-links a {
+      color: var(--slate-600);
+      transition: color 0.2s;
+    }
+
+    .footer__bottom-links a:hover { color: var(--slate-400); }
+
+    /* ═══════════════════════════════════════
+       ANIMATIONS
+       ═══════════════════════════════════════ */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-in {
+      opacity: 0;
+      animation: fadeInUp 0.7s ease forwards;
+    }
+
+    .animate-in--delay-1 { animation-delay: 0.1s; }
+    .animate-in--delay-2 { animation-delay: 0.2s; }
+    .animate-in--delay-3 { animation-delay: 0.3s; }
+    .animate-in--delay-4 { animation-delay: 0.4s; }
+    .animate-in--delay-5 { animation-delay: 0.5s; }
+
+    /* Scroll-triggered reveal — JS adds .reveal--hidden, then removes it */
+    .reveal--hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero__content { grid-template-columns: 1fr; gap: var(--space-2xl); }
+      .capabilities__grid { grid-template-columns: repeat(2, 1fr); }
+      .approach__pillars { grid-template-columns: 1fr; }
+      .projects__grid { grid-template-columns: 1fr; }
+      .featured__inner { grid-template-columns: 1fr; }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+    }
+
+    @media (max-width: 768px) {
+      .header__links { display: none; }
+      .capabilities__grid { grid-template-columns: 1fr; }
+      .hero__stats { grid-template-columns: 1fr 1fr; }
+      .project-card { grid-template-columns: 1fr; }
+      .project-card__image { min-height: 120px; }
+      .footer__top { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero__stats { grid-template-columns: 1fr; }
+      .hero__actions { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+    }
+
+    /* ═══════════════════════════════════════
+       BILINGUAL SUPPORT
+       — content toggled via data-lang on <html>
+       ═══════════════════════════════════════ */
+    [data-lang="en"] [data-cy],
+    [data-lang="cy"] [data-en] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en],
+    [data-lang="cy"] [data-cy] {
+      display: initial;
+    }
+
+    /* Block-level bilingual elements */
+    [data-lang="en"] [data-cy-block],
+    [data-lang="cy"] [data-en-block] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en-block],
+    [data-lang="cy"] [data-cy-block] {
+      display: block;
+    }
+
+    /* Flex bilingual elements */
+    [data-lang="en"] [data-cy-flex],
+    [data-lang="cy"] [data-en-flex] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en-flex],
+    [data-lang="cy"] [data-cy-flex] {
+      display: flex;
+    }
+
+    /* Grid bilingual elements */
+    [data-lang="en"] [data-cy-grid],
+    [data-lang="cy"] [data-en-grid] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en-grid],
+    [data-lang="cy"] [data-cy-grid] {
+      display: grid;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════ -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo" aria-label="VDB UK Home">
+        <!-- VDB UK Logo — geometric monogram -->
+        <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- V chevron mark -->
+          <path d="M4 4L16 32L28 4" stroke="#c8283f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- D -->
+          <path d="M38 6h8c8 0 14 6 14 14s-6 14-14 14h-8V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
+          <!-- B -->
+          <path d="M70 6h7c5 0 8 2.5 8 6.5 0 3-1.5 5-4.5 5.8 3.5 0.6 5.5 3 5.5 6.2 0 4.5-3.5 7.5-9 7.5H70V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
+          <!-- Divider -->
+          <line x1="98" y1="10" x2="98" y2="30" stroke="#363a4d" stroke-width="1.5"/>
+          <!-- UK text -->
+          <text x="108" y="26" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#8b91a8" letter-spacing="2">UK</text>
+        </svg>
+      </a>
+
+      <nav class="header__nav">
+        <ul class="header__links">
+          <li><a href="#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
+          <li><a href="#approach"><span data-en>Our Approach</span><span data-cy>Ein Dull</span></a></li>
+          <li><a href="#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
+          <li><a href="#about"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
+        </ul>
+
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn lang-toggle__btn--active" data-set-lang="en" aria-label="English">EN</button>
+          <button class="lang-toggle__btn" data-set-lang="cy" aria-label="Cymraeg">CY</button>
+        </div>
+
+        <a href="#contact" class="header__cta">
+          <span data-en>Contact Us</span><span data-cy>Cysylltwch</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__pattern"></div>
+    <div class="hero__accent"></div>
+    <div class="hero__accent hero__accent--2"></div>
+
+    <div class="hero__content">
+      <div class="hero__text">
+        <div class="hero__eyebrow label label--gold animate-in">
+          <span data-en>Innovation Consultancy</span>
+          <span data-cy>Ymgynghoriaeth Arloesi</span>
+        </div>
+
+        <h1 class="animate-in animate-in--delay-1">
+          <span data-en-block>We unlock funding and <em>build the future</em> of UK innovation</span>
+          <span data-cy-block>Rydym yn datgloi cyllid ac yn <em>adeiladu dyfodol</em> arloesedd y DU</span>
+        </h1>
+
+        <p class="hero__desc animate-in animate-in--delay-2">
+          <span data-en>From validating bold ideas to delivering complex funded projects, VDB partners with government, universities, and enterprises to turn ambition into impact.</span>
+          <span data-cy>O ddilysu syniadau beiddgar i gyflawni prosiectau ariannu cymhleth, mae VDB yn partneru gyda'r llywodraeth, prifysgolion, a mentrau i droi uchelgais yn effaith.</span>
+        </p>
+
+        <div class="hero__actions animate-in animate-in--delay-3">
+          <a href="#contact" class="btn btn--primary">
+            <span data-en>Work with us</span>
+            <span data-cy>Gweithiwch gyda ni</span>
+            <span class="btn__arrow">&rarr;</span>
+          </a>
+          <a href="#projects" class="btn btn--ghost">
+            <span data-en>View projects</span>
+            <span data-cy>Gweld prosiectau</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__stats animate-in animate-in--delay-4">
+        <div class="stat-card">
+          <div class="stat-card__number stat-card__number--gold">&pound;255m</div>
+          <div class="stat-card__label">
+            <span data-en>Unlocked for UK R&amp;D projects since 2020</span>
+            <span data-cy>Wedi'i ddatgloi ar gyfer prosiectau ymchwil a datblygu y DU ers 2020</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number stat-card__number--red">8+</div>
+          <div class="stat-card__label">
+            <span data-en>Major funded projects delivered</span>
+            <span data-cy>Prosiectau ariannu mawr wedi'u cyflawni</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number stat-card__number--white">350+</div>
+          <div class="stat-card__label">
+            <span data-en>Healthcare locations using our innovations</span>
+            <span data-cy>Lleoliadau gofal iechyd yn defnyddio ein harloesiadau</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number stat-card__number--gold">5+</div>
+          <div class="stat-card__label">
+            <span data-en>Years building innovation partnerships</span>
+            <span data-cy>Blynyddoedd yn adeiladu partneriaethau arloesi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PARTNER LOGOS
+       ═══════════════════════════════════════ -->
+  <div class="partners">
+    <div class="partners__inner">
+      <span class="partners__label">
+        <span data-en>Trusted by</span>
+        <span data-cy>Ymddiried gan</span>
+      </span>
+      <div class="partners__logos">
+        <span>Defra</span>
+        <span>Innovate UK</span>
+        <span>Imperial College</span>
+        <span>Cambridge</span>
+        <span>NHS</span>
+        <span>Forestry Commission</span>
+        <span>Cranswick</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CAPABILITIES
+       ═══════════════════════════════════════ -->
+  <section class="capabilities" id="capabilities">
+    <div class="capabilities__header">
+      <span class="label label--red">
+        <span data-en>What we do</span>
+        <span data-cy>Beth rydym yn ei wneud</span>
+      </span>
+      <h2>
+        <span data-en>Capabilities built for complex delivery</span>
+        <span data-cy>Galluoedd wedi'u hadeiladu ar gyfer cyflawni cymhleth</span>
+      </h2>
+      <p class="capabilities__subtitle">
+        <span data-en>We bring together research, funding expertise, and programme delivery to help organisations achieve their most ambitious goals.</span>
+        <span data-cy>Rydym yn dod ag ymchwil, arbenigedd cyllido, a chyflawni rhaglenni ynghyd i helpu sefydliadau i gyflawni eu nodau mwyaf uchelgeisiol.</span>
+      </p>
+    </div>
+
+    <div class="capabilities__grid">
+      <div class="cap-card">
+        <div class="cap-card__icon cap-card__icon--red">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+        </div>
+        <h3>
+          <span data-en>Secretariat &amp; Programme Management</span>
+          <span data-cy>Ysgrifenyddiaeth a Rheoli Rhaglenni</span>
+        </h3>
+        <p class="cap-card__desc">
+          <span data-en>End-to-end governance and programme delivery for government bodies. Stakeholder coordination, reporting, minutes, and institutional continuity across multi-year funded periods.</span>
+          <span data-cy>Llywodraethu a chyflawni rhaglenni o'r dechrau i'r diwedd ar gyfer cyrff llywodraethol. Cydlynu rhanddeiliaid, adrodd, cofnodion, a pharhad sefydliadol ar draws cyfnodau ariannu aml-flwyddyn.</span>
+        </p>
+        <a href="/capabilities/secretariat" class="cap-card__link">
+          <span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-card__icon cap-card__icon--gold">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+        </div>
+        <h3>
+          <span data-en>Research &amp; Innovation</span>
+          <span data-cy>Ymchwil ac Arloesi</span>
+        </h3>
+        <p class="cap-card__desc">
+          <span data-en>Primary and secondary research to validate new ideas. Human-centred design, user workshops, and corporate insights enriched with peer-reviewed evidence.</span>
+          <span data-cy>Ymchwil gynradd ac eilaidd i ddilysu syniadau newydd. Dylunio sy'n canolbwyntio ar bobl, gweithdai defnyddwyr, a mewnwelediadau corfforaethol wedi'u cyfoethogi gyda thystiolaeth a adolygwyd gan gymheiriaid.</span>
+        </p>
+        <a href="/capabilities/research" class="cap-card__link">
+          <span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-card__icon cap-card__icon--slate">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>
+          <span data-en>Funding &amp; Grant Strategy</span>
+          <span data-cy>Strategaeth Cyllido a Grantiau</span>
+        </h3>
+        <p class="cap-card__desc">
+          <span data-en>We develop winning bids and unlock substantial public and institutional funding. Our team has secured over &pound;255m for UK R&amp;D projects across government, UKRI, and charitable foundations.</span>
+          <span data-cy>Rydym yn datblygu ceisiadau llwyddiannus ac yn datgloi cyllid cyhoeddus a sefydliadol sylweddol. Mae ein t&icirc;m wedi sicrhau dros &pound;255m ar gyfer prosiectau ymchwil a datblygu y DU.</span>
+        </p>
+        <a href="/capabilities/funding" class="cap-card__link">
+          <span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-card__icon cap-card__icon--red">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 18h8M3 22h18M14 22a7 7 0 1 0 0-14h-1M9 14h2M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2"/></svg>
+        </div>
+        <h3>
+          <span data-en>Science &amp; Engineering</span>
+          <span data-cy>Gwyddoniaeth a Pheirianneg</span>
+        </h3>
+        <p class="cap-card__desc">
+          <span data-en>Lab-to-market delivery. We build demonstrators, run field trials, and develop scalable solutions — from bio-fertiliser production to medical sensor technology.</span>
+          <span data-cy>Cyflawni o'r labordy i'r farchnad. Rydym yn adeiladu arddangoswyr, yn rhedeg treialon maes, ac yn datblygu atebion graddadwy.</span>
+        </p>
+        <a href="/capabilities/science" class="cap-card__link">
+          <span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-card__icon cap-card__icon--gold">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3Z"/><path d="M17 4a2 2 0 0 0 2 2 2 2 0 0 0-2 2 2 2 0 0 0-2-2 2 2 0 0 0 2-2"/></svg>
+        </div>
+        <h3>
+          <span data-en>ESG &amp; Sustainability</span>
+          <span data-cy>ESG a Chynaliadwyedd</span>
+        </h3>
+        <p class="cap-card__desc">
+          <span data-en>Climate research, ESG risk frameworks, and circular economy innovation. Our clients include Earthshot Prize shortlistees and Terra Carta Labs winners.</span>
+          <span data-cy>Ymchwil hinsawdd, fframweithiau risg ESG, ac arloesedd economi gylchol. Mae ein cleientiaid yn cynnwys rhai ar restr fer Gwobr Earthshot.</span>
+        </p>
+        <a href="/capabilities/esg" class="cap-card__link">
+          <span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       OUR APPROACH — V D B PILLARS
+       ═══════════════════════════════════════ -->
+  <section class="approach" id="approach">
+    <div class="approach__bg"></div>
+    <div class="approach__header">
+      <span class="label label--gold">
+        <span data-en>Our approach</span>
+        <span data-cy>Ein dull</span>
+      </span>
+      <h2>
+        <span data-en>Validate. Develop. Build.</span>
+        <span data-cy>Dilysu. Datblygu. Adeiladu.</span>
+      </h2>
+    </div>
+
+    <div class="approach__pillars">
+      <div class="pillar">
+        <div class="pillar__number">V</div>
+        <h3>
+          <span data-en>Validate</span>
+          <span data-cy>Dilysu</span>
+        </h3>
+        <p class="pillar__desc">
+          <span data-en>Before building anything, we make sure the idea is sound. Our research team tests assumptions with real evidence.</span>
+          <span data-cy>Cyn adeiladu unrhyw beth, rydym yn sicrhau bod y syniad yn gadarn. Mae ein t&icirc;m ymchwil yn profi rhagdybiaethau gyda thystiolaeth go iawn.</span>
+        </p>
+        <ul class="pillar__list">
+          <li>
+            <span data-en>Primary &amp; secondary research</span>
+            <span data-cy>Ymchwil gynradd ac eilaidd</span>
+          </li>
+          <li>
+            <span data-en>Human-centred design</span>
+            <span data-cy>Dylunio sy'n canolbwyntio ar bobl</span>
+          </li>
+          <li>
+            <span data-en>Stakeholder workshops</span>
+            <span data-cy>Gweithdai rhanddeiliaid</span>
+          </li>
+          <li>
+            <span data-en>Peer-reviewed evidence</span>
+            <span data-cy>Tystiolaeth a adolygwyd gan gymheiriaid</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__number">D</div>
+        <h3>
+          <span data-en>Develop</span>
+          <span data-cy>Datblygu</span>
+        </h3>
+        <p class="pillar__desc">
+          <span data-en>We assemble the right teams, secure funding, and build the partnerships needed to move from concept to delivery.</span>
+          <span data-cy>Rydym yn cydosod y timau cywir, yn sicrhau cyllid, ac yn adeiladu'r partneriaethau sydd eu hangen i symud o gysyniad i gyflawni.</span>
+        </p>
+        <ul class="pillar__list">
+          <li>
+            <span data-en>Funding strategy &amp; bid writing</span>
+            <span data-cy>Strategaeth cyllido ac ysgrifennu ceisiadau</span>
+          </li>
+          <li>
+            <span data-en>Consortium building</span>
+            <span data-cy>Adeiladu consortia</span>
+          </li>
+          <li>
+            <span data-en>Market development</span>
+            <span data-cy>Datblygu marchnad</span>
+          </li>
+          <li>
+            <span data-en>Business development</span>
+            <span data-cy>Datblygu busnes</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__number">B</div>
+        <h3>
+          <span data-en>Build</span>
+          <span data-cy>Adeiladu</span>
+        </h3>
+        <p class="pillar__desc">
+          <span data-en>Our science and engineering teams deliver real outcomes — from lab demonstrators to new enterprises ready for market.</span>
+          <span data-cy>Mae ein timau gwyddoniaeth a pheirianneg yn cyflawni canlyniadau go iawn — o arddangoswyr labordy i fentrau newydd yn barod ar gyfer y farchnad.</span>
+        </p>
+        <ul class="pillar__list">
+          <li>
+            <span data-en>Product &amp; prototype development</span>
+            <span data-cy>Datblygu cynnyrch a phrototeip</span>
+          </li>
+          <li>
+            <span data-en>Field trials &amp; validation</span>
+            <span data-cy>Treialon maes a dilysu</span>
+          </li>
+          <li>
+            <span data-en>Spin-out creation</span>
+            <span data-cy>Creu cwmn&iuml;au deillio</span>
+          </li>
+          <li>
+            <span data-en>Scaling partnerships</span>
+            <span data-cy>Partneriaethau graddfa</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SELECTED PROJECTS
+       ═══════════════════════════════════════ -->
+  <section class="projects" id="projects">
+    <div class="projects__header">
+      <div>
+        <span class="label label--red">
+          <span data-en>Track record</span>
+          <span data-cy>Hanes llwyddiant</span>
+        </span>
+        <h2>
+          <span data-en>Selected projects</span>
+          <span data-cy>Prosiectau dethol</span>
+        </h2>
+      </div>
+      <a href="/projects" class="btn btn--ghost" style="color: var(--slate-700); border-color: var(--slate-300);">
+        <span data-en>View all</span>
+        <span data-cy>Gweld pob un</span>
+        <span class="btn__arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="projects__grid">
+      <div class="project-card">
+        <div class="project-card__image">
+          <img src="images/vdb-photo-2.jpg" alt="Laboratory glassware with green solutions — chemical recycling research">
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__partner">NPK Recovery / VDB Labs</div>
+          <div class="project-card__title">
+            <span data-en>Bio-fertiliser from waste: chemical recycling and water recovery</span>
+            <span data-cy>Bio-wrtaith o wastraff: ailgylchu cemegol ac adfer dŵr</span>
+          </div>
+          <p class="project-card__desc">
+            <span data-en>Our first spin-out enterprise. Converting human urine into validated crop fertiliser, deployed at UK festivals and now growing native trees in the Brecon Beacons.</span>
+            <span data-cy>Ein menter deillio gyntaf. Trosi wrin dynol yn wrtaith cnydau dilysiedig, wedi'i ddefnyddio mewn gwyliau yn y DU ac yn awr yn tyfu coed brodorol ym Mannau Brycheiniog.</span>
+          </p>
+          <div class="project-card__stat">
+            <span data-en>&pound;2m+ grant funding secured</span>
+            <span data-cy>Dros &pound;2m o gyllid grant wedi'i sicrhau</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__image">
+          <span>
+            <span data-en>[ GripAble device image ]</span>
+            <span data-cy>[ Delwedd dyfais GripAble ]</span>
+          </span>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__partner">GripAble / Imperial College</div>
+          <div class="project-card__title">
+            <span data-en>Remote rehabilitation technology with proprietary sensors</span>
+            <span data-cy>Technoleg adsefydlu o bell gyda synwyryddion perchnogol</span>
+          </div>
+          <p class="project-card__desc">
+            <span data-en>Programme management for the SqueezAble paediatric device. Now deployed across 350+ NHS and healthcare locations worldwide with US expansion via Medline.</span>
+            <span data-cy>Rheoli rhaglen ar gyfer y ddyfais bediatrig SqueezAble. Bellach wedi'i ddefnyddio mewn dros 350 o leoliadau GIG a gofal iechyd ledled y byd.</span>
+          </p>
+          <div class="project-card__stat">
+            <span data-en>$11M Series A raised</span>
+            <span data-cy>$11M Cyfres A wedi'i godi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__image">
+          <img src="images/vdb-photo-1.jpg" alt="Team collaboration workshop with post-it notes — innovation accelerator design">
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__partner">Plus X Innovation</div>
+          <div class="project-card__title">
+            <span data-en>Designing a leading UK hardware accelerator</span>
+            <span data-cy>Dylunio cyflymydd caledwedd blaenllaw yn y DU</span>
+          </div>
+          <p class="project-card__desc">
+            <span data-en>Helped design the accelerator programme for this national innovation hub. 69 companies supported, &pound;180m raised by portfolio companies, 1,100+ jobs created.</span>
+            <span data-cy>Helpu i ddylunio'r rhaglen gyflymydd ar gyfer y ganolfan arloesi genedlaethol hon. 69 cwmni wedi'u cefnogi, &pound;180m wedi'i godi.</span>
+          </p>
+          <div class="project-card__stat">
+            <span data-en>&pound;25m in grants won for entrepreneurs</span>
+            <span data-cy>&pound;25m mewn grantiau i entrepreneuriaid</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__image">
+          <span>
+            <span data-en>[ BlakBear sensor image ]</span>
+            <span data-cy>[ Delwedd synhwyrydd BlakBear ]</span>
+          </span>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__partner">BlakBear / Cranswick</div>
+          <div class="project-card__title">
+            <span data-en>Digital freshness sensors reducing food waste</span>
+            <span data-cy>Synwyryddion ffresni digidol yn lleihau gwastraff bwyd</span>
+          </div>
+          <p class="project-card__desc">
+            <span data-en>Supporting the world's first digital freshness sensor company. Now deployed across 17 Cranswick production sites — a first for the UK meat industry.</span>
+            <span data-cy>Cefnogi cwmni synhwyrydd ffresni digidol cyntaf y byd. Bellach wedi'i ddefnyddio ar draws 17 safle cynhyrchu Cranswick.</span>
+          </p>
+          <div class="project-card__stat">
+            <span data-en>17 production sites deployed</span>
+            <span data-cy>17 safle cynhyrchu wedi'u defnyddio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FEATURED — SECRETARIAT
+       ═══════════════════════════════════════ -->
+  <section class="featured" id="about">
+    <div class="featured__inner">
+      <div class="featured__image">
+        <img src="images/vdb-photo-4.jpg" alt="Overhead view of collaborative planning session with documents, charts, and blueprints">
+      </div>
+      <div class="featured__text">
+        <span class="label label--red">
+          <span data-en>Featured capability</span>
+          <span data-cy>Gallu dan sylw</span>
+        </span>
+        <h2>
+          <span data-en>Government Secretariat &amp; Programme Delivery</span>
+          <span data-cy>Ysgrifenyddiaeth y Llywodraeth a Chyflawni Rhaglenni</span>
+        </h2>
+        <p class="featured__desc">
+          <span data-en>We run the governance process so public bodies can focus on their mission. From stakeholder coordination to compliance reporting, we provide the institutional backbone for multi-year funded programmes.</span>
+          <span data-cy>Rydym yn rhedeg y broses lywodraethu fel y gall cyrff cyhoeddus ganolbwyntio ar eu cenhadaeth. O gydlynu rhanddeiliaid i adrodd ar gydymffurfiaeth, rydym yn darparu'r asgwrn cefn sefydliadol ar gyfer rhaglenni ariannu aml-flwyddyn.</span>
+        </p>
+        <ul class="featured__checklist">
+          <li>
+            <span data-en>Stakeholder mapping &amp; onboarding</span>
+            <span data-cy>Mapio a chyflwyno rhanddeiliaid</span>
+          </li>
+          <li>
+            <span data-en>Meeting management &amp; minute production</span>
+            <span data-cy>Rheoli cyfarfodydd a chynhyrchu cofnodion</span>
+          </li>
+          <li>
+            <span data-en>Governance frameworks &amp; reporting</span>
+            <span data-cy>Fframweithiau llywodraethu ac adrodd</span>
+          </li>
+          <li>
+            <span data-en>Continuity planning &amp; knowledge transfer</span>
+            <span data-cy>Cynllunio parhad a throsglwyddo gwybodaeth</span>
+          </li>
+        </ul>
+        <a href="/capabilities/secretariat" class="btn btn--primary">
+          <span data-en>Explore this capability</span>
+          <span data-cy>Archwiliwch y gallu hwn</span>
+          <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ -->
+  <section class="cta-banner" id="contact">
+    <div class="cta-banner__pattern"></div>
+    <div class="cta-banner__inner">
+      <h2>
+        <span data-en>Let's build something that matters</span>
+        <span data-cy>Gadewch i ni adeiladu rhywbeth sy'n bwysig</span>
+      </h2>
+      <p class="cta-banner__desc">
+        <span data-en>Whether you're exploring a new idea, applying for funding, or need a delivery partner — we'd love to hear from you.</span>
+        <span data-cy>P'un a ydych chi'n archwilio syniad newydd, yn gwneud cais am gyllid, neu angen partner cyflawni — byddem wrth ein bodd yn clywed gennych.</span>
+      </p>
+      <a href="mailto:hannah@vandenberghuk.com" class="btn btn--white">
+        <span data-en>Get in touch</span>
+        <span data-cy>Cysylltwch &acirc; ni</span>
+        <span class="btn__arrow">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="100" aria-hidden="true">
+            <path d="M4 4L16 32L28 4" stroke="#c8283f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M38 6h8c8 0 14 6 14 14s-6 14-14 14h-8V6z" stroke="#8b91a8" stroke-width="3" fill="none" stroke-linejoin="round"/>
+            <path d="M70 6h7c5 0 8 2.5 8 6.5 0 3-1.5 5-4.5 5.8 3.5 0.6 5.5 3 5.5 6.2 0 4.5-3.5 7.5-9 7.5H70V6z" stroke="#8b91a8" stroke-width="3" fill="none" stroke-linejoin="round"/>
+            <text x="98" y="26" font-family="Outfit, sans-serif" font-size="12" font-weight="600" fill="#4a4f66" letter-spacing="2">UK</text>
+          </svg>
+          <p>
+            <span data-en>Innovation consultancy based in Bristol. We validate ideas, develop collaborations, and build innovations that matter.</span>
+            <span data-cy>Ymgynghoriaeth arloesi wedi'i lleoli ym Mryste. Rydym yn dilysu syniadau, datblygu cydweithrediadau, ac adeiladu arloesiadau sy'n bwysig.</span>
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>
+            <span data-en>Capabilities</span>
+            <span data-cy>Galluoedd</span>
+          </h4>
+          <ul>
+            <li><a href="/capabilities/secretariat"><span data-en>Secretariat</span><span data-cy>Ysgrifenyddiaeth</span></a></li>
+            <li><a href="/capabilities/research"><span data-en>Research</span><span data-cy>Ymchwil</span></a></li>
+            <li><a href="/capabilities/funding"><span data-en>Funding</span><span data-cy>Cyllido</span></a></li>
+            <li><a href="/capabilities/science"><span data-en>Science</span><span data-cy>Gwyddoniaeth</span></a></li>
+            <li><a href="/capabilities/esg"><span data-en>ESG</span><span data-cy>ESG</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>
+            <span data-en>Company</span>
+            <span data-cy>Cwmni</span>
+          </h4>
+          <ul>
+            <li><a href="/about"><span data-en>About VDB</span><span data-cy>Amdanom VDB</span></a></li>
+            <li><a href="/projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
+            <li><a href="#contact"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>
+            <span data-en>Contact</span>
+            <span data-cy>Cyswllt</span>
+          </h4>
+          <ul>
+            <li><a href="mailto:hannah@vandenberghuk.com">hannah@vandenberghuk.com</a></li>
+            <li><span data-en>Future Space, Bristol</span><span data-cy>Future Space, Bryste</span></li>
+            <li><a href="https://linkedin.com/company/vandenberghuk">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 VDB UK Ltd. <span data-en>All rights reserved.</span><span data-cy>Cedwir pob hawl.</span></span>
+        <div class="footer__bottom-links">
+          <a href="/privacy"><span data-en>Privacy</span><span data-cy>Preifatrwydd</span></a>
+          <a href="/accessibility"><span data-en>Accessibility</span><span data-cy>Hygyrchedd</span></a>
+          <a href="/cookies"><span data-en>Cookies</span><span data-cy>Cwcis</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════ -->
+  <script>
+    // ─── Language Toggle ───
+    const html = document.documentElement;
+    const langBtns = document.querySelectorAll('[data-set-lang]');
+
+    // Auto-detect browser language
+    const browserLang = navigator.language || navigator.languages?.[0] || 'en';
+    const savedLang = localStorage.getItem('vdb-lang');
+    const initialLang = savedLang || (browserLang.startsWith('cy') ? 'cy' : 'en');
+
+    function setLang(lang) {
+      html.setAttribute('data-lang', lang);
+      html.setAttribute('lang', lang);
+      localStorage.setItem('vdb-lang', lang);
+      langBtns.forEach(btn => {
+        btn.classList.toggle('lang-toggle__btn--active', btn.dataset.setLang === lang);
+      });
+    }
+
+    setLang(initialLang);
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+    });
+
+    // ─── Scroll Reveal ───
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => el.classList.add('reveal--hidden'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ─── Header Background on Scroll ───
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      header.style.background = window.scrollY > 50
+        ? 'rgba(15, 17, 24, 0.95)'
+        : 'var(--slate-950)';
+      header.style.backdropFilter = window.scrollY > 50 ? 'blur(12px)' : 'none';
+    }, { passive: true });
+
+    // ─── Smooth Scroll for Anchor Links ───
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
