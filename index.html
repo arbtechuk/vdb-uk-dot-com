@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en" data-lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1149,6 +1149,257 @@
     [data-lang="cy"] [data-cy-grid] {
       display: grid;
     }
+
+    /* ═══════════════════════════════════════
+       THEME TOGGLE
+       ═══════════════════════════════════════ */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: var(--slate-800);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .theme-toggle__btn {
+      padding: 6px 10px;
+      border-radius: 4px;
+      color: var(--slate-400);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-toggle__btn--active {
+      background: var(--red-600);
+      color: white;
+    }
+
+    .theme-toggle__btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ═══════════════════════════════════════
+       LIGHT THEME OVERRIDES
+       ═══════════════════════════════════════ */
+
+    /* Smooth theme transitions on key sections */
+    .hero,
+    .partners,
+    .approach,
+    .pillar,
+    .footer,
+    .stat-card {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* --- Header --- */
+    [data-theme="light"] .header {
+      background: #ffffff;
+      border-bottom-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .header__links a {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .header__links a:hover {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .lang-toggle,
+    [data-theme="light"] .theme-toggle {
+      background: var(--slate-100);
+    }
+
+    [data-theme="light"] .lang-toggle__btn,
+    [data-theme="light"] .theme-toggle__btn {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .header__logo svg path:not(:first-child) {
+      stroke: var(--slate-900);
+    }
+
+    [data-theme="light"] .header__logo svg text {
+      fill: var(--slate-600);
+    }
+
+    [data-theme="light"] .header__logo svg line {
+      stroke: var(--slate-300);
+    }
+
+    /* --- Hero --- */
+    [data-theme="light"] .hero {
+      background: var(--stone-50);
+    }
+
+    [data-theme="light"] .hero__pattern {
+      opacity: 0.04;
+    }
+
+    [data-theme="light"] .hero__accent {
+      opacity: 0.15;
+    }
+
+    [data-theme="light"] .hero__text,
+    [data-theme="light"] .hero h1 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .hero h1 em {
+      color: var(--gold-600);
+    }
+
+    [data-theme="light"] .hero__desc {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .hero__eyebrow {
+      color: var(--gold-600);
+    }
+
+    [data-theme="light"] .btn--ghost {
+      border-color: var(--slate-300);
+      color: var(--slate-700);
+    }
+
+    [data-theme="light"] .btn--ghost:hover {
+      border-color: var(--slate-500);
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .stat-card {
+      background: white;
+      border-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .stat-card:hover {
+      border-color: var(--slate-300);
+    }
+
+    [data-theme="light"] .stat-card__number--white {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .stat-card__number--gold {
+      color: var(--gold-600);
+    }
+
+    [data-theme="light"] .stat-card__label {
+      color: var(--slate-600);
+    }
+
+    /* --- Partners --- */
+    [data-theme="light"] .partners {
+      background: var(--stone-100);
+      border-top-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .partners__label {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .partners__logos span {
+      color: var(--slate-700);
+    }
+
+    /* --- Approach (V-D-B) --- */
+    [data-theme="light"] .approach {
+      background: var(--stone-100);
+    }
+
+    [data-theme="light"] .approach__bg {
+      background: radial-gradient(circle, rgba(200,40,63,0.04) 0%, transparent 70%);
+    }
+
+    [data-theme="light"] .approach__header h2 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .approach .label {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .approach__pillars {
+      background: var(--slate-200);
+    }
+
+    [data-theme="light"] .pillar {
+      background: white;
+    }
+
+    [data-theme="light"] .pillar h3 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .pillar__desc {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .pillar__list li {
+      color: var(--slate-700);
+      border-bottom-color: var(--slate-100);
+    }
+
+    /* --- Section utilities --- */
+    [data-theme="light"] .section--dark {
+      background: var(--stone-100);
+      color: var(--slate-900);
+    }
+
+    /* --- Footer --- */
+    [data-theme="light"] .footer {
+      background: var(--stone-100);
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__top {
+      border-bottom-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .footer__brand svg path:not(:first-child) {
+      stroke: var(--slate-700);
+    }
+
+    [data-theme="light"] .footer__brand svg text {
+      fill: var(--slate-500);
+    }
+
+    [data-theme="light"] .footer__brand p {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__col h4 {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__col a {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__col a:hover {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .footer__bottom {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .footer__bottom-links a {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .footer__bottom-links a:hover {
+      color: var(--slate-700);
+    }
+
+    /* Accessibility: darken gold for WCAG AA on light backgrounds */
+    [data-theme="light"] .label--gold {
+      color: var(--gold-600);
+    }
   </style>
 </head>
 <body>
@@ -1185,6 +1436,15 @@
         <div class="lang-toggle" role="group" aria-label="Language">
           <button class="lang-toggle__btn lang-toggle__btn--active" data-set-lang="en" aria-label="English">EN</button>
           <button class="lang-toggle__btn" data-set-lang="cy" aria-label="Cymraeg">CY</button>
+        </div>
+
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button class="theme-toggle__btn" data-set-theme="light" aria-label="Light mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <button class="theme-toggle__btn theme-toggle__btn--active" data-set-theme="dark" aria-label="Dark mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
         </div>
 
         <a href="#contact" class="header__cta">
@@ -1780,6 +2040,34 @@
       btn.addEventListener('click', () => setLang(btn.dataset.setLang));
     });
 
+    // ─── Theme Toggle ───
+    const savedTheme = localStorage.getItem('vdb-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+    const themeBtns = document.querySelectorAll('[data-set-theme]');
+
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('vdb-theme', theme);
+      themeBtns.forEach(btn => {
+        btn.classList.toggle('theme-toggle__btn--active', btn.dataset.setTheme === theme);
+      });
+      updateHeaderScroll();
+    }
+
+    setTheme(initialTheme);
+
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => setTheme(btn.dataset.setTheme));
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('vdb-theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
     // ─── Scroll Reveal ───
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => el.classList.add('reveal--hidden'));
@@ -1796,12 +2084,18 @@
 
     // ─── Header Background on Scroll ───
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-      header.style.background = window.scrollY > 50
-        ? 'rgba(15, 17, 24, 0.95)'
-        : 'var(--slate-950)';
-      header.style.backdropFilter = window.scrollY > 50 ? 'blur(12px)' : 'none';
-    }, { passive: true });
+    function updateHeaderScroll() {
+      const scrolled = window.scrollY > 50;
+      const isLight = html.getAttribute('data-theme') === 'light';
+      if (scrolled) {
+        header.style.background = isLight ? 'rgba(255,255,255,0.95)' : 'rgba(15,17,24,0.95)';
+        header.style.backdropFilter = 'blur(12px)';
+      } else {
+        header.style.background = '';
+        header.style.backdropFilter = '';
+      }
+    }
+    window.addEventListener('scroll', updateHeaderScroll, { passive: true });
 
     // ─── Smooth Scroll for Anchor Links ───
     document.querySelectorAll('a[href^="#"]').forEach(link => {
