@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — VDB UK</title>
+  <meta name="description" content="Selected projects from VDB UK — innovation consultancy case studies in bio-fertiliser, rehabilitation tech, hardware acceleration, and food waste reduction.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       CSS CUSTOM PROPERTIES
+       Welsh Slate palette — institutional
+       warmth meets modern consultancy
+       ═══════════════════════════════════════ */
+    :root {
+      /* Core palette */
+      --slate-950: #0f1118;
+      --slate-900: #1a1d2b;
+      --slate-800: #252838;
+      --slate-700: #363a4d;
+      --slate-600: #4a4f66;
+      --slate-500: #636880;
+      --slate-400: #8b91a8;
+      --slate-300: #b0b5c8;
+      --slate-200: #d4d7e3;
+      --slate-100: #ecedf3;
+      --slate-50: #f6f7fa;
+
+      /* Welsh red — deeper, more sophisticated than flag red */
+      --red-700: #8b1a2b;
+      --red-600: #a82135;
+      --red-500: #c8283f;
+      --red-400: #d94a5e;
+      --red-100: #fce8eb;
+
+      /* Warm gold accent */
+      --gold-600: #b8860b;
+      --gold-500: #d4a017;
+      --gold-400: #e8b82f;
+      --gold-300: #f0cc5a;
+      --gold-100: #fdf6e3;
+
+      /* Stone / cream for warm backgrounds */
+      --stone-100: #f8f6f1;
+      --stone-200: #efeade;
+      --stone-300: #e2dac8;
+      --stone-50: #fcfbf8;
+
+      /* Typography */
+      --font-display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+      --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Spacing scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+      --space-4xl: 6rem;
+      --space-5xl: 8rem;
+
+      /* Layout */
+      --max-width: 1200px;
+      --header-height: 72px;
+    }
+
+    /* ═══════════════════════════════════════
+       RESET & BASE
+       ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--slate-800);
+      background: var(--stone-50);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* ═══════════════════════════════════════
+       TYPOGRAPHY
+       ═══════════════════════════════════════ */
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+    .label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+    }
+
+    .label--gold { color: var(--gold-500); }
+    .label--red { color: var(--red-500); }
+
+    /* ═══════════════════════════════════════
+       LAYOUT UTILITIES
+       ═══════════════════════════════════════ */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+
+    .section {
+      padding: var(--space-5xl) 0;
+    }
+
+    .section--dark {
+      background: var(--slate-900);
+      color: var(--slate-100);
+    }
+
+    .section--stone {
+      background: var(--stone-100);
+    }
+
+    .section--red {
+      background: var(--red-700);
+      color: white;
+    }
+
+    /* ═══════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--header-height);
+      background: var(--slate-950);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s ease;
+    }
+
+    .header__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .header__logo svg { height: 36px; width: auto; }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xl);
+    }
+
+    .header__links {
+      display: flex;
+      gap: var(--space-lg);
+      list-style: none;
+    }
+
+    .header__links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--slate-300);
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .header__links a:hover { color: white; }
+
+    .header__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--red-500);
+      transition: width 0.3s ease;
+    }
+
+    .header__links a:hover::after { width: 100%; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: var(--slate-800);
+      border-radius: 6px;
+      padding: 2px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .lang-toggle__btn {
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: var(--slate-400);
+      transition: all 0.2s;
+    }
+
+    .lang-toggle__btn--active {
+      background: var(--red-600);
+      color: white;
+    }
+
+    .header__cta {
+      padding: 8px 20px;
+      background: var(--red-600);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .header__cta:hover { background: var(--red-500); }
+
+    /* ═══════════════════════════════════════
+       THEME TOGGLE
+       ═══════════════════════════════════════ */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: var(--slate-800);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .theme-toggle__btn {
+      padding: 6px 10px;
+      border-radius: 4px;
+      color: var(--slate-400);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-toggle__btn--active {
+      background: var(--red-600);
+      color: white;
+    }
+
+    .theme-toggle__btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ═══════════════════════════════════════
+       BUTTONS
+       ═══════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .btn--primary {
+      background: var(--red-600);
+      color: white;
+    }
+
+    .btn--primary:hover {
+      background: var(--red-500);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(200, 40, 63, 0.3);
+    }
+
+    .btn--ghost {
+      border: 1px solid var(--slate-600);
+      color: var(--slate-300);
+    }
+
+    .btn--ghost:hover {
+      border-color: var(--slate-400);
+      color: white;
+    }
+
+    .btn--white {
+      background: white;
+      color: var(--red-700);
+    }
+
+    .btn--white:hover {
+      background: var(--stone-50);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .btn__arrow {
+      transition: transform 0.2s;
+    }
+
+    .btn:hover .btn__arrow {
+      transform: translateX(3px);
+    }
+
+    /* ═══════════════════════════════════════
+       PAGE HERO
+       ═══════════════════════════════════════ */
+    .page-hero {
+      position: relative;
+      min-height: 40vh;
+      display: flex;
+      align-items: flex-end;
+      background: var(--slate-950);
+      overflow: hidden;
+      padding-top: var(--header-height);
+    }
+
+    .page-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/images/vdb-photo-1.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .page-hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 17, 24, 0.55) 0%,
+        rgba(15, 17, 24, 0.75) 60%,
+        rgba(15, 17, 24, 0.92) 100%
+      );
+    }
+
+    .page-hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-4xl) var(--space-xl) var(--space-3xl);
+      width: 100%;
+    }
+
+    .page-hero__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      margin-bottom: var(--space-lg);
+    }
+
+    .page-hero__breadcrumb a {
+      color: var(--slate-400);
+      transition: color 0.2s;
+    }
+
+    .page-hero__breadcrumb a:hover {
+      color: white;
+    }
+
+    .page-hero__breadcrumb span.sep {
+      color: var(--slate-600);
+    }
+
+    .page-hero__breadcrumb span.current {
+      color: var(--slate-300);
+    }
+
+    .page-hero h1 {
+      color: white;
+      max-width: 700px;
+      margin-bottom: var(--space-md);
+    }
+
+    .page-hero__subtitle {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--slate-300);
+      max-width: 600px;
+    }
+
+    /* ═══════════════════════════════════════
+       PROJECTS LISTING
+       ═══════════════════════════════════════ */
+    .projects-listing {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-50);
+    }
+
+    .projects-listing__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+
+    .projects-listing__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--slate-300);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .project-card__image {
+      background: var(--slate-200);
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .project-card__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-700) 100%);
+      opacity: 0.35;
+      z-index: 1;
+    }
+
+    .project-card:nth-child(1) .project-card__image::after { background: linear-gradient(135deg, #1a3a2a, #2d5a3e); opacity: 0.35; }
+    .project-card:nth-child(2) .project-card__image::after { background: linear-gradient(135deg, #1a2a3a, #2d4a5e); opacity: 0.35; }
+    .project-card:nth-child(3) .project-card__image::after { background: linear-gradient(135deg, #2a1a3a, #4a2d5e); opacity: 0.35; }
+    .project-card:nth-child(4) .project-card__image::after { background: linear-gradient(135deg, #3a2a1a, #5e4a2d); opacity: 0.35; }
+
+    .project-card__body {
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card__partner {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red-600);
+      margin-bottom: var(--space-sm);
+    }
+
+    .project-card__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--slate-900);
+      margin-bottom: var(--space-sm);
+      line-height: 1.3;
+    }
+
+    .project-card__desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .project-card__stat {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--slate-100);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold-600);
+    }
+
+    /* ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ */
+    .cta-banner {
+      position: relative;
+      background: var(--red-700);
+      padding: var(--space-4xl) 0;
+      overflow: hidden;
+    }
+
+    .cta-banner__pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%),
+                         radial-gradient(circle at 80% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+    }
+
+    .cta-banner__inner {
+      position: relative;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      color: white;
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-banner__desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 550px;
+      margin: 0 auto var(--space-xl);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ */
+    .footer {
+      background: var(--slate-950);
+      color: var(--slate-400);
+      padding: var(--space-4xl) 0 var(--space-xl);
+    }
+
+    .footer__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: var(--space-3xl);
+      padding-bottom: var(--space-3xl);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer__brand svg { margin-bottom: var(--space-md); }
+
+    .footer__brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--slate-400);
+      max-width: 280px;
+    }
+
+    .footer__col h4 {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--slate-300);
+      margin-bottom: var(--space-lg);
+    }
+
+    .footer__col ul { list-style: none; }
+
+    .footer__col li { margin-bottom: var(--space-sm); }
+
+    .footer__col a {
+      font-size: 0.88rem;
+      color: var(--slate-400);
+      transition: color 0.2s;
+    }
+
+    .footer__col a:hover { color: white; }
+
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: var(--space-xl);
+      font-size: 0.82rem;
+      color: var(--slate-500);
+    }
+
+    .footer__bottom-links {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    .footer__bottom-links a {
+      color: var(--slate-500);
+      transition: color 0.2s;
+    }
+
+    .footer__bottom-links a:hover { color: var(--slate-300); }
+
+    /* ═══════════════════════════════════════
+       SCROLL REVEAL
+       ═══════════════════════════════════════ */
+    .reveal--hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .projects-listing__grid { grid-template-columns: 1fr; }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+    }
+
+    @media (max-width: 768px) {
+      .header__links { display: none; }
+      .project-card { grid-template-columns: 1fr; }
+      .project-card__image { min-height: 120px; }
+      .footer__top { grid-template-columns: 1fr; }
+      .page-hero { min-height: 35vh; }
+      .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+    }
+
+    @media (max-width: 480px) {
+      .btn { justify-content: center; }
+      .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
+    }
+
+    /* ═══════════════════════════════════════
+       BILINGUAL SUPPORT
+       ═══════════════════════════════════════ */
+    [data-lang="en"] [data-cy],
+    [data-lang="cy"] [data-en] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en],
+    [data-lang="cy"] [data-cy] {
+      display: initial;
+    }
+
+    /* Block-level bilingual elements */
+    [data-lang="en"] [data-cy-block],
+    [data-lang="cy"] [data-en-block] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en-block],
+    [data-lang="cy"] [data-cy-block] {
+      display: block;
+    }
+
+    /* ═══════════════════════════════════════
+       LIGHT THEME OVERRIDES
+       ═══════════════════════════════════════ */
+
+    .page-hero,
+    .footer {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* --- Header --- */
+    [data-theme="light"] .header {
+      background: #ffffff;
+      border-bottom-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .header__links a {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .header__links a:hover {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .lang-toggle,
+    [data-theme="light"] .theme-toggle {
+      background: var(--slate-100);
+    }
+
+    [data-theme="light"] .lang-toggle__btn,
+    [data-theme="light"] .theme-toggle__btn {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .header__logo svg path:not(:first-child) {
+      stroke: var(--slate-900);
+    }
+
+    [data-theme="light"] .header__logo svg text {
+      fill: var(--slate-600);
+    }
+
+    [data-theme="light"] .header__logo svg line {
+      stroke: var(--slate-300);
+    }
+
+    /* --- Page Hero --- */
+    [data-theme="light"] .page-hero {
+      background: var(--stone-100);
+    }
+
+    [data-theme="light"] .page-hero__bg::after {
+      background: linear-gradient(
+        to bottom,
+        rgba(248, 246, 241, 0.4) 0%,
+        rgba(248, 246, 241, 0.6) 60%,
+        rgba(248, 246, 241, 0.9) 100%
+      );
+    }
+
+    [data-theme="light"] .page-hero h1 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .page-hero__subtitle {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .page-hero__breadcrumb a {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .page-hero__breadcrumb a:hover {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .page-hero__breadcrumb span.sep {
+      color: var(--slate-400);
+    }
+
+    [data-theme="light"] .page-hero__breadcrumb span.current {
+      color: var(--slate-700);
+    }
+
+    /* --- Projects Listing --- */
+    [data-theme="light"] .projects-listing {
+      background: white;
+    }
+
+    [data-theme="light"] .project-card {
+      background: var(--stone-50);
+      border-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .project-card:hover {
+      border-color: var(--slate-300);
+    }
+
+    /* --- Footer --- */
+    [data-theme="light"] .footer {
+      background: var(--stone-100);
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__top {
+      border-bottom-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .footer__brand svg path:not(:first-child) {
+      stroke: var(--slate-700);
+    }
+
+    [data-theme="light"] .footer__brand svg text {
+      fill: var(--slate-500);
+    }
+
+    [data-theme="light"] .footer__brand p {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__col h4 {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__col a {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .footer__col a:hover {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .footer__bottom {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .footer__bottom-links a {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .footer__bottom-links a:hover {
+      color: var(--slate-700);
+    }
+
+    /* Accessibility: darken gold for WCAG AA on light backgrounds */
+    [data-theme="light"] .label--gold {
+      color: var(--gold-600);
+    }
+
+    [data-theme="light"] .btn--ghost {
+      border-color: var(--slate-300);
+      color: var(--slate-700);
+    }
+
+    [data-theme="light"] .btn--ghost:hover {
+      border-color: var(--slate-500);
+      color: var(--slate-900);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════ -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo" aria-label="VDB UK Home">
+        <!-- VDB UK Logo — geometric monogram -->
+        <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- V chevron mark -->
+          <path d="M4 4L16 32L28 4" stroke="#c8283f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- D -->
+          <path d="M38 6h8c8 0 14 6 14 14s-6 14-14 14h-8V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
+          <!-- B -->
+          <path d="M70 6h7c5 0 8 2.5 8 6.5 0 3-1.5 5-4.5 5.8 3.5 0.6 5.5 3 5.5 6.2 0 4.5-3.5 7.5-9 7.5H70V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
+          <!-- Divider -->
+          <line x1="98" y1="10" x2="98" y2="30" stroke="#363a4d" stroke-width="1.5"/>
+          <!-- UK text -->
+          <text x="108" y="26" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#8b91a8" letter-spacing="2">UK</text>
+        </svg>
+      </a>
+
+      <nav class="header__nav">
+        <ul class="header__links">
+          <li><a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a></li>
+          <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
+          <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
+          <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
+        </ul>
+
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn lang-toggle__btn--active" data-set-lang="en" aria-label="English">EN</button>
+          <button class="lang-toggle__btn" data-set-lang="cy" aria-label="Cymraeg">CY</button>
+        </div>
+
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button class="theme-toggle__btn" data-set-theme="light" aria-label="Light mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <button class="theme-toggle__btn theme-toggle__btn--active" data-set-theme="dark" aria-label="Dark mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+
+        <a href="/contact.html" class="header__cta">
+          <span data-en>Contact Us</span><span data-cy>Cysylltwch</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       PAGE HERO
+       ═══════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero__bg"></div>
+    <div class="page-hero__content">
+      <div class="page-hero__breadcrumb">
+        <a href="/">
+          <span data-en>Home</span>
+          <span data-cy>Hafan</span>
+        </a>
+        <span class="sep">/</span>
+        <span class="current">
+          <span data-en>Projects</span>
+          <span data-cy>Prosiectau</span>
+        </span>
+      </div>
+      <h1>
+        <span data-en>Our Projects</span>
+        <span data-cy>Ein Prosiectau</span>
+      </h1>
+      <p class="page-hero__subtitle">
+        <span data-en>Case studies from across our portfolio &mdash; from bio-fertiliser spin-outs to digital health devices deployed worldwide.</span>
+        <span data-cy>Astudiaethau achos o ar draws ein portffolio &mdash; o fentrau bio-wrtaith i ddyfeisiau iechyd digidol wedi'u defnyddio ledled y byd.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PROJECTS LISTING
+       ═══════════════════════════════════════ -->
+  <section class="projects-listing reveal">
+    <div class="projects-listing__inner">
+      <div class="projects-listing__grid">
+
+        <a href="/projects/npk-recovery.html" class="project-card">
+          <div class="project-card__image">
+            <img src="/images/vdb-photo-2.jpg" alt="Laboratory glassware with green solutions — chemical recycling research">
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__partner">NPK Recovery / VDB Labs</div>
+            <div class="project-card__title">
+              <span data-en>Bio-fertiliser from waste: chemical recycling and water recovery</span>
+              <span data-cy>Bio-wrtaith o wastraff: ailgylchu cemegol ac adfer dŵr</span>
+            </div>
+            <p class="project-card__desc">
+              <span data-en>Our first spin-out enterprise. Converting human urine into validated crop fertiliser, deployed at UK festivals and now growing native trees in the Brecon Beacons.</span>
+              <span data-cy>Ein menter deillio gyntaf. Trosi wrin dynol yn wrtaith cnydau dilysiedig, wedi'i ddefnyddio mewn gwyliau yn y DU ac yn awr yn tyfu coed brodorol ym Mannau Brycheiniog.</span>
+            </p>
+            <div class="project-card__stat">
+              <span data-en>&pound;2m+ grant funding secured</span>
+              <span data-cy>Dros &pound;2m o gyllid grant wedi'i sicrhau</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/projects/gripable.html" class="project-card">
+          <div class="project-card__image">
+            <img src="/images/project-gripable-device.jpg" alt="GripAble rehabilitation device">
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__partner">GripAble / Imperial College</div>
+            <div class="project-card__title">
+              <span data-en>Remote rehabilitation technology with proprietary sensors</span>
+              <span data-cy>Technoleg adsefydlu o bell gyda synwyryddion perchnogol</span>
+            </div>
+            <p class="project-card__desc">
+              <span data-en>Programme management for the SqueezAble paediatric device. Now deployed across 350+ NHS and healthcare locations worldwide with US expansion via Medline.</span>
+              <span data-cy>Rheoli rhaglen ar gyfer y ddyfais bediatrig SqueezAble. Bellach wedi'i ddefnyddio mewn dros 350 o leoliadau GIG a gofal iechyd ledled y byd.</span>
+            </p>
+            <div class="project-card__stat">
+              <span data-en>$11M Series A raised</span>
+              <span data-cy>$11M Cyfres A wedi'i godi</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/projects/plus-x-innovation.html" class="project-card">
+          <div class="project-card__image">
+            <img src="/images/vdb-photo-1.jpg" alt="Team collaboration workshop with post-it notes — innovation accelerator design">
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__partner">Plus X Innovation</div>
+            <div class="project-card__title">
+              <span data-en>Designing a leading UK hardware accelerator</span>
+              <span data-cy>Dylunio cyflymydd caledwedd blaenllaw yn y DU</span>
+            </div>
+            <p class="project-card__desc">
+              <span data-en>Helped design the accelerator programme for this national innovation hub. 69 companies supported, &pound;180m raised by portfolio companies, 1,100+ jobs created.</span>
+              <span data-cy>Helpu i ddylunio'r rhaglen gyflymydd ar gyfer y ganolfan arloesi genedlaethol hon. 69 cwmni wedi'u cefnogi, &pound;180m wedi'i godi.</span>
+            </p>
+            <div class="project-card__stat">
+              <span data-en>&pound;25m in grants won for entrepreneurs</span>
+              <span data-cy>&pound;25m mewn grantiau i entrepreneuriaid</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/projects/blakbear.html" class="project-card">
+          <div class="project-card__image">
+            <img src="/images/project-blakbear-sensor.jpg" alt="BlakBear digital freshness sensor">
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__partner">BlakBear / Cranswick</div>
+            <div class="project-card__title">
+              <span data-en>Digital freshness sensors reducing food waste</span>
+              <span data-cy>Synwyryddion ffresni digidol yn lleihau gwastraff bwyd</span>
+            </div>
+            <p class="project-card__desc">
+              <span data-en>Supporting the world's first digital freshness sensor company. Now deployed across 17 Cranswick production sites — a first for the UK meat industry.</span>
+              <span data-cy>Cefnogi cwmni synhwyrydd ffresni digidol cyntaf y byd. Bellach wedi'i ddefnyddio ar draws 17 safle cynhyrchu Cranswick.</span>
+            </p>
+            <div class="project-card__stat">
+              <span data-en>17 production sites deployed</span>
+              <span data-cy>17 safle cynhyrchu wedi'u defnyddio</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="cta-banner__pattern"></div>
+    <div class="cta-banner__inner">
+      <h2>
+        <span data-en>Work with us</span>
+        <span data-cy>Gweithiwch gyda ni</span>
+      </h2>
+      <p class="cta-banner__desc">
+        <span data-en>Whether you're exploring a new idea, applying for funding, or need a delivery partner &mdash; we'd love to hear from you.</span>
+        <span data-cy>P'un a ydych chi'n archwilio syniad newydd, yn gwneud cais am gyllid, neu angen partner cyflawni &mdash; byddem wrth ein bodd yn clywed gennych.</span>
+      </p>
+      <a href="/contact.html" class="btn btn--white">
+        <span data-en>Get in touch</span>
+        <span data-cy>Cysylltwch &acirc; ni</span>
+        <span class="btn__arrow">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="100" aria-hidden="true">
+            <path d="M4 4L16 32L28 4" stroke="#c8283f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M38 6h8c8 0 14 6 14 14s-6 14-14 14h-8V6z" stroke="#8b91a8" stroke-width="3" fill="none" stroke-linejoin="round"/>
+            <path d="M70 6h7c5 0 8 2.5 8 6.5 0 3-1.5 5-4.5 5.8 3.5 0.6 5.5 3 5.5 6.2 0 4.5-3.5 7.5-9 7.5H70V6z" stroke="#8b91a8" stroke-width="3" fill="none" stroke-linejoin="round"/>
+            <text x="98" y="26" font-family="Outfit, sans-serif" font-size="12" font-weight="600" fill="#4a4f66" letter-spacing="2">UK</text>
+          </svg>
+          <p>
+            <span data-en>Innovation consultancy based in Bristol. We validate ideas, develop collaborations, and build innovations that matter.</span>
+            <span data-cy>Ymgynghoriaeth arloesi wedi'i lleoli ym Mryste. Rydym yn dilysu syniadau, datblygu cydweithrediadau, ac adeiladu arloesiadau sy'n bwysig.</span>
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>
+            <span data-en>Capabilities</span>
+            <span data-cy>Galluoedd</span>
+          </h4>
+          <ul>
+            <li><a href="/capabilities/secretariat.html"><span data-en>Secretariat</span><span data-cy>Ysgrifenyddiaeth</span></a></li>
+            <li><a href="/capabilities/research.html"><span data-en>Research</span><span data-cy>Ymchwil</span></a></li>
+            <li><a href="/capabilities/funding.html"><span data-en>Funding</span><span data-cy>Cyllido</span></a></li>
+            <li><a href="/capabilities/science.html"><span data-en>Science</span><span data-cy>Gwyddoniaeth</span></a></li>
+            <li><a href="/capabilities/esg.html"><span data-en>ESG</span><span data-cy>ESG</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>
+            <span data-en>Company</span>
+            <span data-cy>Cwmni</span>
+          </h4>
+          <ul>
+            <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Amdanom VDB</span></a></li>
+            <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
+            <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>
+            <span data-en>Contact</span>
+            <span data-cy>Cyswllt</span>
+          </h4>
+          <ul>
+            <li><a href="mailto:hannah@vandenberghuk.com">hannah@vandenberghuk.com</a></li>
+            <li><span data-en>Future Space, Bristol</span><span data-cy>Future Space, Bryste</span></li>
+            <li><a href="https://linkedin.com/company/vandenberghuk">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 VDB UK Ltd. <span data-en>All rights reserved.</span><span data-cy>Cedwir pob hawl.</span></span>
+        <div class="footer__bottom-links">
+          <a href="/privacy.html"><span data-en>Privacy</span><span data-cy>Preifatrwydd</span></a>
+          <a href="/accessibility.html"><span data-en>Accessibility</span><span data-cy>Hygyrchedd</span></a>
+          <a href="/cookies.html"><span data-en>Cookies</span><span data-cy>Cwcis</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════ -->
+  <script>
+    // ─── Language Toggle ───
+    const html = document.documentElement;
+    const langBtns = document.querySelectorAll('[data-set-lang]');
+
+    const browserLang = navigator.language || navigator.languages?.[0] || 'en';
+    const savedLang = localStorage.getItem('vdb-lang');
+    const initialLang = savedLang || (browserLang.startsWith('cy') ? 'cy' : 'en');
+
+    function setLang(lang) {
+      html.setAttribute('data-lang', lang);
+      html.setAttribute('lang', lang);
+      localStorage.setItem('vdb-lang', lang);
+      langBtns.forEach(btn => {
+        btn.classList.toggle('lang-toggle__btn--active', btn.dataset.setLang === lang);
+      });
+    }
+
+    setLang(initialLang);
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+    });
+
+    // ─── Header Background on Scroll ───
+    const header = document.querySelector('.header');
+    function updateHeaderScroll() {
+      const scrolled = window.scrollY > 50;
+      const isLight = html.getAttribute('data-theme') === 'light';
+      if (scrolled) {
+        header.style.background = isLight ? 'rgba(255,255,255,0.95)' : 'rgba(15,17,24,0.95)';
+        header.style.backdropFilter = 'blur(12px)';
+      } else {
+        header.style.background = '';
+        header.style.backdropFilter = '';
+      }
+    }
+    window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+
+    // ─── Theme Toggle ───
+    const savedTheme = localStorage.getItem('vdb-theme');
+    const initialTheme = savedTheme || 'dark';
+
+    const themeBtns = document.querySelectorAll('[data-set-theme]');
+
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('vdb-theme', theme);
+      themeBtns.forEach(btn => {
+        btn.classList.toggle('theme-toggle__btn--active', btn.dataset.setTheme === theme);
+      });
+      updateHeaderScroll();
+    }
+
+    setTheme(initialTheme);
+
+    themeBtns.forEach(btn => {
+      btn.addEventListener('click', () => setTheme(btn.dataset.setTheme));
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('vdb-theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
+    // ─── Scroll Reveal ───
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => el.classList.add('reveal--hidden'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // ─── Smooth Scroll for Anchor Links ───
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
