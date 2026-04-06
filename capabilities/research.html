@@ -95,6 +95,31 @@
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    body.mobile-nav-open {
+      overflow: hidden;
+    }
+
+    body.mobile-nav-open::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 12, 18, 0.58);
+      backdrop-filter: blur(3px);
+      z-index: 90;
+    }
+
     /* ═══════════════════════════════════════
        TYPOGRAPHY
        ═══════════════════════════════════════ */
@@ -180,6 +205,51 @@
     }
 
     .header__logo svg { height: 36px; width: auto; }
+
+    .header__menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      color: white;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .header__menu-btn:hover {
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .header__menu-btn-box {
+      display: grid;
+      gap: 5px;
+    }
+
+    .header__menu-btn-line {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .header--nav-open .header__menu-btn-line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .header--nav-open .header__menu-btn-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .header--nav-open .header__menu-btn-line:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
     .header__nav {
       display: flex;
@@ -920,7 +990,88 @@
     }
 
     @media (max-width: 768px) {
-      .header__links { display: none; }
+      .header__inner { gap: var(--space-md); }
+
+      .header__menu-btn { display: inline-flex; }
+
+      .header__nav {
+        display: none;
+        position: fixed;
+        top: calc(var(--header-height) + var(--space-md));
+        left: var(--space-md);
+        right: var(--space-md);
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-lg);
+        padding: var(--space-xl);
+        background: rgba(15,17,24,0.97);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+        max-height: calc(100vh - var(--header-height) - (var(--space-md) * 3));
+        overflow-y: auto;
+      }
+
+      .header--nav-open .header__nav { display: flex; }
+
+      .header__links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+      }
+
+      .header__links a {
+        display: block;
+        padding: 0.75rem 0;
+        font-size: 1rem;
+      }
+
+      .lang-toggle,
+      .theme-toggle {
+        width: fit-content;
+      }
+
+      .header__cta {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+      }
+
+      .hero__content,
+      .page-hero__content,
+      .index-hero__content,
+      .cs-hero__content {
+        padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
+      }
+
+      .hero__content { gap: var(--space-xl); }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero__stats { grid-template-columns: 1fr; }
+
+      .hero__desc,
+      .page-hero__subtitle,
+      .index-hero__desc,
+      .cs-hero__subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+
+      .page-hero,
+      .index-hero,
+      .cs-hero {
+        min-height: auto;
+      }
+
+      .page-hero__breadcrumb,
+      .breadcrumb__inner {
+        flex-wrap: wrap;
+        row-gap: var(--space-xs);
+      }
       .related-card { grid-template-columns: 1fr; }
       .related-card__image { min-height: 120px; }
       .footer__top { grid-template-columns: 1fr; }
@@ -1050,6 +1201,18 @@
 
     [data-theme="light"] .header__logo svg text {
       fill: var(--slate-600);
+    }
+
+    [data-theme="light"] .header__menu-btn {
+      color: var(--slate-700);
+      border-color: var(--slate-200);
+      background: rgba(246, 247, 250, 0.96);
+    }
+
+    [data-theme="light"] .header--nav-open .header__nav {
+      background: rgba(255,255,255,0.98);
+      border-color: var(--slate-200);
+      box-shadow: 0 24px 60px rgba(15,17,24,0.12);
     }
 
     [data-theme="light"] .header__logo svg line {
@@ -1231,7 +1394,16 @@
         </svg>
       </a>
 
-      <nav class="header__nav">
+      <button class="header__menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only"><span data-en>Menu</span><span data-cy>Dewislen</span></span>
+        <span class="header__menu-btn-box" aria-hidden="true">
+          <span class="header__menu-btn-line"></span>
+          <span class="header__menu-btn-line"></span>
+          <span class="header__menu-btn-line"></span>
+        </span>
+      </button>
+
+      <nav class="header__nav" id="site-nav">
         <ul class="header__links">
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
           <li><a href="/#approach"><span data-en>Our Approach</span><span data-cy>Ein Dull</span></a></li>
@@ -1682,6 +1854,43 @@
 
     langBtns.forEach(btn => {
       btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+    });
+
+    // ─── Mobile Navigation ───
+    const menuBtn = document.querySelector('.header__menu-btn');
+    const siteHeader = document.querySelector('.header');
+
+    function setMobileNavOpen(open) {
+      if (!siteHeader || !menuBtn) return;
+      siteHeader.classList.toggle('header--nav-open', open);
+      document.body.classList.toggle('mobile-nav-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    }
+
+    menuBtn?.addEventListener('click', () => {
+      setMobileNavOpen(!siteHeader.classList.contains('header--nav-open'));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!siteHeader?.classList.contains('header--nav-open')) return;
+      if (siteHeader.contains(event.target)) return;
+      setMobileNavOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setMobileNavOpen(false);
+      }
+    });
+
+    document.querySelectorAll('.header__nav a').forEach((link) => {
+      link.addEventListener('click', () => setMobileNavOpen(false));
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        setMobileNavOpen(false);
+      }
     });
 
     // ─── Header Background on Scroll ───
