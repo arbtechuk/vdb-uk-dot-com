@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — VDB UK</title>
-  <meta name="description" content="Selected projects from VDB UK — including innovation, public sector strategy, bilingual delivery, and consultation-led research.">
+  <title>LGA — Funding Transition Analysis for Local Government | VDB UK</title>
+  <meta name="description" content="VANDENBERGHUK (VDB) analysed historic ESIF investment and built an interactive dashboard for the Local Government Association to support UK Shared Prosperity Fund advocacy.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -24,7 +24,7 @@
       --slate-800: #252838;
       --slate-700: #363a4d;
       --slate-600: #4a4f66;
-      --slate-500: #636880;
+      --slate-500: #5d6380;
       --slate-400: #8b91a8;
       --slate-300: #b0b5c8;
       --slate-200: #d4d7e3;
@@ -339,9 +339,9 @@
     }
 
     /* ═══════════════════════════════════════
-       PAGE HERO
+       PROJECT HERO
        ═══════════════════════════════════════ */
-    .page-hero {
+    .project-hero {
       position: relative;
       min-height: 40vh;
       display: flex;
@@ -351,27 +351,26 @@
       padding-top: var(--header-height);
     }
 
-    .page-hero__bg {
+    .project-hero__image {
       position: absolute;
       inset: 0;
-      background-image: url('/images/vdb-photo-1.jpg');
-      background-size: cover;
-      background-position: center;
+      z-index: 0;
     }
 
-    .page-hero__bg::after {
+    .project-hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-hero__image::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(15, 17, 24, 0.55) 0%,
-        rgba(15, 17, 24, 0.75) 60%,
-        rgba(15, 17, 24, 0.92) 100%
-      );
+      background: linear-gradient(to top, var(--slate-950) 0%, rgba(15,17,24,0.6) 50%, rgba(15,17,24,0.3) 100%);
     }
 
-    .page-hero__content {
+    .project-hero__content {
       position: relative;
       z-index: 2;
       max-width: var(--max-width);
@@ -380,189 +379,418 @@
       width: 100%;
     }
 
-    .page-hero__breadcrumb {
+    .project-hero__breadcrumb {
       display: flex;
       align-items: center;
       gap: var(--space-sm);
-      font-size: 0.85rem;
-      color: var(--slate-400);
       margin-bottom: var(--space-lg);
+      font-size: 0.82rem;
+      color: var(--slate-400);
     }
 
-    .page-hero__breadcrumb a {
+    .project-hero__breadcrumb a {
       color: var(--slate-400);
       transition: color 0.2s;
     }
 
-    .page-hero__breadcrumb a:hover {
+    .project-hero__breadcrumb a:hover {
       color: white;
     }
 
-    .page-hero__breadcrumb span.sep {
+    .project-hero__breadcrumb span.sep {
       color: var(--slate-600);
     }
 
-    .page-hero__breadcrumb span.current {
-      color: var(--slate-300);
-    }
-
-    .page-hero h1 {
+    .project-hero h1 {
       color: white;
-      max-width: 700px;
       margin-bottom: var(--space-md);
+      max-width: 720px;
     }
 
-    .page-hero__subtitle {
+    .project-hero__subtitle {
       font-size: 1.15rem;
-      line-height: 1.7;
       color: var(--slate-300);
       max-width: 600px;
+      line-height: 1.7;
     }
 
     /* ═══════════════════════════════════════
-       PROJECTS LISTING
+       THE BRIEF
        ═══════════════════════════════════════ */
-    .projects-listing {
+    .brief {
       padding: var(--space-5xl) 0;
       background: var(--stone-50);
     }
 
-    .projects-listing__inner {
+    .brief__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: var(--space-4xl);
+    }
+
+    .brief__sidebar h2 {
+      color: var(--slate-900);
+      margin-top: var(--space-sm);
+    }
+
+    .brief__text {
+      font-size: 1.1rem;
+      color: var(--slate-700);
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    /* ═══════════════════════════════════════
+       WHAT WE DID — 3 SECTIONS
+       ═══════════════════════════════════════ */
+    .what-we-did {
+      padding: var(--space-5xl) 0;
+      background: var(--slate-900);
+    }
+
+    .what-we-did__header {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .what-we-did__header h2 {
+      color: white;
+      margin-top: var(--space-sm);
+    }
+
+    .what-we-did__grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .work-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: var(--space-2xl);
+      transition: border-color 0.3s;
+    }
+
+    .work-card:hover {
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .work-card__number {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: var(--space-lg);
+      color: var(--red-400);
+    }
+
+    .work-card:nth-child(2) .work-card__number { color: var(--gold-400); }
+    .work-card:nth-child(3) .work-card__number { color: var(--slate-400); }
+
+    .work-card h3 {
+      color: white;
+      margin-bottom: var(--space-md);
+      font-size: 1.25rem;
+    }
+
+    .work-card__desc {
+      font-size: 0.92rem;
+      color: var(--slate-400);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       CONTENT IMAGE
+       ═══════════════════════════════════════ */
+    .content-image {
+      padding: var(--space-3xl) 0;
+      background: var(--stone-100);
+    }
+
+    .content-image__inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--space-xl);
     }
 
-    .projects-listing__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-xl);
+    .content-image__figure {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 21/9;
     }
 
-    .project-card {
+    .content-image__figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ═══════════════════════════════════════
+       RESULTS STATS
+       ═══════════════════════════════════════ */
+    .results {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-50);
+    }
+
+    .results__header {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .results__header h2 {
+      color: var(--slate-900);
+      margin-top: var(--space-sm);
+    }
+
+    .results__grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .result-card {
+      text-align: center;
+      padding: var(--space-2xl) var(--space-lg);
       background: white;
       border: 1px solid var(--slate-200);
       border-radius: 12px;
-      overflow: hidden;
       transition: all 0.3s ease;
     }
 
-    .project-card:hover {
+    .result-card:hover {
       border-color: var(--slate-300);
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(0,0,0,0.06);
     }
 
-    .project-card__image {
-      background: var(--slate-200);
-      min-height: 180px;
+    .result-card__number {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+
+    .result-card:nth-child(1) .result-card__number { color: var(--gold-500); }
+    .result-card:nth-child(2) .result-card__number { color: var(--red-500); }
+    .result-card:nth-child(3) .result-card__number { color: var(--gold-500); }
+    .result-card:nth-child(4) .result-card__number { color: var(--red-500); }
+    .result-card:nth-child(5) .result-card__number { color: var(--gold-500); }
+
+    .result-card__label {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════
+       PARTNERS STRIP
+       ═══════════════════════════════════════ */
+    .partners {
+      background: var(--slate-900);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: var(--space-xl) 0;
+    }
+
+    .partners__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
       display: flex;
       align-items: center;
+      gap: var(--space-2xl);
+      flex-wrap: wrap;
       justify-content: center;
+    }
+
+    .partners__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-600);
+      white-space: nowrap;
+    }
+
+    .partners__logos {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xl);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .partners__logos span {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--slate-300);
+      letter-spacing: 0.04em;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .partners__logos span:hover { opacity: 1; }
+
+    /* ═══════════════════════════════════════
+       RELATED CAPABILITIES
+       ═══════════════════════════════════════ */
+    .related-caps {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-100);
+    }
+
+    .related-caps__header {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .related-caps__header h2 {
+      color: var(--slate-900);
+      margin-top: var(--space-sm);
+    }
+
+    .related-caps__grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .cap-card {
       position: relative;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: var(--space-2xl);
+      transition: all 0.3s ease;
       overflow: hidden;
     }
 
-    .project-card__image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-    }
-
-    .project-card__image::after {
+    .cap-card::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-700) 100%);
-      opacity: 0.35;
-      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--slate-200);
+      transition: background 0.3s;
     }
 
-    .project-card:nth-child(1) .project-card__image::after { background: linear-gradient(135deg, #1a3a2a, #2d5a3e); opacity: 0.35; }
-    .project-card:nth-child(2) .project-card__image::after { background: linear-gradient(135deg, #1a2a3a, #2d4a5e); opacity: 0.35; }
-    .project-card:nth-child(3) .project-card__image::after { background: linear-gradient(135deg, #2a1a3a, #4a2d5e); opacity: 0.35; }
-    .project-card:nth-child(4) .project-card__image::after { background: linear-gradient(135deg, #3a2a1a, #5e4a2d); opacity: 0.35; }
+    .cap-card:hover {
+      border-color: var(--slate-300);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
 
-    .project-card__body {
-      padding: var(--space-xl);
+    .cap-card:hover::before {
+      background: var(--red-500);
+    }
+
+    .cap-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-lg);
+      font-size: 1.4rem;
     }
 
-    .project-card__partner {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--red-600);
-      margin-bottom: var(--space-sm);
-    }
+    .cap-card__icon--red { background: var(--red-100); color: var(--red-600); }
+    .cap-card__icon--gold { background: var(--gold-100); color: var(--gold-600); }
+    .cap-card__icon--slate { background: var(--slate-100); color: var(--slate-700); }
 
-    .project-card__title {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
+    .cap-card h3 {
       color: var(--slate-900);
       margin-bottom: var(--space-sm);
-      line-height: 1.3;
     }
 
-    .project-card__desc {
-      font-size: 0.88rem;
+    .cap-card__desc {
+      font-size: 0.9rem;
       color: var(--slate-600);
       line-height: 1.6;
-      flex: 1;
+      margin-bottom: var(--space-lg);
     }
 
-    .project-card__stat {
-      margin-top: var(--space-md);
-      padding-top: var(--space-md);
-      border-top: 1px solid var(--slate-100);
-      font-size: 0.8rem;
+    .cap-card__link {
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--gold-600);
+      color: var(--red-600);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
     }
+
+    .cap-card:hover .cap-card__link { gap: 10px; }
 
     /* ═══════════════════════════════════════
        CTA BANNER
        ═══════════════════════════════════════ */
     .cta-banner {
-      position: relative;
+      padding: var(--space-5xl) 0;
       background: var(--red-700);
-      padding: var(--space-4xl) 0;
+      position: relative;
       overflow: hidden;
     }
 
     .cta-banner__pattern {
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%),
-                         radial-gradient(circle at 80% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+      opacity: 0.08;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.1) 40px,
+          rgba(255,255,255,0.1) 42px
+        );
     }
 
     .cta-banner__inner {
-      position: relative;
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--space-xl);
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .cta-banner h2 {
       color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: var(--space-md);
     }
 
     .cta-banner__desc {
       font-size: 1.1rem;
       color: rgba(255,255,255,0.8);
-      max-width: 550px;
-      margin: 0 auto var(--space-xl);
-      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto var(--space-2xl);
     }
 
     /* ═══════════════════════════════════════
@@ -570,8 +798,8 @@
        ═══════════════════════════════════════ */
     .footer {
       background: var(--slate-950);
+      padding: var(--space-3xl) 0 var(--space-xl);
       color: var(--slate-400);
-      padding: var(--space-4xl) 0 var(--space-xl);
     }
 
     .footer__inner {
@@ -584,32 +812,35 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: var(--space-3xl);
-      padding-bottom: var(--space-3xl);
+      padding-bottom: var(--space-2xl);
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .footer__brand svg { margin-bottom: var(--space-md); }
-
     .footer__brand p {
       font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--slate-400);
+      color: var(--slate-500);
       max-width: 280px;
+      margin-top: var(--space-md);
+      line-height: 1.6;
     }
 
     .footer__col h4 {
       font-family: var(--font-body);
       font-size: 0.8rem;
       font-weight: 600;
-      text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--slate-300);
-      margin-bottom: var(--space-lg);
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: var(--space-md);
     }
 
-    .footer__col ul { list-style: none; }
+    .footer__col ul {
+      list-style: none;
+    }
 
-    .footer__col li { margin-bottom: var(--space-sm); }
+    .footer__col li {
+      margin-bottom: var(--space-sm);
+    }
 
     .footer__col a {
       font-size: 0.88rem;
@@ -624,8 +855,8 @@
       justify-content: space-between;
       align-items: center;
       padding-top: var(--space-xl);
-      font-size: 0.82rem;
-      color: var(--slate-500);
+      font-size: 0.8rem;
+      color: var(--slate-600);
     }
 
     .footer__bottom-links {
@@ -634,15 +865,29 @@
     }
 
     .footer__bottom-links a {
-      color: var(--slate-500);
+      color: var(--slate-600);
       transition: color 0.2s;
     }
 
-    .footer__bottom-links a:hover { color: var(--slate-300); }
+    .footer__bottom-links a:hover { color: var(--slate-400); }
 
     /* ═══════════════════════════════════════
-       SCROLL REVEAL
+       ANIMATIONS
        ═══════════════════════════════════════ */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-in {
+      opacity: 0;
+      animation: fadeInUp 0.7s ease forwards;
+    }
+
+    .animate-in--delay-1 { animation-delay: 0.1s; }
+    .animate-in--delay-2 { animation-delay: 0.2s; }
+    .animate-in--delay-3 { animation-delay: 0.3s; }
+
     .reveal--hidden {
       opacity: 0;
       transform: translateY(20px);
@@ -658,26 +903,30 @@
        RESPONSIVE
        ═══════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .projects-listing__grid { grid-template-columns: 1fr; }
+      .brief__inner { grid-template-columns: 1fr; gap: var(--space-xl); }
+      .what-we-did__grid { grid-template-columns: 1fr; }
+      .results__grid { grid-template-columns: repeat(3, 1fr); }
+      .related-caps__grid { grid-template-columns: repeat(2, 1fr); }
       .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
     }
 
     @media (max-width: 768px) {
       .header__links { display: none; }
-      .project-card { grid-template-columns: 1fr; }
-      .project-card__image { min-height: 120px; }
+      .results__grid { grid-template-columns: repeat(2, 1fr); }
+      .related-caps__grid { grid-template-columns: 1fr; }
+      .content-image__figure { aspect-ratio: 16/9; }
       .footer__top { grid-template-columns: 1fr; }
-      .page-hero { min-height: 35vh; }
-      .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+      .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
     }
 
     @media (max-width: 480px) {
-      .btn { justify-content: center; }
-      .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
+      .results__grid { grid-template-columns: 1fr; }
+      .project-hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
     }
 
     /* ═══════════════════════════════════════
        BILINGUAL SUPPORT
+       — content toggled via data-lang on <html>
        ═══════════════════════════════════════ */
     [data-lang="en"] [data-cy],
     [data-lang="cy"] [data-en] {
@@ -700,11 +949,37 @@
       display: block;
     }
 
+    /* Flex bilingual elements */
+    [data-lang="en"] [data-cy-flex],
+    [data-lang="cy"] [data-en-flex] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en-flex],
+    [data-lang="cy"] [data-cy-flex] {
+      display: flex;
+    }
+
+    /* Grid bilingual elements */
+    [data-lang="en"] [data-cy-grid],
+    [data-lang="cy"] [data-en-grid] {
+      display: none;
+    }
+
+    [data-lang="en"] [data-en-grid],
+    [data-lang="cy"] [data-cy-grid] {
+      display: grid;
+    }
+
     /* ═══════════════════════════════════════
        LIGHT THEME OVERRIDES
        ═══════════════════════════════════════ */
 
-    .page-hero,
+    /* Smooth theme transitions */
+    .project-hero,
+    .partners,
+    .what-we-did,
+    .work-card,
     .footer {
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
@@ -745,56 +1020,95 @@
       stroke: var(--slate-300);
     }
 
-    /* --- Page Hero --- */
-    [data-theme="light"] .page-hero {
+    /* --- Project Hero --- */
+    [data-theme="light"] .project-hero {
       background: var(--stone-100);
     }
 
-    [data-theme="light"] .page-hero__bg::after {
-      background: linear-gradient(
-        to bottom,
-        rgba(248, 246, 241, 0.4) 0%,
-        rgba(248, 246, 241, 0.6) 60%,
-        rgba(248, 246, 241, 0.9) 100%
-      );
-    }
-
-    [data-theme="light"] .page-hero h1 {
+    [data-theme="light"] .project-hero h1 {
       color: var(--slate-900);
     }
 
-    [data-theme="light"] .page-hero__subtitle {
+    [data-theme="light"] .project-hero__subtitle {
       color: var(--slate-600);
     }
 
-    [data-theme="light"] .page-hero__breadcrumb a {
+    [data-theme="light"] .project-hero__breadcrumb {
       color: var(--slate-500);
     }
 
-    [data-theme="light"] .page-hero__breadcrumb a:hover {
+    [data-theme="light"] .project-hero__breadcrumb a {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .project-hero__breadcrumb a:hover {
       color: var(--slate-900);
     }
 
-    [data-theme="light"] .page-hero__breadcrumb span.sep {
-      color: var(--slate-400);
+    /* --- Brief --- */
+    [data-theme="light"] .brief__sidebar h2 {
+      color: var(--slate-900);
     }
 
-    [data-theme="light"] .page-hero__breadcrumb span.current {
-      color: var(--slate-700);
+    /* --- What We Did --- */
+    [data-theme="light"] .what-we-did {
+      background: var(--stone-100);
     }
 
-    /* --- Projects Listing --- */
-    [data-theme="light"] .projects-listing {
+    [data-theme="light"] .what-we-did__header h2 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .what-we-did .label {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .work-card {
       background: white;
-    }
-
-    [data-theme="light"] .project-card {
-      background: var(--stone-50);
       border-color: var(--slate-200);
     }
 
-    [data-theme="light"] .project-card:hover {
+    [data-theme="light"] .work-card:hover {
       border-color: var(--slate-300);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    [data-theme="light"] .work-card h3 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .work-card__desc {
+      color: var(--slate-600);
+    }
+
+    /* --- Results --- */
+    [data-theme="light"] .result-card {
+      background: white;
+    }
+
+    /* --- Partners --- */
+    [data-theme="light"] .partners {
+      background: var(--stone-100);
+      border-top-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .partners__label {
+      color: var(--slate-500);
+    }
+
+    [data-theme="light"] .partners__logos span {
+      color: var(--slate-700);
+    }
+
+    /* --- Related Capabilities --- */
+    [data-theme="light"] .cap-card {
+      background: white;
+    }
+
+    /* --- Section utilities --- */
+    [data-theme="light"] .section--dark {
+      background: var(--stone-100);
+      color: var(--slate-900);
     }
 
     /* --- Footer --- */
@@ -867,27 +1181,21 @@
   <header class="header">
     <div class="header__inner">
       <a href="/" class="header__logo" aria-label="VDB UK Home">
-        <!-- VDB UK Logo — geometric monogram -->
         <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- V chevron mark -->
           <path d="M4 4L16 32L28 4" stroke="#c8283f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- D -->
           <path d="M38 6h8c8 0 14 6 14 14s-6 14-14 14h-8V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
-          <!-- B -->
           <path d="M70 6h7c5 0 8 2.5 8 6.5 0 3-1.5 5-4.5 5.8 3.5 0.6 5.5 3 5.5 6.2 0 4.5-3.5 7.5-9 7.5H70V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
-          <!-- Divider -->
           <line x1="98" y1="10" x2="98" y2="30" stroke="#363a4d" stroke-width="1.5"/>
-          <!-- UK text -->
           <text x="108" y="26" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#8b91a8" letter-spacing="2">UK</text>
         </svg>
       </a>
 
       <nav class="header__nav">
         <ul class="header__links">
-          <li><a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a></li>
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
+          <li><a href="/#approach"><span data-en>Our Approach</span><span data-cy>Ein Dull</span></a></li>
           <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
-          <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
+          <li><a href="/#about"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
         </ul>
 
         <div class="lang-toggle" role="group" aria-label="Language">
@@ -904,7 +1212,7 @@
           </button>
         </div>
 
-        <a href="/contact.html" class="header__cta">
+        <a href="mailto:hannah@vandenberghuk.com" class="header__cta">
           <span data-en>Contact Us</span><span data-cy>Cysylltwch</span>
         </a>
       </nav>
@@ -912,209 +1220,196 @@
   </header>
 
   <!-- ═══════════════════════════════════════
-       PAGE HERO
+       PROJECT HERO
        ═══════════════════════════════════════ -->
-  <section class="page-hero">
-    <div class="page-hero__bg"></div>
-    <div class="page-hero__content">
-      <div class="page-hero__breadcrumb">
-        <a href="/">
-          <span data-en>Home</span>
-          <span data-cy>Hafan</span>
-        </a>
+  <section class="project-hero">
+    <div class="project-hero__image">
+      <img src="/images/project-gripable-device.jpg" alt="GripAble handheld rehabilitation device with soft-sensor technology">
+    </div>
+
+    <div class="project-hero__content">
+      <nav class="project-hero__breadcrumb animate-in" aria-label="Breadcrumb">
+        <a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a>
         <span class="sep">/</span>
-        <span class="current">
-          <span data-en>Projects</span>
-          <span data-cy>Prosiectau</span>
-        </span>
-      </div>
-      <h1>
-        <span data-en>Our Projects</span>
-        <span data-cy>Ein Prosiectau</span>
+        <a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a>
+        <span class="sep">/</span>
+        <span><span data-en>LGA Funding Transition Analysis</span><span data-cy>LGA Funding Transition Analysis</span></span>
+      </nav>
+
+      <h1 class="animate-in animate-in--delay-1">
+        <span data-en>LGA Funding Transition Analysis</span>
+        <span data-cy>LGA Funding Transition Analysis</span>
       </h1>
-      <p class="page-hero__subtitle">
-        <span data-en>Case studies from across our portfolio &mdash; from bio-fertiliser spin-outs to digital health devices deployed worldwide.</span>
-        <span data-cy>Astudiaethau achos o ar draws ein portffolio &mdash; o fentrau bio-wrtaith i ddyfeisiau iechyd digidol wedi'u defnyddio ledled y byd.</span>
+
+      <p class="project-hero__subtitle animate-in animate-in--delay-2">
+        <span data-en>Turning complex public investment data into evidence for advocacy, consultation, and local decision-making.</span>
+        <span data-cy>Turning complex public investment data into evidence for advocacy, consultation, and local decision-making.</span>
       </p>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       PROJECTS LISTING
+       THE BRIEF
        ═══════════════════════════════════════ -->
-  <section class="projects-listing reveal">
-    <div class="projects-listing__inner">
-      <div class="projects-listing__grid">
-
-        <a href="/projects/npk-recovery.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/vdb-photo-2.jpg" alt="Laboratory glassware with green solutions — chemical recycling research">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">NPK Recovery</div>
-            <div class="project-card__title">
-              <span data-en>Bio-fertiliser from waste: chemical recycling and water recovery</span>
-              <span data-cy>Bio-wrtaith o wastraff: ailgylchu cemegol ac adfer dŵr</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Our first spin-out enterprise. Converting human urine into validated crop fertiliser, deployed at UK festivals and now growing native trees in the Brecon Beacons.</span>
-              <span data-cy>Ein menter deillio gyntaf. Trosi wrin dynol yn wrtaith cnydau dilysiedig, wedi'i ddefnyddio mewn gwyliau yn y DU ac yn awr yn tyfu coed brodorol ym Mannau Brycheiniog.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>&pound;2m+ grant funding secured</span>
-              <span data-cy>Dros &pound;2m o gyllid grant wedi'i sicrhau</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/projects/gripable.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/project-gripable-device.jpg" alt="GripAble rehabilitation device">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">GripAble / Imperial College</div>
-            <div class="project-card__title">
-              <span data-en>Remote rehabilitation technology with proprietary sensors</span>
-              <span data-cy>Technoleg adsefydlu o bell gyda synwyryddion perchnogol</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Programme management for the SqueezAble paediatric device. Now deployed across 350+ NHS and healthcare locations worldwide with US expansion via Medline.</span>
-              <span data-cy>Rheoli rhaglen ar gyfer y ddyfais bediatrig SqueezAble. Bellach wedi'i ddefnyddio mewn dros 350 o leoliadau GIG a gofal iechyd ledled y byd.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>$11M Series A raised</span>
-              <span data-cy>$11M Cyfres A wedi'i godi</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/projects/plus-x-innovation.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/vdb-photo-1.jpg" alt="Team collaboration workshop with post-it notes — innovation accelerator design">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">Plus X Innovation</div>
-            <div class="project-card__title">
-              <span data-en>Designing a leading UK hardware accelerator</span>
-              <span data-cy>Dylunio cyflymydd caledwedd blaenllaw yn y DU</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Helped design the accelerator programme for this national innovation hub. 69 companies supported, &pound;180m raised by portfolio companies, 1,100+ jobs created.</span>
-              <span data-cy>Helpu i ddylunio'r rhaglen gyflymydd ar gyfer y ganolfan arloesi genedlaethol hon. 69 cwmni wedi'u cefnogi, &pound;180m wedi'i godi.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>&pound;25m in grants won for entrepreneurs</span>
-              <span data-cy>&pound;25m mewn grantiau i entrepreneuriaid</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/projects/blakbear.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/project-blakbear-sensor.jpg" alt="BlakBear digital freshness sensor">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">BlakBear / Cranswick</div>
-            <div class="project-card__title">
-              <span data-en>Digital freshness sensors reducing food waste</span>
-              <span data-cy>Synwyryddion ffresni digidol yn lleihau gwastraff bwyd</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Supporting the world's first digital freshness sensor company. Now deployed across 17 Cranswick production sites — a first for the UK meat industry.</span>
-              <span data-cy>Cefnogi cwmni synhwyrydd ffresni digidol cyntaf y byd. Bellach wedi'i ddefnyddio ar draws 17 safle cynhyrchu Cranswick.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>17 production sites deployed</span>
-              <span data-cy>17 safle cynhyrchu wedi'u defnyddio</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/projects/lga-funding-analysis.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/vdb-photo-1.jpg" alt="Planning materials for local government funding analysis">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">VANDENBERGHUK (VDB) / LGA</div>
-            <div class="project-card__title">
-              <span data-en>Funding transition analysis for local government</span>
-              <span data-cy>Funding transition analysis for local government</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Historic ESIF analysis, council consultation, and an interactive dashboard to support advocacy around the UK Shared Prosperity Fund.</span>
-              <span data-cy>Historic ESIF analysis, council consultation, and an interactive dashboard to support advocacy around the UK Shared Prosperity Fund.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>Evidence for policy and consultation</span>
-              <span data-cy>Evidence for policy and consultation</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/projects/wales-nutrient-recovery.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/project-npk-festival.jpg" alt="Nutrient recovery demonstration project">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">VANDENBERGHUK (VDB) trading as NPK Recovery</div>
-            <div class="project-card__title">
-              <span data-en>Consulting on nutrient recovery in Welsh agriculture</span>
-              <span data-cy>Consulting on nutrient recovery in Welsh agriculture</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Consultation-led research across South Wales, combining farmer insight, public body engagement, and science-informed solution design.</span>
-              <span data-cy>Consultation-led research across South Wales, combining farmer insight, public body engagement, and science-informed solution design.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>Commercial and environmental evidence base</span>
-              <span data-cy>Commercial and environmental evidence base</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/projects/wales-bilingual-organisations.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/vdb-photo-2.jpg" alt="Bilingual planning and organisational delivery work in Wales">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">Hannah Van Den Bergh</div>
-            <div class="project-card__title">
-              <span data-en>Working with bilingual organisations in Wales</span>
-              <span data-cy>Working with bilingual organisations in Wales</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Supporting Welsh public, cultural, and political organisations to embed bilingual delivery, trusted translation partnerships, and quality assurance.</span>
-              <span data-cy>Supporting Welsh public, cultural, and political organisations to embed bilingual delivery, trusted translation partnerships, and quality assurance.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>Welsh-English delivery built in from the start</span>
-              <span data-cy>Welsh-English delivery built in from the start</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/projects/devolved-political-campaigns.html" class="project-card">
-          <div class="project-card__image">
-            <img src="/images/vdb-photo-3.jpg" alt="Campaign operations planning materials">
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">Hannah Van Den Bergh</div>
-            <div class="project-card__title">
-              <span data-en>Hands-on campaign operations in devolved politics</span>
-              <span data-cy>Hands-on campaign operations in devolved politics</span>
-            </div>
-            <p class="project-card__desc">
-              <span data-en>Secretariat support, grassroots coordination, hustings, bilingual materials, and campaign logistics delivered across Wales.</span>
-              <span data-cy>Secretariat support, grassroots coordination, hustings, bilingual materials, and campaign logistics delivered across Wales.</span>
-            </p>
-            <div class="project-card__stat">
-              <span data-en>Operational support for high-visibility political work</span>
-              <span data-cy>Operational support for high-visibility political work</span>
-            </div>
-          </div>
-        </a>
-
+  <section class="brief reveal">
+    <div class="brief__inner">
+      <div class="brief__sidebar">
+        <span class="label label--red">
+          <span data-en>The Brief</span>
+          <span data-cy>Y Briff</span>
+        </span>
+        <h2>
+          <span data-en>Evidence for a major funding transition</span>
+          <span data-cy>Evidence for a major funding transition</span>
+        </h2>
       </div>
+      <div class="brief__text">
+        <p data-en-block>The Local Government Association appointed VANDENBERGHUK (VDB) to analyse how ESIF-related investment had reached local government areas via Local Enterprise Partnerships, and to help councils understand the likely implications of the move to the UK Shared Prosperity Fund.</p>
+        <p data-cy-block>The Local Government Association appointed VANDENBERGHUK (VDB) to analyse how ESIF-related investment had reached local government areas via Local Enterprise Partnerships, and to help councils understand the likely implications of the move to the UK Shared Prosperity Fund.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WHAT WE DID
+       ═══════════════════════════════════════ -->
+  <section class="what-we-did">
+    <div class="what-we-did__header">
+      <span class="label label--gold">
+        <span data-en>What we did</span>
+        <span data-cy>Beth wnaethom ni</span>
+      </span>
+      <h2>
+        <span data-en>Analysis, consultation, and practical decision tools</span>
+        <span data-cy>Analysis, consultation, and practical decision tools</span>
+      </h2>
+    </div>
+
+    <div class="what-we-did__grid">
+      <div class="work-card reveal">
+        <div class="work-card__number">01</div>
+        <h3>
+          <span data-en>Funding Data Analysis</span>
+          <span data-cy>Funding Data Analysis</span>
+        </h3>
+        <p class="work-card__desc">
+          <span data-en>Undertook detailed analysis of historic ESIF-related investment data, including time-series and longitudinal review of how funding flowed through local growth structures and into place-based activity.</span>
+          <span data-cy>Undertook detailed analysis of historic ESIF-related investment data, including time-series and longitudinal review of how funding flowed through local growth structures and into place-based activity.</span>
+        </p>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="work-card__number">02</div>
+        <h3>
+          <span data-en>Council Consultation</span>
+          <span data-cy>Council Consultation</span>
+        </h3>
+        <p class="work-card__desc">
+          <span data-en>Consulted local councils to test the data against lived experience on the ground, ensuring the findings were useful not only analytically but also politically and operationally.</span>
+          <span data-cy>Consulted local councils to test the data against lived experience on the ground, ensuring the findings were useful not only analytically but also politically and operationally.</span>
+        </p>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="work-card__number">03</div>
+        <h3>
+          <span data-en>Dashboard &amp; Advocacy Tools</span>
+          <span data-cy>Dashboard &amp; Advocacy Tools</span>
+        </h3>
+        <p class="work-card__desc">
+          <span data-en>Produced a detailed analytical report and an interactive map-based dashboard so the LGA and individual councils could compare historic investment patterns with the emerging UK Shared Prosperity Fund landscape.</span>
+          <span data-cy>Produced a detailed analytical report and an interactive map-based dashboard so the LGA and individual councils could compare historic investment patterns with the emerging UK Shared Prosperity Fund landscape.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTENT IMAGE
+       ═══════════════════════════════════════ -->
+  <section class="content-image">
+    <div class="content-image__inner">
+      <figure class="content-image__figure">
+        <img src="/images/vdb-photo-1.jpg" alt="Workshop table with planning materials and notes used for public sector analysis work">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       RESULTS
+       ═══════════════════════════════════════ -->
+  <section class="results reveal">
+    <div class="results__header">
+      <span class="label label--gold">
+        <span data-en>Results</span>
+        <span data-cy>Canlyniadau</span>
+      </span>
+      <h2>
+        <span data-en>Evidence decision-makers could use</span>
+        <span data-cy>Evidence decision-makers could use</span>
+      </h2>
+    </div>
+
+    <div class="results__grid">
+      <div class="result-card"><div class="result-card__number">LGA</div><div class="result-card__label"><span data-en>Used as an advocacy tool</span><span data-cy>Used as an advocacy tool</span></div></div>
+      <div class="result-card"><div class="result-card__number">UK</div><div class="result-card__label"><span data-en>Funding transition context mapped</span><span data-cy>Funding transition context mapped</span></div></div>
+      <div class="result-card"><div class="result-card__number">Data</div><div class="result-card__label"><span data-en>Time-series and longitudinal analysis</span><span data-cy>Time-series and longitudinal analysis</span></div></div>
+      <div class="result-card"><div class="result-card__number">Map</div><div class="result-card__label"><span data-en>Interactive dashboard delivered</span><span data-cy>Interactive dashboard delivered</span></div></div>
+      <div class="result-card"><div class="result-card__number">Councils</div><div class="result-card__label"><span data-en>Better prepared consultation responses</span><span data-cy>Better prepared consultation responses</span></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PARTNERS
+       ═══════════════════════════════════════ -->
+  <div class="partners">
+    <div class="partners__inner">
+      <span class="partners__label">
+        <span data-en>Partners</span>
+        <span data-cy>Partneriaid</span>
+      </span>
+      <div class="partners__logos">
+        <span>Local Government Association</span>
+        <span>Local councils</span>
+        <span>Local Enterprise Partnerships</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       RELATED CAPABILITIES
+       ═══════════════════════════════════════ -->
+  <section class="related-caps reveal">
+    <div class="related-caps__header">
+      <span class="label label--red">
+        <span data-en>Related capabilities</span>
+        <span data-cy>Galluoedd cysylltiedig</span>
+      </span>
+      <h2>
+        <span data-en>How we helped</span>
+        <span data-cy>Sut wnaethom ni helpu</span>
+      </h2>
+    </div>
+
+    <div class="related-caps__grid">
+      <a href="/capabilities/research.html" class="cap-card">
+        <div class="cap-card__icon cap-card__icon--gold"></div>
+        <h3><span data-en>Research &amp; Insight</span><span data-cy>Research &amp; Insight</span></h3>
+        <p class="cap-card__desc"><span data-en>Primary and secondary research that turns complex evidence into usable strategy.</span><span data-cy>Primary and secondary research that turns complex evidence into usable strategy.</span></p>
+        <span class="cap-card__link"><span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span></span>
+      </a>
+      <a href="/capabilities/funding.html" class="cap-card">
+        <div class="cap-card__icon cap-card__icon--red"></div>
+        <h3><span data-en>Funding Strategy</span><span data-cy>Funding Strategy</span></h3>
+        <p class="cap-card__desc"><span data-en>Funding architecture analysis, positioning, and evidence for public sector investment cases.</span><span data-cy>Funding architecture analysis, positioning, and evidence for public sector investment cases.</span></p>
+        <span class="cap-card__link"><span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span></span>
+      </a>
+      <a href="/capabilities/secretariat.html" class="cap-card">
+        <div class="cap-card__icon cap-card__icon--gold"></div>
+        <h3><span data-en>Stakeholder Coordination</span><span data-cy>Stakeholder Coordination</span></h3>
+        <p class="cap-card__desc"><span data-en>Clear reporting, consultation management, and multi-party coordination for complex programmes.</span><span data-cy>Clear reporting, consultation management, and multi-party coordination for complex programmes.</span></p>
+        <span class="cap-card__link"><span data-en>Learn more</span><span data-cy>Dysgu mwy</span> <span class="btn__arrow">&rarr;</span></span>
+      </a>
     </div>
   </section>
 
@@ -1125,14 +1420,14 @@
     <div class="cta-banner__pattern"></div>
     <div class="cta-banner__inner">
       <h2>
-        <span data-en>Work with us</span>
-        <span data-cy>Gweithiwch gyda ni</span>
+        <span data-en>Have a similar challenge? Let's talk.</span>
+        <span data-cy>Mae gennych her debyg? Gadewch i ni siarad.</span>
       </h2>
       <p class="cta-banner__desc">
-        <span data-en>Whether you're exploring a new idea, applying for funding, or need a delivery partner &mdash; we'd love to hear from you.</span>
-        <span data-cy>P'un a ydych chi'n archwilio syniad newydd, yn gwneud cais am gyllid, neu angen partner cyflawni &mdash; byddem wrth ein bodd yn clywed gennych.</span>
+        <span data-en>Whether you need programme management for a funded project or help coordinating multi-partner delivery, we're ready.</span>
+        <span data-cy>P'un a oes angen rheoli rhaglenni arnoch ar gyfer prosiect a ariennir neu help i gydlynu cyflawni aml-bartner, rydym yn barod.</span>
       </p>
-      <a href="/contact.html" class="btn btn--white">
+      <a href="mailto:hannah@vandenberghuk.com" class="btn btn--white">
         <span data-en>Get in touch</span>
         <span data-cy>Cysylltwch &acirc; ni</span>
         <span class="btn__arrow">&rarr;</span>
@@ -1179,7 +1474,7 @@
           <ul>
             <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Amdanom VDB</span></a></li>
             <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
-            <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
+            <li><a href="mailto:hannah@vandenberghuk.com"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
           </ul>
         </div>
         <div class="footer__col">
