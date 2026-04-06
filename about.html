@@ -1392,18 +1392,23 @@
       display: flex;
       gap: var(--space-xl);
       width: max-content;
-      animation: scroll-team 50s linear infinite;
       padding: var(--space-md) 0;
+      will-change: transform;
     }
 
-    .team-carousel__track:hover,
-    .team-carousel__track:focus-within {
-      animation-play-state: paused;
+    .team-carousel__track-wrapper {
+      cursor: grab;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
-    @keyframes scroll-team {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .team-carousel__track-wrapper.is-dragging {
+      cursor: grabbing;
+    }
+
+    .team-carousel__track-wrapper.is-dragging .team-card {
+      pointer-events: none;
     }
 
     .team-card {
@@ -1540,20 +1545,11 @@
     /* ── Team Carousel: Reduced Motion ── */
 
     @media (prefers-reduced-motion: reduce) {
-      .team-carousel__track {
-        animation: none;
+      .team-carousel__track-wrapper {
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-left: var(--space-xl);
-        padding-right: var(--space-xl);
         -webkit-overflow-scrolling: touch;
-      }
-      .team-card {
-        scroll-snap-align: start;
-      }
-      .team-card__bio {
-        opacity: 1;
-        transform: none;
+        mask-image: none;
+        -webkit-mask-image: none;
       }
     }
 
@@ -2440,6 +2436,85 @@
         }
       });
     });
+  </script>
+
+  <!-- Team Carousel: auto-scroll + drag interaction -->
+  <script>
+    (function () {
+      var wrapper = document.querySelector('.team-carousel__track-wrapper');
+      var track = document.querySelector('.team-carousel__track');
+      if (!wrapper || !track) return;
+
+      var scrollPos = 0;
+      var speed = 0.5;
+      var halfWidth = track.scrollWidth / 2;
+      var isDragging = false;
+      var isAuto = true;
+      var startX = 0;
+      var dragStart = 0;
+      var resumeTimer = null;
+
+      function tick() {
+        if (isAuto && !isDragging) {
+          scrollPos += speed;
+          if (scrollPos >= halfWidth) scrollPos -= halfWidth;
+          if (scrollPos < 0) scrollPos += halfWidth;
+        }
+        track.style.transform = 'translateX(' + -scrollPos + 'px)';
+        requestAnimationFrame(tick);
+      }
+
+      // Pointer events for drag
+      wrapper.addEventListener('pointerdown', function (e) {
+        if (e.button !== 0) return; // left click only
+        isDragging = true;
+        isAuto = false;
+        clearTimeout(resumeTimer);
+        startX = e.clientX;
+        dragStart = scrollPos;
+        wrapper.classList.add('is-dragging');
+        wrapper.setPointerCapture(e.pointerId);
+        e.preventDefault();
+      });
+
+      wrapper.addEventListener('pointermove', function (e) {
+        if (!isDragging) return;
+        var dx = e.clientX - startX;
+        scrollPos = dragStart - dx;
+        // Wrap around seamlessly
+        while (scrollPos >= halfWidth) scrollPos -= halfWidth;
+        while (scrollPos < 0) scrollPos += halfWidth;
+      });
+
+      wrapper.addEventListener('pointerup', function () {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.classList.remove('is-dragging');
+        resumeTimer = setTimeout(function () { isAuto = true; }, 2500);
+      });
+
+      wrapper.addEventListener('pointercancel', function () {
+        isDragging = false;
+        wrapper.classList.remove('is-dragging');
+        resumeTimer = setTimeout(function () { isAuto = true; }, 2500);
+      });
+
+      // Pause auto on hover, resume on leave
+      wrapper.addEventListener('mouseenter', function () {
+        if (!isDragging) { isAuto = false; clearTimeout(resumeTimer); }
+      });
+
+      wrapper.addEventListener('mouseleave', function () {
+        if (!isDragging) { resumeTimer = setTimeout(function () { isAuto = true; }, 800); }
+      });
+
+      // Respect reduced motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        isAuto = false;
+      }
+
+      requestAnimationFrame(tick);
+    })();
   </script>
 </body>
 </html>
