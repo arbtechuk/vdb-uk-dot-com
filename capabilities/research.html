@@ -1804,6 +1804,7 @@
   <!-- ═══════════════════════════════════════
        SCRIPTS
        ═══════════════════════════════════════ -->
+  <script src="/lang-config.js"></script>
   <script>
     // ─── Language Toggle ───
     const html = document.documentElement;
@@ -1850,11 +1851,15 @@
       });
     }
 
-    setLang(initialLang);
-
-    langBtns.forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.dataset.setLang));
-    });
+    if (!window.VDB_WELSH_ENABLED) {
+      document.querySelectorAll('.lang-toggle').forEach(function(el) { el.style.display = 'none'; });
+      setLang('en');
+    } else {
+      setLang(initialLang);
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+      });
+    }
 
     // ─── Mobile Navigation ───
     const menuBtn = document.querySelector('.header__menu-btn');
