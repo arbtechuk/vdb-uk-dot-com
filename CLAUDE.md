@@ -43,10 +43,13 @@ The `secrets.env` file (gitignored) contains `VPS_IP` for SSH access.
 │   ├── science.html                    # Science & Engineering
 │   └── esg.html                        # ESG & Sustainability
 ├── projects/
-│   ├── npk-recovery.html               # NPK Recovery / VDB Labs case study
-│   ├── gripable.html                   # GripAble / SqueezAble case study
-│   ├── plus-x-innovation.html          # Plus X Innovation case study
-│   └── blakbear.html                   # BlakBear case study
+│   ├── npk-recovery.html               # NPK Recovery / VDB Labs project
+│   ├── gripable.html                   # GripAble / SqueezAble project
+│   ├── plus-x-innovation.html          # Plus X Innovation project
+│   └── blakbear.html                   # BlakBear project
+├── case-studies/
+│   ├── index.html                      # Case Studies landing page
+│   └── devolved-funding-architecture.html  # Wales/ACW funding case study
 ├── images/                             # All site images
 ├── docs/plans/                         # Build plans and content specs
 ├── docker-compose.yml                  # VPS container config

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NPK Recovery — VDB UK</title>
-  <meta name="description" content="From festival toilets to farm fields — NPK Recovery turns human waste into sustainable fertiliser through biological NPK recovery.">
+  <title>Devolved Funding Architecture — Case Study — VDB UK</title>
+  <meta name="description" content="How VDB UK helped Wales navigate complex devolved funding landscapes, advising government and the cultural sector on European funding opportunities.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -14,11 +14,9 @@
   <style>
     /* ═══════════════════════════════════════
        CSS CUSTOM PROPERTIES
-       Welsh Slate palette — institutional
-       warmth meets modern consultancy
+       Welsh Slate palette
        ═══════════════════════════════════════ */
     :root {
-      /* Core palette */
       --slate-950: #0f1118;
       --slate-900: #1a1d2b;
       --slate-800: #252838;
@@ -30,31 +28,26 @@
       --slate-100: #ecedf3;
       --slate-50: #f6f7fa;
 
-      /* Welsh red — deeper, more sophisticated than flag red */
       --red-700: #8b1a2b;
       --red-600: #a82135;
       --red-500: #c8283f;
       --red-400: #d94a5e;
       --red-100: #fce8eb;
 
-      /* Warm gold accent */
       --gold-600: #b8860b;
       --gold-500: #d4a017;
       --gold-400: #e8b82f;
       --gold-300: #f0cc5a;
       --gold-100: #fdf6e3;
 
-      /* Stone / cream for warm backgrounds */
       --stone-100: #f8f6f1;
       --stone-200: #efeade;
       --stone-300: #e2dac8;
       --stone-50: #fcfbf8;
 
-      /* Typography */
       --font-display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
       --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      /* Spacing scale */
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
@@ -65,7 +58,6 @@
       --space-4xl: 6rem;
       --space-5xl: 8rem;
 
-      /* Layout */
       --max-width: 1200px;
       --header-height: 72px;
     }
@@ -128,24 +120,6 @@
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--space-xl);
-    }
-
-    .section {
-      padding: var(--space-5xl) 0;
-    }
-
-    .section--dark {
-      background: var(--slate-900);
-      color: var(--slate-100);
-    }
-
-    .section--stone {
-      background: var(--stone-100);
-    }
-
-    .section--red {
-      background: var(--red-700);
-      color: white;
     }
 
     /* ═══════════════════════════════════════
@@ -251,9 +225,6 @@
 
     .header__cta:hover { background: var(--red-500); }
 
-    /* ═══════════════════════════════════════
-       THEME TOGGLE
-       ═══════════════════════════════════════ */
     .theme-toggle {
       display: flex;
       align-items: center;
@@ -327,11 +298,11 @@
     }
 
     /* ═══════════════════════════════════════
-       PROJECT HERO
+       CASE STUDY HERO
        ═══════════════════════════════════════ */
-    .project-hero {
+    .cs-hero {
       position: relative;
-      min-height: 40vh;
+      min-height: 50vh;
       display: flex;
       align-items: flex-end;
       background: var(--slate-950);
@@ -339,22 +310,40 @@
       padding-top: var(--header-height);
     }
 
-    .project-hero__bg {
+    .cs-hero__bg {
       position: absolute;
       inset: 0;
-      background-image: url('/images/project-npk-field.jpg');
+      background-image: url('/images/casestudy-wales-senedd.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.4;
+      opacity: 0.35;
     }
 
-    .project-hero__overlay {
+    .cs-hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, var(--slate-950) 0%, rgba(15,17,24,0.6) 50%, rgba(15,17,24,0.3) 100%);
+      background: linear-gradient(to top, var(--slate-950) 0%, rgba(15,17,24,0.5) 50%, rgba(15,17,24,0.2) 100%);
     }
 
-    .project-hero__content {
+    /* Gold diagonal accent — distinguishes case studies from projects */
+    .cs-hero__accent {
+      position: absolute;
+      top: 0;
+      right: 18%;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--gold-500), transparent);
+      opacity: 0.35;
+      transform: skewX(-15deg);
+    }
+
+    .cs-hero__accent--2 {
+      right: 17.5%;
+      width: 1px;
+      opacity: 0.15;
+    }
+
+    .cs-hero__content {
       position: relative;
       z-index: 2;
       max-width: var(--max-width);
@@ -374,296 +363,350 @@
       transition: color 0.2s;
     }
 
-    .breadcrumb a:hover {
-      color: white;
-    }
+    .breadcrumb a:hover { color: white; }
 
     .breadcrumb__sep {
       margin: 0 var(--space-sm);
       opacity: 0.5;
     }
 
-    .project-hero h1 {
-      color: white;
-      margin-bottom: var(--space-md);
-      max-width: 700px;
+    .cs-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 6px 14px;
+      background: rgba(212, 160, 23, 0.15);
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-400);
+      margin-bottom: var(--space-lg);
     }
 
-    .project-hero__subtitle {
+    .cs-hero__badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-400);
+    }
+
+    .cs-hero h1 {
+      color: white;
+      margin-bottom: var(--space-md);
+      max-width: 800px;
+    }
+
+    .cs-hero__subtitle {
       font-size: 1.15rem;
       line-height: 1.7;
       color: var(--slate-300);
-      max-width: 600px;
+      max-width: 640px;
+    }
+
+    .cs-hero__meta {
+      display: flex;
+      gap: var(--space-2xl);
+      margin-top: var(--space-2xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cs-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cs-meta__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-500);
+    }
+
+    .cs-meta__value {
+      font-size: 0.9rem;
+      color: var(--slate-200);
+      font-weight: 500;
     }
 
     /* ═══════════════════════════════════════
-       THE BRIEF
+       CONTEXT SECTION
        ═══════════════════════════════════════ */
-    .brief {
+    .cs-context {
       padding: var(--space-5xl) 0;
+      background: var(--stone-100);
     }
 
-    .brief__inner {
+    .cs-context__inner {
       max-width: 780px;
       margin: 0 auto;
       padding: 0 var(--space-xl);
     }
 
-    .brief__label {
-      margin-bottom: var(--space-lg);
-    }
-
-    .brief h2 {
+    .cs-context h2 {
       color: var(--slate-900);
       margin-bottom: var(--space-xl);
     }
 
-    .brief__text {
+    .cs-context__text {
       font-size: 1.1rem;
       line-height: 1.85;
       color: var(--slate-600);
     }
 
+    .cs-context__text p + p {
+      margin-top: var(--space-lg);
+    }
+
     /* ═══════════════════════════════════════
-       WHAT WE DID
+       OBJECTIVE SECTION
        ═══════════════════════════════════════ */
-    .workstream {
+    .cs-objective {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-50);
+    }
+
+    .cs-objective__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4xl);
+      align-items: start;
+    }
+
+    .cs-objective__text h2 {
+      color: var(--slate-900);
+      margin-bottom: var(--space-xl);
+    }
+
+    .cs-objective__text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--slate-600);
+    }
+
+    .cs-objective__text p + p {
+      margin-top: var(--space-lg);
+    }
+
+    .cs-objective__highlight {
+      background: var(--gold-100);
+      border-left: 4px solid var(--gold-500);
+      border-radius: 0 12px 12px 0;
+      padding: var(--space-2xl) var(--space-xl);
+      margin-top: var(--space-md);
+    }
+
+    .cs-objective__highlight p {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--slate-800);
+    }
+
+    /* ═══════════════════════════════════════
+       DELIVERABLES
+       ═══════════════════════════════════════ */
+    .cs-deliverables {
       padding: var(--space-5xl) 0;
       background: var(--slate-900);
     }
 
-    .workstream__inner {
+    .cs-deliverables__inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--space-xl);
     }
 
-    .workstream__header {
+    .cs-deliverables__header {
       margin-bottom: var(--space-3xl);
     }
 
-    .workstream__header h2 {
+    .cs-deliverables__header h2 {
       color: white;
       margin-top: var(--space-sm);
     }
 
-    .workstream__grid {
+    .cs-deliverables__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-2xl);
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
     }
 
-    .workstream-card {
+    .cs-deliverable {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
       padding: var(--space-2xl);
       transition: border-color 0.3s ease, background 0.3s ease;
+      position: relative;
     }
 
-    .workstream-card:hover {
-      border-color: rgba(255,255,255,0.15);
+    .cs-deliverable:hover {
+      border-color: rgba(232, 184, 47, 0.3);
       background: rgba(255,255,255,0.06);
     }
 
-    .workstream-card__number {
+    .cs-deliverable__number {
       font-family: var(--font-display);
-      font-size: 3rem;
+      font-size: 2.4rem;
       font-weight: 700;
-      color: var(--red-500);
+      color: var(--gold-500);
       line-height: 1;
       margin-bottom: var(--space-md);
-      opacity: 0.3;
+      opacity: 0.4;
     }
 
-    .workstream-card h3 {
+    .cs-deliverable h3 {
       color: white;
       margin-bottom: var(--space-md);
+      font-size: 1.15rem;
     }
 
-    .workstream-card__text {
+    .cs-deliverable__text {
       font-size: 0.95rem;
       line-height: 1.75;
       color: var(--slate-300);
     }
 
-    /* Festival image within workstream */
-    .workstream-card--with-image {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-lg);
-    }
-
-    .workstream-card__image {
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: var(--space-md);
-    }
-
-    .workstream-card__image img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
+    /* Full-width deliverable for the last one */
+    .cs-deliverable--wide {
+      grid-column: 1 / -1;
     }
 
     /* ═══════════════════════════════════════
-       RESULTS STATS STRIP
+       WHY IT MATTERED — PULL QUOTE SECTION
        ═══════════════════════════════════════ */
-    .results-strip {
-      background: var(--red-700);
-      padding: var(--space-3xl) 0;
+    .cs-why {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-100);
+      position: relative;
+      overflow: hidden;
     }
 
-    .results-strip__inner {
-      max-width: var(--max-width);
+    .cs-why__accent {
+      position: absolute;
+      top: -10%;
+      left: 5%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 70%);
+    }
+
+    .cs-why__inner {
+      max-width: 780px;
       margin: 0 auto;
       padding: 0 var(--space-xl);
+      position: relative;
+      z-index: 1;
     }
 
-    .results-strip__grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: var(--space-xl);
-      text-align: center;
+    .cs-why h2 {
+      color: var(--slate-900);
+      margin-bottom: var(--space-xl);
     }
 
-    .result-stat {
-      color: white;
+    .cs-why__text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--slate-600);
     }
 
-    .result-stat__number {
+    .cs-why__text p + p {
+      margin-top: var(--space-lg);
+    }
+
+    .cs-pullquote {
+      margin: var(--space-3xl) 0;
+      padding: var(--space-xl) 0 var(--space-xl) var(--space-2xl);
+      border-left: 4px solid var(--gold-500);
+      position: relative;
+    }
+
+    .cs-pullquote::before {
+      content: '\201C';
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-weight: 700;
-      color: var(--gold-300);
-      line-height: 1.1;
-      margin-bottom: var(--space-sm);
+      font-size: 6rem;
+      color: var(--gold-400);
+      opacity: 0.2;
+      position: absolute;
+      top: -1.5rem;
+      left: 0.5rem;
+      line-height: 1;
     }
 
-    .result-stat__label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.4;
+    .cs-pullquote p {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--slate-800);
     }
 
     /* ═══════════════════════════════════════
-       TIMELINE
+       OUTCOME
        ═══════════════════════════════════════ */
-    .timeline-section {
+    .cs-outcome {
       padding: var(--space-5xl) 0;
+      background: var(--stone-50);
     }
 
-    .timeline-section__inner {
+    .cs-outcome__inner {
       max-width: 780px;
       margin: 0 auto;
       padding: 0 var(--space-xl);
     }
 
-    .timeline-section__header {
-      margin-bottom: var(--space-3xl);
-    }
-
-    .timeline-section__header h2 {
+    .cs-outcome h2 {
       color: var(--slate-900);
-      margin-top: var(--space-sm);
+      margin-bottom: var(--space-xl);
     }
 
-    .timeline {
-      position: relative;
-      padding-left: var(--space-2xl);
+    .cs-outcome__text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--slate-600);
     }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 6px;
-      top: 8px;
-      bottom: 8px;
-      width: 2px;
-      background: var(--slate-200);
+    .cs-outcome__text p + p {
+      margin-top: var(--space-lg);
     }
 
-    .timeline__item {
-      position: relative;
-      padding-bottom: var(--space-xl);
-    }
-
-    .timeline__item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline__dot {
-      position: absolute;
-      left: calc(-1 * var(--space-2xl) + 1px);
-      top: 6px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--red-500);
-      border: 3px solid var(--stone-50);
-    }
-
-    .timeline__date {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--red-500);
-      letter-spacing: 0.05em;
-      margin-bottom: var(--space-xs);
-    }
-
-    .timeline__text {
-      font-size: 0.95rem;
-      color: var(--slate-700);
-      line-height: 1.6;
-    }
-
-    /* ═══════════════════════════════════════
-       PARTNERS
-       ═══════════════════════════════════════ */
-    .partners-section {
-      padding: var(--space-3xl) 0 var(--space-5xl);
-      background: var(--stone-100);
-    }
-
-    .partners-section__inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--space-xl);
-      text-align: center;
-    }
-
-    .partners-section__header {
-      margin-bottom: var(--space-2xl);
-    }
-
-    .partners-section__header h2 {
-      color: var(--slate-900);
-      margin-top: var(--space-sm);
-    }
-
-    .partners-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    /* Key takeaway strip */
+    .cs-outcome__takeaway {
+      margin-top: var(--space-3xl);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-md);
     }
 
-    .partner-tag {
-      display: inline-block;
-      padding: 10px 20px;
-      background: white;
-      border: 1px solid var(--slate-200);
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--slate-700);
-      transition: border-color 0.2s, transform 0.2s;
+    .cs-takeaway {
+      background: var(--gold-100);
+      border-radius: 12px;
+      padding: var(--space-xl);
+      text-align: center;
     }
 
-    .partner-tag:hover {
-      border-color: var(--red-400);
-      transform: translateY(-2px);
+    .cs-takeaway__icon {
+      font-size: 1.8rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .cs-takeaway__text {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--slate-700);
+      line-height: 1.5;
     }
 
     /* ═══════════════════════════════════════
@@ -705,7 +748,7 @@
     }
 
     .related-card:hover {
-      border-color: var(--red-500);
+      border-color: var(--gold-500);
       transform: translateY(-4px);
       background: rgba(255,255,255,0.06);
     }
@@ -715,9 +758,16 @@
       margin-bottom: var(--space-sm);
     }
 
+    .related-card__desc {
+      font-size: 0.88rem;
+      color: var(--slate-400);
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+
     .related-card__arrow {
       display: inline-block;
-      color: var(--red-400);
+      color: var(--gold-400);
       font-size: 1.2rem;
       transition: transform 0.2s;
     }
@@ -732,28 +782,55 @@
     .cta-banner {
       padding: var(--space-5xl) 0;
       background: var(--red-700);
-      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner__pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.1) 40px,
+          rgba(255,255,255,0.1) 42px
+        );
     }
 
     .cta-banner__inner {
-      max-width: 600px;
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--space-xl);
+      text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .cta-banner h2 {
       color: white;
-      margin-bottom: var(--space-lg);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: var(--space-md);
     }
 
-    .cta-banner .btn--primary {
+    .cta-banner__desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto var(--space-2xl);
+    }
+
+    .btn--white {
       background: white;
       color: var(--red-700);
     }
 
-    .cta-banner .btn--primary:hover {
-      background: var(--gold-100);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    .btn--white:hover {
+      background: var(--stone-50);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     /* ═══════════════════════════════════════
@@ -797,13 +874,8 @@
       margin-bottom: var(--space-md);
     }
 
-    .footer__col ul {
-      list-style: none;
-    }
-
-    .footer__col li {
-      margin-bottom: var(--space-sm);
-    }
+    .footer__col ul { list-style: none; }
+    .footer__col li { margin-bottom: var(--space-sm); }
 
     .footer__col a {
       font-size: 0.88rem;
@@ -850,6 +922,7 @@
     .animate-in--delay-1 { animation-delay: 0.1s; }
     .animate-in--delay-2 { animation-delay: 0.2s; }
     .animate-in--delay-3 { animation-delay: 0.3s; }
+    .animate-in--delay-4 { animation-delay: 0.4s; }
 
     .reveal--hidden {
       opacity: 0;
@@ -866,28 +939,28 @@
        RESPONSIVE
        ═══════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .results-strip__grid { grid-template-columns: repeat(3, 1fr); }
+      .cs-objective__inner { grid-template-columns: 1fr; }
+      .cs-deliverables__grid { grid-template-columns: 1fr; }
+      .cs-deliverable--wide { grid-column: auto; }
+      .cs-outcome__takeaway { grid-template-columns: 1fr; }
       .related__grid { grid-template-columns: 1fr; }
-      .workstream__grid { grid-template-columns: 1fr; }
       .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
     }
 
     @media (max-width: 768px) {
       .header__links { display: none; }
-      .results-strip__grid { grid-template-columns: repeat(2, 1fr); }
+      .cs-hero { min-height: 40vh; }
+      .cs-hero__meta { flex-direction: column; gap: var(--space-md); }
       .footer__top { grid-template-columns: 1fr; }
       .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
-      .project-hero { min-height: 35vh; }
     }
 
     @media (max-width: 480px) {
-      .results-strip__grid { grid-template-columns: 1fr; }
-      .partners-list { flex-direction: column; align-items: center; }
+      .cs-hero h1 { font-size: 1.8rem; }
     }
 
     /* ═══════════════════════════════════════
        BILINGUAL SUPPORT
-       — content toggled via data-lang on <html>
        ═══════════════════════════════════════ */
     [data-lang="en"] [data-cy],
     [data-lang="cy"] [data-en] {
@@ -899,7 +972,6 @@
       display: initial;
     }
 
-    /* Block-level bilingual elements */
     [data-lang="en"] [data-cy-block],
     [data-lang="cy"] [data-en-block] {
       display: none;
@@ -910,7 +982,6 @@
       display: block;
     }
 
-    /* Flex bilingual elements */
     [data-lang="en"] [data-cy-flex],
     [data-lang="cy"] [data-en-flex] {
       display: none;
@@ -921,7 +992,6 @@
       display: flex;
     }
 
-    /* Grid bilingual elements */
     [data-lang="en"] [data-cy-grid],
     [data-lang="cy"] [data-en-grid] {
       display: none;
@@ -936,33 +1006,29 @@
        LIGHT THEME OVERRIDES
        ═══════════════════════════════════════ */
 
-    /* Smooth theme transitions */
-    .project-hero,
-    .brief,
-    .workstream,
-    .workstream-card,
-    .timeline-section,
-    .partners-section,
-    .partner-tag,
+    /* Smooth transitions */
+    .cs-hero,
+    .cs-context,
+    .cs-objective,
+    .cs-deliverables,
+    .cs-deliverable,
+    .cs-why,
+    .cs-outcome,
+    .cs-takeaway,
     .related,
     .related-card,
     .footer {
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
 
-    /* --- Header --- */
+    /* Header */
     [data-theme="light"] .header {
       background: #ffffff;
       border-bottom-color: var(--slate-200);
     }
 
-    [data-theme="light"] .header__links a {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .header__links a:hover {
-      color: var(--slate-900);
-    }
+    [data-theme="light"] .header__links a { color: var(--slate-600); }
+    [data-theme="light"] .header__links a:hover { color: var(--slate-900); }
 
     [data-theme="light"] .lang-toggle,
     [data-theme="light"] .theme-toggle {
@@ -974,222 +1040,99 @@
       color: var(--slate-500);
     }
 
-    [data-theme="light"] .header__logo svg path:not(:first-child) {
-      stroke: var(--slate-900);
-    }
+    [data-theme="light"] .header__logo svg path:not(:first-child) { stroke: var(--slate-900); }
+    [data-theme="light"] .header__logo svg text { fill: var(--slate-600); }
+    [data-theme="light"] .header__logo svg line { stroke: var(--slate-300); }
 
-    [data-theme="light"] .header__logo svg text {
-      fill: var(--slate-600);
+    /* Hero */
+    [data-theme="light"] .cs-hero { background: var(--stone-200); }
+    [data-theme="light"] .cs-hero__overlay {
+      background: linear-gradient(to top, var(--stone-200) 0%, rgba(239,234,222,0.6) 50%, rgba(239,234,222,0.2) 100%);
     }
-
-    [data-theme="light"] .header__logo svg line {
-      stroke: var(--slate-300);
+    [data-theme="light"] .cs-hero h1 { color: var(--slate-900); }
+    [data-theme="light"] .cs-hero__subtitle { color: var(--slate-600); }
+    [data-theme="light"] .breadcrumb { color: var(--slate-500); }
+    [data-theme="light"] .breadcrumb a { color: var(--slate-500); }
+    [data-theme="light"] .breadcrumb a:hover { color: var(--slate-900); }
+    [data-theme="light"] .cs-hero__bg { opacity: 0.5; }
+    [data-theme="light"] .cs-hero__badge {
+      background: rgba(184, 134, 11, 0.1);
+      border-color: rgba(184, 134, 11, 0.25);
+      color: var(--gold-600);
     }
+    [data-theme="light"] .cs-hero__badge::before { background: var(--gold-600); }
+    [data-theme="light"] .cs-hero__meta { border-top-color: rgba(0,0,0,0.1); }
+    [data-theme="light"] .cs-meta__label { color: var(--slate-500); }
+    [data-theme="light"] .cs-meta__value { color: var(--slate-800); }
 
-    /* --- Project Hero --- */
-    [data-theme="light"] .project-hero {
-      background: var(--stone-100);
-    }
+    /* Context */
+    [data-theme="light"] .cs-context { background: white; }
+    [data-theme="light"] .cs-context__text { color: var(--slate-700); }
 
-    [data-theme="light"] .project-hero__overlay {
-      background: linear-gradient(to top, var(--stone-100) 0%, rgba(248,246,241,0.6) 50%, rgba(248,246,241,0.3) 100%);
-    }
+    /* Objective */
+    [data-theme="light"] .cs-objective { background: var(--stone-50); }
+    [data-theme="light"] .cs-objective__text p { color: var(--slate-700); }
 
-    [data-theme="light"] .project-hero h1 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .project-hero__subtitle {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .breadcrumb {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .breadcrumb a {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .breadcrumb a:hover {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .project-hero__bg {
-      opacity: 0.5;
-    }
-
-    /* --- Brief --- */
-    [data-theme="light"] .brief h2 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .brief__text {
-      color: var(--slate-700);
-    }
-
-    /* --- Workstream (What We Did) --- */
-    [data-theme="light"] .workstream {
-      background: var(--stone-100);
-    }
-
-    [data-theme="light"] .workstream__header h2 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .workstream__header .label {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .workstream-card {
+    /* Deliverables */
+    [data-theme="light"] .cs-deliverables { background: var(--stone-100); }
+    [data-theme="light"] .cs-deliverables__header h2 { color: var(--slate-900); }
+    [data-theme="light"] .cs-deliverables__header .label { color: var(--slate-500); }
+    [data-theme="light"] .cs-deliverable {
       background: white;
       border-color: var(--slate-200);
     }
-
-    [data-theme="light"] .workstream-card:hover {
-      border-color: var(--slate-300);
+    [data-theme="light"] .cs-deliverable:hover {
+      border-color: var(--gold-400);
       background: white;
     }
+    [data-theme="light"] .cs-deliverable h3 { color: var(--slate-900); }
+    [data-theme="light"] .cs-deliverable__text { color: var(--slate-600); }
+    [data-theme="light"] .cs-deliverable__number { color: var(--gold-600); }
 
-    [data-theme="light"] .workstream-card h3 {
-      color: var(--slate-900);
-    }
+    /* Why it mattered */
+    [data-theme="light"] .cs-why { background: white; }
+    [data-theme="light"] .cs-why__text { color: var(--slate-700); }
+    [data-theme="light"] .cs-pullquote p { color: var(--slate-800); }
 
-    [data-theme="light"] .workstream-card__text {
-      color: var(--slate-600);
-    }
+    /* Outcome */
+    [data-theme="light"] .cs-outcome { background: var(--stone-50); }
+    [data-theme="light"] .cs-outcome__text { color: var(--slate-700); }
 
-    [data-theme="light"] .workstream-card__number {
-      color: var(--red-400);
-    }
-
-    /* --- Results Strip --- */
-    /* Red section stays red in both themes */
-
-    /* --- Timeline --- */
-    [data-theme="light"] .timeline-section__header h2 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .timeline::before {
-      background: var(--slate-300);
-    }
-
-    [data-theme="light"] .timeline__dot {
-      border-color: white;
-    }
-
-    [data-theme="light"] .timeline__text {
-      color: var(--slate-700);
-    }
-
-    /* --- Partners --- */
-    [data-theme="light"] .partners-section {
-      background: white;
-    }
-
-    [data-theme="light"] .partners-section__header h2 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .partner-tag {
-      background: var(--stone-50);
-      border-color: var(--slate-200);
-      color: var(--slate-700);
-    }
-
-    /* --- Related Capabilities --- */
-    [data-theme="light"] .related {
-      background: var(--stone-100);
-    }
-
-    [data-theme="light"] .related__header h2 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .related__header .label {
-      color: var(--slate-500);
-    }
-
+    /* Related */
+    [data-theme="light"] .related { background: var(--stone-100); }
+    [data-theme="light"] .related__header h2 { color: var(--slate-900); }
+    [data-theme="light"] .related__header .label { color: var(--slate-500); }
     [data-theme="light"] .related-card {
       background: white;
       border-color: var(--slate-200);
     }
-
     [data-theme="light"] .related-card:hover {
-      border-color: var(--red-400);
+      border-color: var(--gold-500);
       background: white;
     }
+    [data-theme="light"] .related-card h3 { color: var(--slate-900); }
 
-    [data-theme="light"] .related-card h3 {
-      color: var(--slate-900);
-    }
-
-    /* --- CTA Banner --- */
-    /* Red section stays red in both themes */
-
-    /* --- Section utilities --- */
-    [data-theme="light"] .section--dark {
-      background: var(--stone-100);
-      color: var(--slate-900);
-    }
-
-    /* --- Footer --- */
+    /* Footer */
     [data-theme="light"] .footer {
       background: var(--stone-100);
       color: var(--slate-600);
     }
+    [data-theme="light"] .footer__top { border-bottom-color: var(--slate-200); }
+    [data-theme="light"] .footer__brand svg path:not(:first-child) { stroke: var(--slate-700); }
+    [data-theme="light"] .footer__brand svg text { fill: var(--slate-500); }
+    [data-theme="light"] .footer__brand p { color: var(--slate-600); }
+    [data-theme="light"] .footer__col h4 { color: var(--slate-600); }
+    [data-theme="light"] .footer__col a { color: var(--slate-600); }
+    [data-theme="light"] .footer__col a:hover { color: var(--slate-900); }
+    [data-theme="light"] .footer__bottom { color: var(--slate-500); }
+    [data-theme="light"] .footer__bottom-links a { color: var(--slate-500); }
+    [data-theme="light"] .footer__bottom-links a:hover { color: var(--slate-700); }
 
-    [data-theme="light"] .footer__top {
-      border-bottom-color: var(--slate-200);
-    }
-
-    [data-theme="light"] .footer__brand svg path:not(:first-child) {
-      stroke: var(--slate-700);
-    }
-
-    [data-theme="light"] .footer__brand svg text {
-      fill: var(--slate-500);
-    }
-
-    [data-theme="light"] .footer__brand p {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .footer__col h4 {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .footer__col a {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .footer__col a:hover {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .footer__bottom {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .footer__bottom-links a {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .footer__bottom-links a:hover {
-      color: var(--slate-700);
-    }
-
-    /* Accessibility: darken gold for WCAG AA on light backgrounds */
-    [data-theme="light"] .label--gold {
-      color: var(--gold-600);
-    }
-
+    [data-theme="light"] .label--gold { color: var(--gold-600); }
     [data-theme="light"] .btn--ghost {
       border-color: var(--slate-300);
       color: var(--slate-700);
     }
-
     [data-theme="light"] .btn--ghost:hover {
       border-color: var(--slate-500);
       color: var(--slate-900);
@@ -1204,17 +1147,11 @@
   <header class="header">
     <div class="header__inner">
       <a href="/" class="header__logo" aria-label="VDB UK Home">
-        <!-- VDB UK Logo — geometric monogram -->
         <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- V chevron mark -->
           <path d="M4 4L16 32L28 4" stroke="#c8283f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- D -->
           <path d="M38 6h8c8 0 14 6 14 14s-6 14-14 14h-8V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
-          <!-- B -->
           <path d="M70 6h7c5 0 8 2.5 8 6.5 0 3-1.5 5-4.5 5.8 3.5 0.6 5.5 3 5.5 6.2 0 4.5-3.5 7.5-9 7.5H70V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
-          <!-- Divider -->
           <line x1="98" y1="10" x2="98" y2="30" stroke="#363a4d" stroke-width="1.5"/>
-          <!-- UK text -->
           <text x="108" y="26" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#8b91a8" letter-spacing="2">UK</text>
         </svg>
       </a>
@@ -1222,10 +1159,10 @@
       <nav class="header__nav">
         <ul class="header__links">
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
-          <li><a href="/#approach"><span data-en>Our Approach</span><span data-cy>Ein Dull</span></a></li>
           <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
           <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
-          <li><a href="/#about"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
+          <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
+          <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
         </ul>
 
         <div class="lang-toggle" role="group" aria-label="Language">
@@ -1250,126 +1187,186 @@
   </header>
 
   <!-- ═══════════════════════════════════════
-       PROJECT HERO
+       CASE STUDY HERO
        ═══════════════════════════════════════ -->
-  <section class="project-hero">
-    <div class="project-hero__bg"></div>
-    <div class="project-hero__overlay"></div>
+  <section class="cs-hero">
+    <div class="cs-hero__bg"></div>
+    <div class="cs-hero__overlay"></div>
+    <div class="cs-hero__accent"></div>
+    <div class="cs-hero__accent cs-hero__accent--2"></div>
 
-    <div class="project-hero__content">
+    <div class="cs-hero__content">
       <nav class="breadcrumb animate-in" aria-label="Breadcrumb">
         <a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a>
         <span class="breadcrumb__sep">/</span>
-        <a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a>
+        <a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a>
         <span class="breadcrumb__sep">/</span>
-        <span><span data-en>NPK Recovery</span><span data-cy>Adfer NPK</span></span>
+        <span><span data-en>Devolved Funding Architecture</span><span data-cy>Pensaern&iuml;aeth Cyllido Datganoledig</span></span>
       </nav>
 
-      <h1 class="animate-in animate-in--delay-1">
-        <span data-en>NPK Recovery</span>
-        <span data-cy>Adfer NPK</span>
+      <div class="cs-hero__badge animate-in animate-in--delay-1">
+        <span data-en>Case Study</span>
+        <span data-cy>Astudiaeth Achos</span>
+      </div>
+
+      <h1 class="animate-in animate-in--delay-2">
+        <span data-en>Understanding and Navigating the Funding Architecture of a Devolved Economy</span>
+        <span data-cy>Deall a Llywio Pensaern&iuml;aeth Cyllido Economi Ddatganoledig</span>
       </h1>
 
-      <p class="project-hero__subtitle animate-in animate-in--delay-2">
-        <span data-en>From festival toilets to farm fields &mdash; turning human waste into sustainable fertiliser.</span>
-        <span data-cy>O doiledau gwyliau i gaeau fferm &mdash; troi gwastraff dynol yn wrtaith cynaliadwy.</span>
+      <p class="cs-hero__subtitle animate-in animate-in--delay-3">
+        <span data-en>Helping Wales engage strategically with complex European funding landscapes across culture, education, and public policy.</span>
+        <span data-cy>Helpu Cymru i ymgysylltu'n strategol &acirc; thirweddau cyllido Ewropeaidd cymhleth ar draws diwylliant, addysg, a pholisi cyhoeddus.</span>
       </p>
+
+      <div class="cs-hero__meta animate-in animate-in--delay-4">
+        <div class="cs-meta">
+          <span class="cs-meta__label"><span data-en>Client</span><span data-cy>Cleient</span></span>
+          <span class="cs-meta__value">Arts Council of Wales / Wales Arts International</span>
+        </div>
+        <div class="cs-meta">
+          <span class="cs-meta__label"><span data-en>Sector</span><span data-cy>Sector</span></span>
+          <span class="cs-meta__value"><span data-en>Culture &amp; Public Policy</span><span data-cy>Diwylliant a Pholisi Cyhoeddus</span></span>
+        </div>
+        <div class="cs-meta">
+          <span class="cs-meta__label"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></span>
+          <span class="cs-meta__value"><span data-en>Funding &amp; Grant Strategy, Programme Management</span><span data-cy>Strategaeth Cyllido a Grantiau, Rheoli Rhaglenni</span></span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       THE BRIEF
+       CONTEXT
        ═══════════════════════════════════════ -->
-  <section class="brief reveal">
-    <div class="brief__inner">
-      <div class="brief__label label label--gold">
-        <span data-en>The Brief</span>
-        <span data-cy>Y Briff</span>
+  <section class="cs-context reveal">
+    <div class="cs-context__inner">
+      <div class="label label--gold">
+        <span data-en>Context</span>
+        <span data-cy>Cyd-destun</span>
       </div>
 
       <h2>
-        <span data-en>Closing the nutrient loop</span>
-        <span data-cy>Cau'r ddolen faethynnau</span>
+        <span data-en>Where culture, policy, and funding intersect</span>
+        <span data-cy>Lle mae diwylliant, polisi, a chyllid yn croestorri</span>
       </h2>
 
-      <p class="brief__text">
-        <span data-en-block>The UK uses approximately 1.5 million tonnes of synthetic fertiliser annually. Its production is carbon-intensive and a major source of agricultural ammonia emissions. Meanwhile, human urine &mdash; rich in nitrogen, phosphorus, and potassium &mdash; is flushed away as waste. VDB saw an opportunity to close this loop.</span>
-        <span data-cy-block>Mae'r DU yn defnyddio tua 1.5 miliwn tunnell o wrtaith synthetig yn flynyddol. Mae ei gynhyrchu yn ddwys o ran carbon ac yn ffynhonnell fawr o allyriadau amonia amaethyddol. Yn y cyfamser, mae wrin dynol &mdash; sy'n gyfoethog mewn nitrogen, ffosfforws, a photasiwm &mdash; yn cael ei fflysio fel gwastraff. Gwelodd VDB gyfle i gau'r ddolen hon.</span>
-      </p>
+      <div class="cs-context__text">
+        <p data-en-block>Working with Arts Council of Wales through Wales Arts International, our team operated at the intersection of culture, public policy, and international funding. In a devolved nation, cultural funding is rarely straightforward: opportunities sit across different layers of government, public bodies, local authorities, and international schemes &mdash; each with their own priorities, rules, and timelines.</p>
+        <p data-cy-block>Gan weithio gyda Chyngor Celfyddydau Cymru trwy Gelfyddydau Rhyngwladol Cymru, roedd ein t&icirc;m yn gweithredu ar groesffordd diwylliant, polisi cyhoeddus, a chyllid rhyngwladol. Mewn cenedl ddatganoledig, anaml y mae cyllid diwylliannol yn syml: mae cyfleoedd yn eistedd ar draws gwahanol haenau o lywodraeth, cyrff cyhoeddus, awdurdodau lleol, a chynlluniau rhyngwladol &mdash; pob un &acirc;'u blaenoriaethau, rheolau, ac amserlenni eu hunain.</p>
+
+        <p data-en-block>Our focus was on making that landscape legible and usable. We advised government, local authorities, and the wider cultural sector on how to understand and engage with European funding opportunities in ways that were both strategic and practical.</p>
+        <p data-cy-block>Roedd ein ffocws ar wneud y dirwedd honno'n ddarllenadwy ac yn ddefnyddiadwy. Buom yn cynghori'r llywodraeth, awdurdodau lleol, a'r sector diwylliannol ehangach ar sut i ddeall ac ymgysylltu &acirc; chyfleoedd cyllido Ewropeaidd mewn ffyrdd a oedd yn strategol ac yn ymarferol.</p>
+      </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       WHAT WE DID
+       OBJECTIVE
        ═══════════════════════════════════════ -->
-  <section class="workstream reveal">
-    <div class="workstream__inner">
-      <div class="workstream__header">
+  <section class="cs-objective reveal">
+    <div class="cs-objective__inner">
+      <div class="cs-objective__text">
         <div class="label label--gold">
-          <span data-en>What We Did</span>
-          <span data-cy>Beth Wnaethon Ni</span>
+          <span data-en>Objective</span>
+          <span data-cy>Amcan</span>
+        </div>
+
+        <h2>
+          <span data-en>Making funding frameworks work for Wales</span>
+          <span data-cy>Gwneud fframweithiau cyllido weithio i Gymru</span>
+        </h2>
+
+        <p data-en-block>To help Wales navigate a complex devolved funding environment and make better use of major European cultural and education funding schemes.</p>
+        <p data-cy-block>Helpu Cymru i lywio amgylchedd cyllido datganoledig cymhleth a gwneud gwell defnydd o gynlluniau cyllido diwylliannol ac addysgol Ewropeaidd mawr.</p>
+
+        <p data-en-block>This meant translating policy and funding frameworks into real opportunities for public bodies and the arts sector, while strengthening the relationships needed to support future collaboration, investment, and cultural ambition.</p>
+        <p data-cy-block>Roedd hyn yn golygu trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau, gan gryfhau'r perthnasoedd sydd eu hangen i gefnogi cydweithio, buddsoddiad, ac uchelgais ddiwylliannol yn y dyfodol.</p>
+      </div>
+
+      <div class="cs-objective__highlight">
+        <p>
+          <span data-en>Translating policy and funding frameworks into real opportunities for public bodies and the arts sector.</span>
+          <span data-cy>Trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       DELIVERABLES
+       ═══════════════════════════════════════ -->
+  <section class="cs-deliverables reveal">
+    <div class="cs-deliverables__inner">
+      <div class="cs-deliverables__header">
+        <div class="label label--gold">
+          <span data-en>What We Delivered</span>
+          <span data-cy>Beth Wnaethon Ni Gyflawni</span>
         </div>
         <h2>
-          <span data-en>Four workstreams, one mission</span>
-          <span data-cy>Pedair ffrwd waith, un genhadaeth</span>
+          <span data-en>Strategic advice at every level</span>
+          <span data-cy>Cyngor strategol ar bob lefel</span>
         </h2>
       </div>
 
-      <div class="workstream__grid">
-        <!-- 1. Research & Validation -->
-        <div class="workstream-card">
-          <div class="workstream-card__number">01</div>
+      <div class="cs-deliverables__grid">
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__number">01</div>
           <h3>
-            <span data-en>Research &amp; Validation</span>
-            <span data-cy>Ymchwil a Dilysu</span>
+            <span data-en>Ministerial &amp; Government Advice</span>
+            <span data-cy>Cyngor Gweinidogol a Llywodraeth</span>
           </h3>
-          <p class="workstream-card__text">
-            <span data-en>Developed a biological process using bacteria to break down urine and recover NPK nutrients. Set up a wet lab at Future Space, UWE Bristol. Conducted independent crop trials at the Royal Agricultural University. Result: bio-fertiliser performs comparably to synthetic alternatives.</span>
-            <span data-cy>Datblygu proses fiolegol gan ddefnyddio bacteria i dorri wrin i lawr ac adfer maethynnau NPK. Sefydlu labordy gwlyb yn Future Space, UWE Bryste. Cynnal treialon cnydau annibynnol yn y Brifysgol Amaethyddol Frenhinol. Canlyniad: mae bio-wrtaith yn perfformio'n debyg i ddewisiadau synthetig amgen.</span>
+          <p class="cs-deliverable__text">
+            <span data-en>Formal advice to ministers, government officials, local authorities, and sector leaders on European funding opportunities &mdash; translating complex policy into clear, actionable guidance.</span>
+            <span data-cy>Cyngor ffurfiol i weinidogion, swyddogion llywodraeth, awdurdodau lleol, ac arweinwyr sector ar gyfleoedd cyllido Ewropeaidd &mdash; trosi polisi cymhleth yn ganllawiau clir a gweithredadwy.</span>
           </p>
         </div>
 
-        <!-- 2. Demonstrator Build -->
-        <div class="workstream-card">
-          <div class="workstream-card__number">02</div>
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__number">02</div>
           <h3>
-            <span data-en>Demonstrator Build</span>
-            <span data-cy>Adeiladu Arddangoswr</span>
+            <span data-en>Erasmus+ &amp; Creative Europe Strategy</span>
+            <span data-cy>Strategaeth Erasmus+ a Creative Europe</span>
           </h3>
-          <p class="workstream-card__text">
-            <span data-en>Designed and built modular, transportable treatment units. Engineered for field deployment at outdoor events. Partnered with Peequal (chemical-free female urinals) for urine collection.</span>
-            <span data-cy>Dylunio ac adeiladu unedau triniaeth modiwlar, cludadwy. Wedi'u peiriannu ar gyfer eu defnyddio yn y maes mewn digwyddiadau awyr agored. Partneru gyda Peequal (urinalau benywaidd di-gemegol) ar gyfer casglu wrin.</span>
+          <p class="cs-deliverable__text">
+            <span data-en>Strategic guidance on major European schemes including Erasmus+ and Creative Europe, helping organisations understand eligibility, alignment, and positioning within these frameworks.</span>
+            <span data-cy>Arweiniad strategol ar gynlluniau Ewropeaidd mawr gan gynnwys Erasmus+ a Creative Europe, gan helpu sefydliadau i ddeall cymhwysedd, aliniad, a lleoliad o fewn y fframweithiau hyn.</span>
           </p>
         </div>
 
-        <!-- 3. Festival Pilots -->
-        <div class="workstream-card workstream-card--with-image">
-          <div>
-            <div class="workstream-card__number">03</div>
-            <h3>
-              <span data-en>Festival Pilots</span>
-              <span data-cy>Peilotiaid Gwyliau</span>
-            </h3>
-            <p class="workstream-card__text">
-              <span data-en>Bristol Pride 2024: collected ~2,000 litres via Peequal urinals. Boomtown Festival 2025: connected to 700-person toilet block, produced 540 litres of stabilised fertiliser product. TCS London Marathon 2025: urine recovery partnership.</span>
-              <span data-cy>Bristol Pride 2024: casglu ~2,000 litr trwy urinalau Peequal. G&#x175;yl Boomtown 2025: cysylltu &acirc; bloc toiled 700-person, cynhyrchu 540 litr o gynnyrch gwrtaith sefydlog. Marathon Llundain TCS 2025: partneriaeth adfer wrin.</span>
-            </p>
-          </div>
-          <div class="workstream-card__image">
-            <img src="/images/project-npk-festival.jpg" alt="NPK Recovery unit deployed at a UK festival" loading="lazy">
-          </div>
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__number">03</div>
+          <h3>
+            <span data-en>International Relationship Brokering</span>
+            <span data-cy>Broceriaeth Perthnasoedd Rhyngwladol</span>
+          </h3>
+          <p class="cs-deliverable__text">
+            <span data-en>Building connections between Wales and international partners, including collaborations across Celtic and minority-language nations such as Scotland, Cornwall, and the Basque Country.</span>
+            <span data-cy>Adeiladu cysylltiadau rhwng Cymru a phartneriaid rhyngwladol, gan gynnwys cydweithrediadau ar draws cenhedloedd Celtaidd ac ieithoedd lleiafrifol fel yr Alban, Cernyw, a Gwlad y Basg.</span>
+          </p>
         </div>
 
-        <!-- 4. Scale-Up & Forestry -->
-        <div class="workstream-card">
-          <div class="workstream-card__number">04</div>
+        <div class="cs-deliverable">
+          <div class="cs-deliverable__number">04</div>
           <h3>
-            <span data-en>Scale-Up &amp; Forestry</span>
-            <span data-cy>Ehangu a Choedwigaeth</span>
+            <span data-en>Place-Based Cultural Ambitions</span>
+            <span data-cy>Uchelgeisiau Diwylliannol Seiliedig ar Le</span>
           </h3>
-          <p class="workstream-card__text">
-            <span data-en>Won &pound;435,627 Forestry Commission grant (3-year project). Growing 4,500 native and threatened tree species (beech, Scots pine) in Bannau Brycheiniog (Brecon Beacons) using urine-derived fertiliser. Partnership with Stump Up for Trees.</span>
-            <span data-cy>Ennill grant Comisiwn Coedwigaeth o &pound;435,627 (prosiect 3 blynedd). Tyfu 4,500 o rywogaethau coed brodorol a bygythiedig (ffawydd, pinwydd yr Alban) ym Mannau Brycheiniog gan ddefnyddio gwrtaith a gafwyd o wrin. Partneriaeth gyda Stump Up for Trees.</span>
+          <p class="cs-deliverable__text">
+            <span data-en>Support for major place-based cultural ambitions, including work connected to Cardiff and Swansea City of Culture bids &mdash; connecting local aspiration with international funding routes.</span>
+            <span data-cy>Cefnogaeth i uchelgeisiau diwylliannol mawr seiliedig ar le, gan gynnwys gwaith yn gysylltiedig &acirc; cheisiadau Dinas Diwylliant Caerdydd ac Abertawe &mdash; cysylltu dyhead lleol &acirc; llwybrau cyllido rhyngwladol.</span>
+          </p>
+        </div>
+
+        <div class="cs-deliverable cs-deliverable--wide">
+          <div class="cs-deliverable__number">05</div>
+          <h3>
+            <span data-en>Cross-Sector Funding Interpretation</span>
+            <span data-cy>Dehongliad Cyllido Traws-sector</span>
+          </h3>
+          <p class="cs-deliverable__text">
+            <span data-en>Cross-sector interpretation of funding policy, helping organisations understand how to position their projects within a wider public funding architecture &mdash; bridging the gap between what's available and what's achievable.</span>
+            <span data-cy>Dehongliad traws-sector o bolisi cyllido, gan helpu sefydliadau i ddeall sut i leoli eu prosiectau o fewn pensaern&iuml;aeth cyllido cyhoeddus ehangach &mdash; pontio'r bwlch rhwng yr hyn sydd ar gael a'r hyn sy'n gyflawnadwy.</span>
           </p>
         </div>
       </div>
@@ -1377,145 +1374,94 @@
   </section>
 
   <!-- ═══════════════════════════════════════
-       RESULTS STATS STRIP
+       WHY IT MATTERED
        ═══════════════════════════════════════ -->
-  <section class="results-strip reveal">
-    <div class="results-strip__inner">
-      <div class="results-strip__grid">
-        <div class="result-stat">
-          <div class="result-stat__number">&pound;2m+</div>
-          <div class="result-stat__label">
-            <span data-en>Grant funding secured</span>
-            <span data-cy>Cyllid grant wedi'i sicrhau</span>
-          </div>
-        </div>
-        <div class="result-stat">
-          <div class="result-stat__number">8</div>
-          <div class="result-stat__label">
-            <span data-en>Person team</span>
-            <span data-cy>T&icirc;m o 8 person</span>
-          </div>
-        </div>
-        <div class="result-stat">
-          <div class="result-stat__number">RAU</div>
-          <div class="result-stat__label">
-            <span data-en>Validated</span>
-            <span data-cy>Wedi'i ddilysu gan RAU</span>
-          </div>
-        </div>
-        <div class="result-stat">
-          <div class="result-stat__number">540<span style="font-size:0.6em">L</span></div>
-          <div class="result-stat__label">
-            <span data-en>From one festival</span>
-            <span data-cy>O un &#x175;yl</span>
-          </div>
-        </div>
-        <div class="result-stat">
-          <div class="result-stat__number">4,500</div>
-          <div class="result-stat__label">
-            <span data-en>Native trees</span>
-            <span data-cy>Coed brodorol</span>
-          </div>
-        </div>
+  <section class="cs-why reveal">
+    <div class="cs-why__accent"></div>
+
+    <div class="cs-why__inner">
+      <div class="label label--gold">
+        <span data-en>Why It Mattered</span>
+        <span data-cy>Pam Roedd yn Bwysig</span>
+      </div>
+
+      <h2>
+        <span data-en>Funding is about alignment, not just eligibility</span>
+        <span data-cy>Mae cyllid yn ymwneud ag aliniad, nid cymhwysedd yn unig</span>
+      </h2>
+
+      <div class="cs-why__text">
+        <p data-en-block>In a devolved economy, funding is not just about eligibility &mdash; it is about alignment. Organisations need to understand how local priorities, national strategy, and international frameworks connect. Without that understanding, valuable opportunities can be missed, partnerships can remain underdeveloped, and ambitious projects can struggle to find the right route to support.</p>
+        <p data-cy-block>Mewn economi ddatganoledig, nid yw cyllid yn ymwneud &acirc; chymhwysedd yn unig &mdash; mae'n ymwneud ag aliniad. Mae angen i sefydliadau ddeall sut mae blaenoriaethau lleol, strategaeth genedlaethol, a fframweithiau rhyngwladol yn cysylltu. Heb y ddealltwriaeth honno, gall cyfleoedd gwerthfawr gael eu colli, gall partneriaethau aros heb eu datblygu, a gall prosiectau uchelgeisiol ei chael hi'n anodd dod o hyd i'r llwybr cywir i gefnogaeth.</p>
+      </div>
+
+      <div class="cs-pullquote">
+        <p>
+          <span data-en>Connecting policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity.</span>
+          <span data-cy>Cysylltu polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol.</span>
+        </p>
+      </div>
+
+      <div class="cs-why__text">
+        <p data-en-block>Our work bridged that gap. We connected policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity. Just as importantly, we helped people make confident decisions in a landscape that often feels fragmented or opaque.</p>
+        <p data-cy-block>Pontiodd ein gwaith y bwlch hwnnw. Cysylltwyd polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol. Yr un mor bwysig, fe wnaethom helpu pobl i wneud penderfyniadau hyderus mewn tirwedd sy'n aml yn teimlo'n dameidiog neu'n aneglur.</p>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       TIMELINE
+       OUTCOME
        ═══════════════════════════════════════ -->
-  <section class="timeline-section reveal">
-    <div class="timeline-section__inner">
-      <div class="timeline-section__header">
-        <div class="label label--gold">
-          <span data-en>Timeline</span>
-          <span data-cy>Llinell Amser</span>
-        </div>
-        <h2>
-          <span data-en>From lab to landscape</span>
-          <span data-cy>O'r labordy i'r tirwedd</span>
-        </h2>
+  <section class="cs-outcome reveal">
+    <div class="cs-outcome__inner">
+      <div class="label label--gold">
+        <span data-en>Outcome</span>
+        <span data-cy>Canlyniad</span>
       </div>
 
-      <div class="timeline">
-        <div class="timeline__item">
-          <div class="timeline__dot"></div>
-          <div class="timeline__date">2023</div>
-          <div class="timeline__text">
-            <span data-en>Lab setup at Future Space</span>
-            <span data-cy>Sefydlu labordy yn Future Space</span>
-          </div>
-        </div>
+      <h2>
+        <span data-en>From reactive to strategic</span>
+        <span data-cy>O adweithiol i strategol</span>
+      </h2>
 
-        <div class="timeline__item">
-          <div class="timeline__dot"></div>
-          <div class="timeline__date">2024</div>
-          <div class="timeline__text">
-            <span data-en>Bristol Pride pilot</span>
-            <span data-cy>Peilot Bristol Pride</span>
-          </div>
-        </div>
+      <div class="cs-outcome__text">
+        <p data-en-block>This engagement strengthened Wales' ability to engage strategically with complex funding systems rather than respond to them passively. It improved funding readiness, informed decision-making at multiple levels, and helped create the conditions for stronger cross-border cultural collaboration.</p>
+        <p data-cy-block>Cryfhaodd yr ymgysylltiad hwn allu Cymru i ymgysylltu'n strategol &acirc; systemau cyllido cymhleth yn hytrach nag ymateb iddynt yn oddefol. Gwellodd barodrwydd cyllido, llywiodd wneud penderfyniadau ar sawl lefel, a helpodd greu'r amodau ar gyfer cydweithio diwylliannol trawsffiniol cryfach.</p>
 
-        <div class="timeline__item">
-          <div class="timeline__dot"></div>
-          <div class="timeline__date">
-            <span data-en>July 2025</span>
-            <span data-cy>Gorffennaf 2025</span>
-          </div>
-          <div class="timeline__text">
-            <span data-en>Boomtown Festival</span>
-            <span data-cy>G&#x175;yl Boomtown</span>
-          </div>
-        </div>
-
-        <div class="timeline__item">
-          <div class="timeline__dot"></div>
-          <div class="timeline__date">2025</div>
-          <div class="timeline__text">
-            <span data-en>TCS London Marathon</span>
-            <span data-cy>Marathon Llundain TCS</span>
-          </div>
-        </div>
-
-        <div class="timeline__item">
-          <div class="timeline__dot"></div>
-          <div class="timeline__date">2025&ndash;2028</div>
-          <div class="timeline__text">
-            <span data-en>Forestry Commission project</span>
-            <span data-cy>Prosiect Comisiwn Coedwigaeth</span>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-       PARTNERS
-       ═══════════════════════════════════════ -->
-  <section class="partners-section reveal">
-    <div class="partners-section__inner">
-      <div class="partners-section__header">
-        <div class="label label--gold">
-          <span data-en>Partners &amp; Funders</span>
-          <span data-cy>Partneriaid a Chyllidwyr</span>
-        </div>
-        <h2>
-          <span data-en>Collaborating for impact</span>
-          <span data-cy>Cydweithio er effaith</span>
-        </h2>
+        <p data-en-block>The lasting value was not only in individual funding conversations, but in building a clearer, more confident understanding of how a devolved nation can work within a layered international funding environment &mdash; and use that understanding to advance cultural, civic, and strategic goals.</p>
+        <p data-cy-block>Nid yn unig mewn sgyrsiau cyllido unigol yr oedd y gwerth parhaol, ond wrth adeiladu dealltwriaeth gliriach, fwy hyderus o sut y gall cenedl ddatganoledig weithio o fewn amgylchedd cyllido rhyngwladol haenog &mdash; a defnyddio'r ddealltwriaeth honno i hyrwyddo nodau diwylliannol, dinesig, a strategol.</p>
       </div>
 
-      <div class="partners-list">
-        <span class="partner-tag">Peequal</span>
-        <span class="partner-tag">Royal Agricultural University</span>
-        <span class="partner-tag">Agri-Epicentre</span>
-        <span class="partner-tag">Forestry Commission</span>
-        <span class="partner-tag">Defra</span>
-        <span class="partner-tag">Innovate UK</span>
-        <span class="partner-tag">Co-op Carbon Innovation Fund</span>
-        <span class="partner-tag">Stump Up for Trees</span>
+      <div class="cs-outcome__takeaway">
+        <div class="cs-takeaway">
+          <div class="cs-takeaway__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="cs-takeaway__text">
+            <span data-en>Improved funding readiness across the sector</span>
+            <span data-cy>Gwell parodrwydd cyllido ar draws y sector</span>
+          </div>
+        </div>
+
+        <div class="cs-takeaway">
+          <div class="cs-takeaway__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="cs-takeaway__text">
+            <span data-en>Stronger cross-border cultural collaboration</span>
+            <span data-cy>Cydweithio diwylliannol trawsffiniol cryfach</span>
+          </div>
+        </div>
+
+        <div class="cs-takeaway">
+          <div class="cs-takeaway__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="cs-takeaway__text">
+            <span data-en>Confident decision-making at all levels</span>
+            <span data-cy>Gwneud penderfyniadau hyderus ar bob lefel</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1537,27 +1483,39 @@
       </div>
 
       <div class="related__grid">
-        <a href="/capabilities/science.html" class="related-card">
-          <h3>
-            <span data-en>Science &amp; Engineering</span>
-            <span data-cy>Gwyddoniaeth a Pheirianneg</span>
-          </h3>
-          <span class="related-card__arrow">&rarr;</span>
-        </a>
-
         <a href="/capabilities/funding.html" class="related-card">
           <h3>
-            <span data-en>Funding &amp; Grants</span>
-            <span data-cy>Cyllid a Grantiau</span>
+            <span data-en>Funding &amp; Grant Strategy</span>
+            <span data-cy>Strategaeth Cyllido a Grantiau</span>
           </h3>
+          <p class="related-card__desc">
+            <span data-en>Navigating complex funding landscapes and securing strategic investment.</span>
+            <span data-cy>Llywio tirweddau cyllido cymhleth a sicrhau buddsoddiad strategol.</span>
+          </p>
           <span class="related-card__arrow">&rarr;</span>
         </a>
 
-        <a href="/capabilities/esg.html" class="related-card">
+        <a href="/capabilities/secretariat.html" class="related-card">
           <h3>
-            <span data-en>ESG &amp; Sustainability</span>
-            <span data-cy>ESG a Chynaliadwyedd</span>
+            <span data-en>Secretariat &amp; Programme Management</span>
+            <span data-cy>Ysgrifenyddiaeth a Rheoli Rhaglenni</span>
           </h3>
+          <p class="related-card__desc">
+            <span data-en>Governance, coordination, and institutional continuity for complex programmes.</span>
+            <span data-cy>Llywodraethu, cydlynu, a pharhad sefydliadol ar gyfer rhaglenni cymhleth.</span>
+          </p>
+          <span class="related-card__arrow">&rarr;</span>
+        </a>
+
+        <a href="/capabilities/research.html" class="related-card">
+          <h3>
+            <span data-en>Research &amp; Innovation</span>
+            <span data-cy>Ymchwil ac Arloesi</span>
+          </h3>
+          <p class="related-card__desc">
+            <span data-en>Evidence-based insights that inform strategy and unlock opportunity.</span>
+            <span data-cy>Mewnwelediadau seiliedig ar dystiolaeth sy'n llywio strategaeth ac yn datgloi cyfle.</span>
+          </p>
           <span class="related-card__arrow">&rarr;</span>
         </a>
       </div>
@@ -1568,12 +1526,17 @@
        CTA BANNER
        ═══════════════════════════════════════ -->
   <section class="cta-banner reveal">
+    <div class="cta-banner__pattern"></div>
     <div class="cta-banner__inner">
       <h2>
-        <span data-en>Have a similar challenge? Let's talk.</span>
-        <span data-cy>Mae gennych her debyg? Gadewch i ni siarad.</span>
+        <span data-en>Navigating complex funding landscapes?</span>
+        <span data-cy>Llywio tirweddau cyllido cymhleth?</span>
       </h2>
-      <a href="/contact.html" class="btn btn--primary">
+      <p class="cta-banner__desc">
+        <span data-en>We help organisations understand, align, and act on funding opportunities at every level.</span>
+        <span data-cy>Rydym yn helpu sefydliadau i ddeall, alinio, a gweithredu ar gyfleoedd cyllido ar bob lefel.</span>
+      </p>
+      <a href="/contact.html" class="btn btn--white">
         <span data-en>Get in touch</span>
         <span data-cy>Cysylltwch &acirc; ni</span>
         <span class="btn__arrow">&rarr;</span>
@@ -1600,10 +1563,7 @@
           </p>
         </div>
         <div class="footer__col">
-          <h4>
-            <span data-en>Capabilities</span>
-            <span data-cy>Galluoedd</span>
-          </h4>
+          <h4><span data-en>Capabilities</span><span data-cy>Galluoedd</span></h4>
           <ul>
             <li><a href="/capabilities/secretariat.html"><span data-en>Secretariat</span><span data-cy>Ysgrifenyddiaeth</span></a></li>
             <li><a href="/capabilities/research.html"><span data-en>Research</span><span data-cy>Ymchwil</span></a></li>
@@ -1613,10 +1573,7 @@
           </ul>
         </div>
         <div class="footer__col">
-          <h4>
-            <span data-en>Company</span>
-            <span data-cy>Cwmni</span>
-          </h4>
+          <h4><span data-en>Company</span><span data-cy>Cwmni</span></h4>
           <ul>
             <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Amdanom VDB</span></a></li>
             <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
@@ -1625,10 +1582,7 @@
           </ul>
         </div>
         <div class="footer__col">
-          <h4>
-            <span data-en>Contact</span>
-            <span data-cy>Cyswllt</span>
-          </h4>
+          <h4><span data-en>Contact</span><span data-cy>Cyswllt</span></h4>
           <ul>
             <li><a href="mailto:hannah@vandenberghuk.com">hannah@vandenberghuk.com</a></li>
             <li><span data-en>Working across the UK</span><span data-cy>Yn gweithio ledled y DU</span></li>
@@ -1639,9 +1593,9 @@
       <div class="footer__bottom">
         <span>&copy; 2026 VDB UK Ltd. <span data-en>All rights reserved.</span><span data-cy>Cedwir pob hawl.</span></span>
         <div class="footer__bottom-links">
-          <a href="/privacy.html"><span data-en>Privacy</span><span data-cy>Preifatrwydd</span></a>
-          <a href="/accessibility.html"><span data-en>Accessibility</span><span data-cy>Hygyrchedd</span></a>
-          <a href="/cookies.html"><span data-en>Cookies</span><span data-cy>Cwcis</span></a>
+          <a href="/privacy"><span data-en>Privacy</span><span data-cy>Preifatrwydd</span></a>
+          <a href="/accessibility"><span data-en>Accessibility</span><span data-cy>Hygyrchedd</span></a>
+          <a href="/cookies"><span data-en>Cookies</span><span data-cy>Cwcis</span></a>
         </div>
       </div>
     </div>
@@ -1651,11 +1605,9 @@
        SCRIPTS
        ═══════════════════════════════════════ -->
   <script>
-    // ─── Language Toggle ───
+    // Language Toggle
     const html = document.documentElement;
     const langBtns = document.querySelectorAll('[data-set-lang]');
-
-    // Auto-detect browser language
     const browserLang = navigator.language || navigator.languages?.[0] || 'en';
     const savedLang = localStorage.getItem('vdb-lang');
     const initialLang = savedLang || (browserLang.startsWith('cy') ? 'cy' : 'en');
@@ -1668,14 +1620,12 @@
         btn.classList.toggle('lang-toggle__btn--active', btn.dataset.setLang === lang);
       });
     }
-
     setLang(initialLang);
-
     langBtns.forEach(btn => {
       btn.addEventListener('click', () => setLang(btn.dataset.setLang));
     });
 
-    // ─── Header Background on Scroll ───
+    // Header Background on Scroll
     const header = document.querySelector('.header');
     function updateHeaderScroll() {
       const scrolled = window.scrollY > 50;
@@ -1690,10 +1640,9 @@
     }
     window.addEventListener('scroll', updateHeaderScroll, { passive: true });
 
-    // ─── Theme Toggle ───
+    // Theme Toggle
     const savedTheme = localStorage.getItem('vdb-theme');
     const initialTheme = savedTheme || 'dark';
-
     const themeBtns = document.querySelectorAll('[data-set-theme]');
 
     function setTheme(theme) {
@@ -1704,9 +1653,7 @@
       });
       updateHeaderScroll();
     }
-
     setTheme(initialTheme);
-
     themeBtns.forEach(btn => {
       btn.addEventListener('click', () => setTheme(btn.dataset.setTheme));
     });
@@ -1717,7 +1664,7 @@
       }
     });
 
-    // ─── Scroll Reveal ───
+    // Scroll Reveal
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => el.classList.add('reveal--hidden'));
     const observer = new IntersectionObserver((entries) => {
@@ -1728,10 +1675,9 @@
         }
       });
     }, { threshold: 0.15 });
-
     reveals.forEach(el => observer.observe(el));
 
-    // ─── Smooth Scroll for Anchor Links ───
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
         const target = document.querySelector(link.getAttribute('href'));

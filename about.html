@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About VDB — Innovation Consultancy, Bristol</title>
-  <meta name="description" content="VDB (VandenberghUK Ltd) is a Bristol-based innovation consultancy. Founded in 2019, we've unlocked over &pound;255 million for UK R&amp;D projects.">
+  <title data-title-en="About VDB — Programme Delivery &amp; Innovation Consultancy" data-title-cy="Yngl&#375;n &acirc; VDB — Ymgynghoriaeth Cyflawni Rhaglenni ac Arloesi">About VDB — Programme Delivery &amp; Innovation Consultancy</title>
+  <meta name="description" content="VDB (VandenberghUK Ltd) is a UK-wide programme delivery and innovation consultancy. Founded in 2019, we've delivered complex programmes and unlocked over &pound;255 million for UK R&amp;D projects." data-content-en="VDB (VandenberghUK Ltd) is a UK-wide programme delivery and innovation consultancy. Founded in 2019, we've delivered complex programmes and unlocked over &pound;255 million for UK R&amp;D projects." data-content-cy="Mae VDB (VandenberghUK Ltd) yn ymgynghoriaeth cyflawni rhaglenni ac arloesi ledled y DU. Ers 2019, rydym wedi cyflawni rhaglenni cymhleth ac wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau ymchwil a datblygu'r DU.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -654,14 +654,14 @@
     }
 
     /* ═══════════════════════════════════════
-       BASED IN BRISTOL + COMPANY DETAILS
+       WORKING ACROSS THE UK + COMPANY DETAILS
        ═══════════════════════════════════════ */
-    .bristol {
+    .uk-presence {
       padding: var(--space-5xl) 0;
       background: var(--stone-100);
     }
 
-    .bristol__inner {
+    .uk-presence__inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--space-xl);
@@ -671,13 +671,13 @@
       align-items: start;
     }
 
-    .bristol__text h2 {
+    .uk-presence__text h2 {
       color: var(--slate-900);
       margin-top: var(--space-sm);
       margin-bottom: var(--space-md);
     }
 
-    .bristol__text p {
+    .uk-presence__text p {
       font-size: 1.05rem;
       color: var(--slate-600);
       line-height: 1.75;
@@ -891,7 +891,7 @@
       .awards-grid { grid-template-columns: repeat(2, 1fr); }
       .vdb-labs__inner { grid-template-columns: 1fr; }
       .vdb-labs__image { max-width: 600px; }
-      .bristol__inner { grid-template-columns: 1fr; }
+      .uk-presence__inner { grid-template-columns: 1fr; }
       .company-card { position: static; }
       .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
     }
@@ -1103,8 +1103,8 @@
       border-top-color: var(--slate-200);
     }
 
-    /* --- Bristol / Company details --- */
-    [data-theme="light"] .bristol {
+    /* --- UK presence / Company details --- */
+    [data-theme="light"] .uk-presence {
       background: var(--stone-50);
     }
 
@@ -1196,7 +1196,7 @@
        ═══════════════════════════════════════ -->
   <header class="header">
     <div class="header__inner">
-      <a href="/" class="header__logo" aria-label="VDB UK Home">
+      <a href="/" class="header__logo" aria-label="VDB UK Home" data-aria-label-en="VDB UK Home" data-aria-label-cy="Hafan VDB UK">
         <!-- VDB UK Logo — geometric monogram -->
         <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <!-- V chevron mark -->
@@ -1217,25 +1217,26 @@
           <li><a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a></li>
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
           <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
+          <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
           <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
         </ul>
 
-        <div class="lang-toggle" role="group" aria-label="Language">
-          <button class="lang-toggle__btn lang-toggle__btn--active" data-set-lang="en" aria-label="English">EN</button>
-          <button class="lang-toggle__btn" data-set-lang="cy" aria-label="Cymraeg">CY</button>
+        <div class="lang-toggle" role="group" aria-label="Language" data-aria-label-en="Language" data-aria-label-cy="Iaith">
+          <button class="lang-toggle__btn lang-toggle__btn--active" data-set-lang="en" aria-label="English" data-aria-label-en="English" data-aria-label-cy="Saesneg">EN</button>
+          <button class="lang-toggle__btn" data-set-lang="cy" aria-label="Cymraeg" data-aria-label-en="Cymraeg" data-aria-label-cy="Cymraeg">CY</button>
         </div>
 
-        <div class="theme-toggle" role="group" aria-label="Theme">
-          <button class="theme-toggle__btn" data-set-theme="light" aria-label="Light mode">
+        <div class="theme-toggle" role="group" aria-label="Theme" data-aria-label-en="Theme" data-aria-label-cy="Thema">
+          <button class="theme-toggle__btn" data-set-theme="light" aria-label="Light mode" data-aria-label-en="Light mode" data-aria-label-cy="Modd golau">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           </button>
-          <button class="theme-toggle__btn theme-toggle__btn--active" data-set-theme="dark" aria-label="Dark mode">
+          <button class="theme-toggle__btn theme-toggle__btn--active" data-set-theme="dark" aria-label="Dark mode" data-aria-label-en="Dark mode" data-aria-label-cy="Modd tywyll">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </button>
         </div>
 
         <a href="/contact.html" class="header__cta">
-          <span data-en>Contact Us</span><span data-cy>Cysylltwch</span>
+          <span data-en>Contact Us</span><span data-cy>Cysylltwch &acirc; ni</span>
         </a>
       </nav>
     </div>
@@ -1247,7 +1248,7 @@
   <section class="page-hero">
     <div class="page-hero__bg"></div>
     <div class="page-hero__content">
-      <nav class="page-hero__breadcrumb animate-in" aria-label="Breadcrumb">
+      <nav class="page-hero__breadcrumb animate-in" aria-label="Breadcrumb" data-aria-label-en="Breadcrumb" data-aria-label-cy="Briwsion bara">
         <a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a>
         <span class="sep">/</span>
         <span class="current"><span data-en>About</span><span data-cy>Amdanom</span></span>
@@ -1255,12 +1256,12 @@
 
       <h1 class="animate-in animate-in--delay-1">
         <span data-en>About VDB</span>
-        <span data-cy>Amdanom VDB</span>
+        <span data-cy>Yngl&#375;n &acirc; VDB</span>
       </h1>
 
       <p class="page-hero__subtitle animate-in animate-in--delay-2">
-        <span data-en>Bristol-based innovation consultancy. Validating ideas, developing collaborations, building innovations since 2019.</span>
-        <span data-cy>Ymgynghoriaeth arloesi wedi'i lleoli ym Mryste. Dilysu syniadau, datblygu cydweithrediadau, adeiladu arloesiadau ers 2019.</span>
+        <span data-en>Programme delivery and innovation consultancy working across the UK since 2019.</span>
+        <span data-cy>Ymgynghoriaeth cyflawni rhaglenni ac arloesi sy'n gweithio ledled y DU ers 2019.</span>
       </p>
     </div>
   </section>
@@ -1276,19 +1277,19 @@
           <span data-cy>Pwy ydym ni</span>
         </span>
         <h2>
-          <span data-en>Innovation from idea to impact</span>
-          <span data-cy>Arloesi o syniad i effaith</span>
+          <span data-en>Programme delivery and innovation — idea to impact</span>
+          <span data-cy>Cyflawni rhaglenni ac arloesi — o syniad i effaith</span>
         </h2>
 
         <p data-en-block>VDB (VandenberghUK Ltd) is an innovation consultancy based in Bristol. Founded by Hannah Van Den Bergh in 2019, we've grown from a one-person consultancy to a team that has unlocked over &pound;255 million for UK R&amp;D projects.</p>
-        <p data-cy-block>VDB (VandenberghUK Ltd) yw ymgynghoriaeth arloesi wedi'i lleoli ym Mryste. Wedi'i sefydlu gan Hannah Van Den Bergh yn 2019, rydym wedi tyfu o ymgynghoriaeth un person i d&icirc;m sydd wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau Ymchwil a Datblygu'r DU.</p>
+        <p data-cy-block>VDB (VandenberghUK Ltd) yw ymgynghoriaeth arloesi wedi'i lleoli ym Mryste. Wedi'i sefydlu gan Hannah Van Den Bergh yn 2019, rydym wedi tyfu o ymgynghoriaeth un person i d&icirc;m sydd wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau ymchwil a datblygu'r DU.</p>
 
         <p data-en-block>We work across the full innovation lifecycle &mdash; from validating an early-stage idea through primary research, to building the consortium and securing funding, to delivering the science and engineering that turns concepts into real-world outcomes.</p>
-        <p data-cy-block>Rydym yn gweithio ar draws cylch bywyd arloesi llawn &mdash; o ddilysu syniad cam cynnar trwy ymchwil gynradd, i adeiladu'r consortiwm a sicrhau cyllid, i gyflawni'r wyddoniaeth a'r peirianneg sy'n troi cysyniadau yn ganlyniadau byd go iawn.</p>
+        <p data-cy-block>Rydym yn gweithio ar draws cylch bywyd arloesi llawn &mdash; o ddilysu syniad cam cynnar trwy ymchwil gynradd, i adeiladu consortiwm a sicrhau cyllid, i gyflawni'r wyddoniaeth a'r peirianneg sy'n troi cysyniadau yn ganlyniadau byd go iawn.</p>
       </div>
 
       <div class="who-we-are__image">
-        <img src="/images/about-team.jpg" alt="The VDB team">
+        <img src="/images/about-team.jpg" alt="The VDB team" data-alt-en="The VDB team" data-alt-cy="T&icirc;m VDB">
       </div>
     </div>
   </section>
@@ -1364,7 +1365,7 @@
 
       <div class="track-record__partners">
         <p data-en-block>We've partnered with <strong>Imperial College London</strong>, the <strong>University of Cambridge</strong>, <strong>Defra</strong>, <strong>Innovate UK</strong>, the <strong>Forestry Commission</strong>, and leading UK enterprises like <strong>Cranswick</strong>.</p>
-        <p data-cy-block>Rydym wedi partneru gyda <strong>Choleg Imperial Llundain</strong>, <strong>Prifysgol Caergrawnt</strong>, <strong>Defra</strong>, <strong>Innovate UK</strong>, y <strong>Comisiwn Coedwigaeth</strong>, a mentrau blaenllaw'r DU fel <strong>Cranswick</strong>.</p>
+        <p data-cy-block>Rydym wedi gweithio gyda <strong>Choleg Imperial Llundain</strong>, <strong>Prifysgol Caergrawnt</strong>, <strong>Defra</strong>, <strong>Innovate UK</strong>, y <strong>Comisiwn Coedwigaeth</strong>, a mentrau blaenllaw'r DU fel <strong>Cranswick</strong>.</p>
       </div>
     </div>
   </section>
@@ -1414,24 +1415,24 @@
       </div>
 
       <div class="vdb-labs__image">
-        <img src="/images/vdb-photo-2.jpg" alt="Laboratory glassware with green solutions — NPK Recovery chemical recycling research">
+        <img src="/images/vdb-photo-2.jpg" alt="Laboratory glassware with green solutions — NPK Recovery chemical recycling research" data-alt-en="Laboratory glassware with green solutions — NPK Recovery chemical recycling research" data-alt-cy="Gwydrau labordy gyda hydoddiannau gwyrdd — ymchwil ailgylchu cemegol NPK Recovery">
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       BASED IN BRISTOL + COMPANY DETAILS
+       WORKING ACROSS THE UK + COMPANY DETAILS
        ═══════════════════════════════════════ -->
-  <section class="bristol reveal">
-    <div class="bristol__inner">
-      <div class="bristol__text">
+  <section class="uk-presence reveal">
+    <div class="uk-presence__inner">
+      <div class="uk-presence__text">
         <span class="label label--red">
-          <span data-en>Our home</span>
-          <span data-cy>Ein cartref</span>
+          <span data-en>Where we work</span>
+          <span data-cy>Ble rydym yn gweithio</span>
         </span>
         <h2>
-          <span data-en>Based in Bristol</span>
-          <span data-cy>Wedi'i leoli ym Mryste</span>
+          <span data-en>Working across the UK</span>
+          <span data-cy>Yn gweithio ledled y DU</span>
         </h2>
 
         <p data-en-block>Based in Bristol, we're embedded in one of the UK's most vibrant innovation ecosystems &mdash; with direct access to world-class research, a diverse talent pool, and a city that's serious about sustainability.</p>
@@ -1518,8 +1519,8 @@
             <text x="98" y="26" font-family="Outfit, sans-serif" font-size="12" font-weight="600" fill="#4a4f66" letter-spacing="2">UK</text>
           </svg>
           <p>
-            <span data-en>Innovation consultancy based in Bristol. We validate ideas, develop collaborations, and build innovations that matter.</span>
-            <span data-cy>Ymgynghoriaeth arloesi wedi'i lleoli ym Mryste. Rydym yn dilysu syniadau, datblygu cydweithrediadau, ac adeiladu arloesiadau sy'n bwysig.</span>
+            <span data-en>UK innovation and programme delivery consultancy. We manage complex programmes, unlock funding, and build innovations that matter.</span>
+            <span data-cy>Ymgynghoriaeth arloesi a chyflawni rhaglenni yn y DU. Rydym yn rheoli rhaglenni cymhleth, datgloi cyllid, ac adeiladu arloesiadau sy'n bwysig.</span>
           </p>
         </div>
         <div class="footer__col">
@@ -1541,8 +1542,9 @@
             <span data-cy>Cwmni</span>
           </h4>
           <ul>
-            <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Amdanom VDB</span></a></li>
+            <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Yngl&#375;n &acirc; VDB</span></a></li>
             <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
+            <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
             <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
           </ul>
         </div>
@@ -1553,6 +1555,7 @@
           </h4>
           <ul>
             <li><a href="mailto:hannah@vandenberghuk.com">hannah@vandenberghuk.com</a></li>
+            <li><span data-en>Working across the UK</span><span data-cy>Yn gweithio ledled y DU</span></li>
             <li><a href="https://linkedin.com/company/vandenberghuk">LinkedIn</a></li>
           </ul>
         </div>
@@ -1575,6 +1578,31 @@
     // ─── Language Toggle ───
     const html = document.documentElement;
     const langBtns = document.querySelectorAll('[data-set-lang]');
+    const titleElement = document.querySelector('title');
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function applyLocalizedMetadata(lang) {
+      if (titleElement) {
+        document.title = lang === 'cy' ? titleElement.dataset.titleCy : titleElement.dataset.titleEn;
+      }
+
+      if (metaDescription) {
+        const description = lang === 'cy' ? metaDescription.dataset.contentCy : metaDescription.dataset.contentEn;
+        metaDescription.setAttribute('content', description);
+      }
+    }
+
+    function applyLocalizedAttributes(lang) {
+      const isWelsh = lang === 'cy';
+
+      document.querySelectorAll('[data-aria-label-en][data-aria-label-cy]').forEach((el) => {
+        el.setAttribute('aria-label', isWelsh ? el.dataset.ariaLabelCy : el.dataset.ariaLabelEn);
+      });
+
+      document.querySelectorAll('[data-alt-en][data-alt-cy]').forEach((el) => {
+        el.setAttribute('alt', isWelsh ? el.dataset.altCy : el.dataset.altEn);
+      });
+    }
 
     // Auto-detect browser language
     const browserLang = navigator.language || navigator.languages?.[0] || 'en';
@@ -1584,6 +1612,8 @@
     function setLang(lang) {
       html.setAttribute('data-lang', lang);
       html.setAttribute('lang', lang);
+      applyLocalizedMetadata(lang);
+      applyLocalizedAttributes(lang);
       localStorage.setItem('vdb-lang', lang);
       langBtns.forEach(btn => {
         btn.classList.toggle('lang-toggle__btn--active', btn.dataset.setLang === lang);

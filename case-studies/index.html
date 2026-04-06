@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-title-en="Contact — VDB UK" data-title-cy="Cysylltu — VDB UK">Contact — VDB UK</title>
-  <meta name="description" content="Get in touch with VDB UK — innovation consultancy based in Bristol for funding, research, and programme delivery." data-content-en="Get in touch with VDB UK — innovation consultancy based in Bristol for funding, research, and programme delivery." data-content-cy="Cysylltwch &acirc; VDB UK — ymgynghoriaeth arloesi ym Mryste ar gyfer cyllido, ymchwil a chyflawni rhaglenni.">
+  <title>Case Studies — VDB UK</title>
+  <meta name="description" content="Strategic advisory case studies from VDB UK. How we help organisations navigate complex funding, policy, and innovation landscapes.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -14,48 +14,39 @@
   <style>
     /* ═══════════════════════════════════════
        CSS CUSTOM PROPERTIES
-       Welsh Slate palette — institutional
-       warmth meets modern consultancy
        ═══════════════════════════════════════ */
     :root {
-      /* Core palette */
       --slate-950: #0f1118;
       --slate-900: #1a1d2b;
       --slate-800: #252838;
       --slate-700: #363a4d;
       --slate-600: #4a4f66;
-      --slate-500: #636880;
       --slate-400: #8b91a8;
       --slate-300: #b0b5c8;
       --slate-200: #d4d7e3;
       --slate-100: #ecedf3;
       --slate-50: #f6f7fa;
 
-      /* Welsh red — deeper, more sophisticated than flag red */
       --red-700: #8b1a2b;
       --red-600: #a82135;
       --red-500: #c8283f;
       --red-400: #d94a5e;
       --red-100: #fce8eb;
 
-      /* Warm gold accent */
       --gold-600: #b8860b;
       --gold-500: #d4a017;
       --gold-400: #e8b82f;
       --gold-300: #f0cc5a;
       --gold-100: #fdf6e3;
 
-      /* Stone / cream for warm backgrounds */
       --stone-100: #f8f6f1;
       --stone-200: #efeade;
       --stone-300: #e2dac8;
       --stone-50: #fcfbf8;
 
-      /* Typography */
       --font-display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
       --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      /* Spacing scale */
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
@@ -66,7 +57,6 @@
       --space-4xl: 6rem;
       --space-5xl: 8rem;
 
-      /* Layout */
       --max-width: 1200px;
       --header-height: 72px;
     }
@@ -96,9 +86,6 @@
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-    /* ═══════════════════════════════════════
-       TYPOGRAPHY
-       ═══════════════════════════════════════ */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
       font-weight: 600;
@@ -120,34 +107,6 @@
     }
 
     .label--gold { color: var(--gold-500); }
-    .label--red { color: var(--red-500); }
-
-    /* ═══════════════════════════════════════
-       LAYOUT UTILITIES
-       ═══════════════════════════════════════ */
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--space-xl);
-    }
-
-    .section {
-      padding: var(--space-5xl) 0;
-    }
-
-    .section--dark {
-      background: var(--slate-900);
-      color: var(--slate-100);
-    }
-
-    .section--stone {
-      background: var(--stone-100);
-    }
-
-    .section--red {
-      background: var(--red-700);
-      color: white;
-    }
 
     /* ═══════════════════════════════════════
        HEADER
@@ -217,6 +176,16 @@
 
     .header__links a:hover::after { width: 100%; }
 
+    /* Active link */
+    .header__links a[aria-current="page"] {
+      color: white;
+    }
+
+    .header__links a[aria-current="page"]::after {
+      width: 100%;
+      background: var(--gold-500);
+    }
+
     .lang-toggle {
       display: flex;
       align-items: center;
@@ -252,9 +221,6 @@
 
     .header__cta:hover { background: var(--red-500); }
 
-    /* ═══════════════════════════════════════
-       THEME TOGGLE
-       ═══════════════════════════════════════ */
     .theme-toggle {
       display: flex;
       align-items: center;
@@ -309,14 +275,297 @@
       box-shadow: 0 4px 20px rgba(200, 40, 63, 0.3);
     }
 
-    .btn--ghost {
-      border: 1px solid var(--slate-600);
-      color: var(--slate-300);
+    .btn__arrow {
+      transition: transform 0.2s;
     }
 
-    .btn--ghost:hover {
-      border-color: var(--slate-400);
+    .btn:hover .btn__arrow {
+      transform: translateX(3px);
+    }
+
+    /* ═══════════════════════════════════════
+       INDEX HERO
+       ═══════════════════════════════════════ */
+    .index-hero {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background: var(--slate-950);
+      overflow: hidden;
+      padding-top: var(--header-height);
+      min-height: 40vh;
+    }
+
+    .index-hero__pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image:
+        linear-gradient(30deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(150deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(30deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(150deg, var(--slate-700) 12%, transparent 12.5%, transparent 87%, var(--slate-700) 87.5%, var(--slate-700)),
+        linear-gradient(60deg, var(--slate-600) 25%, transparent 25.5%, transparent 75%, var(--slate-600) 75%, var(--slate-600)),
+        linear-gradient(60deg, var(--slate-600) 25%, transparent 25.5%, transparent 75%, var(--slate-600) 75%, var(--slate-600));
+      background-size: 80px 140px;
+      background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+
+    /* Gold accent lines — case study signature */
+    .index-hero__accent {
+      position: absolute;
+      top: 0;
+      right: 20%;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--gold-500), transparent);
+      opacity: 0.3;
+      transform: skewX(-15deg);
+    }
+
+    .index-hero__accent--2 {
+      right: 19.5%;
+      width: 1px;
+      opacity: 0.15;
+    }
+
+    .index-hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-4xl) var(--space-xl) var(--space-3xl);
+      width: 100%;
+    }
+
+    .index-hero h1 {
       color: white;
+      margin-bottom: var(--space-md);
+      max-width: 700px;
+    }
+
+    .index-hero__desc {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--slate-300);
+      max-width: 600px;
+    }
+
+    /* ═══════════════════════════════════════
+       CASE STUDIES GRID
+       ═══════════════════════════════════════ */
+    .cs-grid-section {
+      padding: var(--space-5xl) 0;
+      background: var(--stone-100);
+    }
+
+    .cs-grid-section__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+
+    .cs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    /* Featured (first) case study card — large horizontal layout */
+    .cs-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .cs-card:hover {
+      border-color: var(--gold-400);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .cs-card__image {
+      position: relative;
+      min-height: 320px;
+      background: var(--slate-200);
+      overflow: hidden;
+    }
+
+    .cs-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .cs-card__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,29,43,0.4) 0%, rgba(15,17,24,0.2) 100%);
+      z-index: 1;
+    }
+
+    .cs-card__badge {
+      position: absolute;
+      top: var(--space-xl);
+      left: var(--space-xl);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 5px 12px;
+      background: rgba(212, 160, 23, 0.9);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .cs-card__body {
+      padding: var(--space-2xl) var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cs-card__tags {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-lg);
+    }
+
+    .cs-card__tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--gold-100);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+    }
+
+    .cs-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      color: var(--slate-900);
+      line-height: 1.3;
+      margin-bottom: var(--space-md);
+    }
+
+    .cs-card__excerpt {
+      font-size: 0.95rem;
+      color: var(--slate-600);
+      line-height: 1.7;
+      margin-bottom: var(--space-xl);
+      flex: 1;
+    }
+
+    .cs-card__meta {
+      display: flex;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-md);
+      border-bottom: 1px solid var(--slate-100);
+    }
+
+    .cs-card__meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cs-card__meta-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-400);
+    }
+
+    .cs-card__meta-value {
+      font-size: 0.85rem;
+      color: var(--slate-700);
+      font-weight: 500;
+    }
+
+    .cs-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gold-600);
+      transition: gap 0.2s;
+    }
+
+    .cs-card:hover .cs-card__link {
+      gap: 12px;
+    }
+
+    .cs-card__link-arrow {
+      transition: transform 0.2s;
+    }
+
+    .cs-card:hover .cs-card__link-arrow {
+      transform: translateX(3px);
+    }
+
+    /* ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ */
+    .cta-banner {
+      padding: var(--space-5xl) 0;
+      background: var(--red-700);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner__pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(255,255,255,0.1) 40px,
+          rgba(255,255,255,0.1) 42px
+        );
+    }
+
+    .cta-banner__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-banner h2 {
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-banner__desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto var(--space-2xl);
     }
 
     .btn--white {
@@ -328,375 +577,6 @@
       background: var(--stone-50);
       transform: translateY(-1px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
-    .btn__arrow {
-      transition: transform 0.2s;
-    }
-
-    .btn:hover .btn__arrow {
-      transform: translateX(3px);
-    }
-
-    /* ═══════════════════════════════════════
-       PAGE HERO — image background variant
-       ═══════════════════════════════════════ */
-    .page-hero {
-      position: relative;
-      min-height: 40vh;
-      display: flex;
-      align-items: flex-end;
-      background: var(--slate-950);
-      overflow: hidden;
-      padding-top: var(--header-height);
-    }
-
-    .page-hero__bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('/images/contact-bristol.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .page-hero__bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(15, 17, 24, 0.55) 0%,
-        rgba(15, 17, 24, 0.75) 60%,
-        rgba(15, 17, 24, 0.92) 100%
-      );
-    }
-
-    .page-hero__content {
-      position: relative;
-      z-index: 2;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: var(--space-4xl) var(--space-xl) var(--space-3xl);
-      width: 100%;
-    }
-
-    .page-hero__breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-size: 0.85rem;
-      color: var(--slate-400);
-      margin-bottom: var(--space-lg);
-    }
-
-    .page-hero__breadcrumb a {
-      color: var(--slate-400);
-      transition: color 0.2s;
-    }
-
-    .page-hero__breadcrumb a:hover {
-      color: white;
-    }
-
-    .page-hero__breadcrumb span.sep {
-      color: var(--slate-600);
-    }
-
-    .page-hero__breadcrumb span.current {
-      color: var(--slate-300);
-    }
-
-    .page-hero h1 {
-      color: white;
-      max-width: 700px;
-      margin-bottom: var(--space-md);
-    }
-
-    .page-hero__subtitle {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: var(--slate-300);
-      max-width: 600px;
-    }
-
-    /* ═══════════════════════════════════════
-       CONTACT SECTION — two-column layout
-       ═══════════════════════════════════════ */
-    .contact {
-      padding: var(--space-5xl) 0;
-      background: var(--stone-50);
-    }
-
-    .contact__inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--space-xl);
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-4xl);
-      align-items: start;
-    }
-
-    /* --- Details column (left) --- */
-    .contact__details h2 {
-      color: var(--slate-900);
-      margin-top: var(--space-sm);
-      margin-bottom: var(--space-2xl);
-    }
-
-    .contact__item {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-lg);
-      margin-bottom: var(--space-xl);
-    }
-
-    .contact__icon {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--red-100);
-      color: var(--red-600);
-    }
-
-    .contact__icon svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .contact__item-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate-400);
-      margin-bottom: var(--space-xs);
-    }
-
-    .contact__item-value {
-      font-size: 0.95rem;
-      color: var(--slate-700);
-      line-height: 1.6;
-    }
-
-    .contact__item-value a {
-      color: var(--red-600);
-      transition: color 0.2s;
-    }
-
-    .contact__item-value a:hover {
-      color: var(--red-500);
-      text-decoration: underline;
-    }
-
-    /* --- Form column (right) --- */
-    .contact__form-wrap {
-      background: var(--slate-900);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: var(--space-2xl);
-    }
-
-    .contact__form-wrap h3 {
-      color: white;
-      margin-bottom: var(--space-xl);
-    }
-
-    .form__group {
-      margin-bottom: var(--space-lg);
-    }
-
-    .form__label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--slate-300);
-      margin-bottom: var(--space-sm);
-    }
-
-    .form__label .optional {
-      font-weight: 400;
-      color: var(--slate-500);
-      font-size: 0.8rem;
-    }
-
-    .form__input,
-    .form__textarea {
-      width: 100%;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      padding: 12px 16px;
-      border: 1px solid var(--slate-700);
-      border-radius: 6px;
-      background: var(--slate-800);
-      color: white;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-    }
-
-    .form__input::placeholder,
-    .form__textarea::placeholder {
-      color: var(--slate-500);
-    }
-
-    .form__input:focus,
-    .form__textarea:focus {
-      border-color: var(--red-500);
-      box-shadow: 0 0 0 3px rgba(200, 40, 63, 0.15);
-    }
-
-    .form__textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .form__submit {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-sm);
-      padding: 14px 32px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      background: var(--red-600);
-      color: white;
-      transition: all 0.25s ease;
-      width: 100%;
-      justify-content: center;
-    }
-
-    .form__submit:hover {
-      background: var(--red-500);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(200, 40, 63, 0.3);
-    }
-
-    .form__submit .btn__arrow {
-      transition: transform 0.2s;
-    }
-
-    .form__submit:hover .btn__arrow {
-      transform: translateX(3px);
-    }
-
-    /* ═══════════════════════════════════════
-       WHAT TO EXPECT
-       ═══════════════════════════════════════ */
-    .expect {
-      padding: var(--space-4xl) 0;
-      background: var(--stone-100);
-    }
-
-    .expect__inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--space-xl);
-    }
-
-    .expect__header {
-      margin-bottom: var(--space-2xl);
-    }
-
-    .expect__header h2 {
-      color: var(--slate-900);
-      margin-top: var(--space-sm);
-    }
-
-    .expect__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
-    }
-
-    .expect-card {
-      background: white;
-      border: 1px solid var(--slate-200);
-      border-radius: 12px;
-      padding: var(--space-2xl);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .expect-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--slate-200);
-      transition: background 0.3s;
-    }
-
-    .expect-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-      border-color: var(--slate-300);
-    }
-
-    .expect-card:hover::before { background: var(--red-500); }
-
-    .expect-card:nth-child(1)::before { background: var(--red-500); }
-    .expect-card:nth-child(2)::before { background: var(--gold-500); }
-    .expect-card:nth-child(3)::before { background: var(--red-500); }
-
-    .expect-card__icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: var(--space-lg);
-    }
-
-    .expect-card:nth-child(1) .expect-card__icon { background: var(--red-100); color: var(--red-600); }
-    .expect-card:nth-child(2) .expect-card__icon { background: var(--gold-100); color: var(--gold-600); }
-    .expect-card:nth-child(3) .expect-card__icon { background: var(--slate-100); color: var(--slate-700); }
-
-    .expect-card__title {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--slate-900);
-      line-height: 1.35;
-    }
-
-    /* ═══════════════════════════════════════
-       MAP SECTION
-       ═══════════════════════════════════════ */
-    .map-section {
-      padding: var(--space-4xl) 0;
-      background: var(--stone-50);
-    }
-
-    .map-section__inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--space-xl);
-    }
-
-    .map-section__header {
-      margin-bottom: var(--space-xl);
-    }
-
-    .map-section__header h2 {
-      color: var(--slate-900);
-      margin-top: var(--space-sm);
-    }
-
-    .map-section__embed {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--slate-200);
     }
 
     /* ═══════════════════════════════════════
@@ -740,13 +620,8 @@
       margin-bottom: var(--space-md);
     }
 
-    .footer__col ul {
-      list-style: none;
-    }
-
-    .footer__col li {
-      margin-bottom: var(--space-sm);
-    }
+    .footer__col ul { list-style: none; }
+    .footer__col li { margin-bottom: var(--space-sm); }
 
     .footer__col a {
       font-size: 0.88rem;
@@ -785,11 +660,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     .animate-in {
       opacity: 0;
       animation: fadeInUp 0.7s ease forwards;
@@ -797,11 +667,7 @@
 
     .animate-in--delay-1 { animation-delay: 0.1s; }
     .animate-in--delay-2 { animation-delay: 0.2s; }
-    .animate-in--delay-3 { animation-delay: 0.3s; }
-    .animate-in--delay-4 { animation-delay: 0.4s; }
-    .animate-in--delay-5 { animation-delay: 0.5s; }
 
-    /* Scroll-triggered reveal */
     .reveal--hidden {
       opacity: 0;
       transform: translateY(20px);
@@ -817,25 +683,22 @@
        RESPONSIVE
        ═══════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .contact__inner { grid-template-columns: 1fr; gap: var(--space-2xl); }
-      .expect__grid { grid-template-columns: 1fr; }
+      .cs-card { grid-template-columns: 1fr; }
+      .cs-card__image { min-height: 240px; }
       .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
     }
 
     @media (max-width: 768px) {
       .header__links { display: none; }
+      .index-hero { min-height: 30vh; }
+      .cs-card__image { min-height: 200px; }
+      .cs-card__meta { flex-direction: column; gap: var(--space-sm); }
       .footer__top { grid-template-columns: 1fr; }
-      .page-hero { min-height: 35vh; }
-    }
-
-    @media (max-width: 480px) {
-      .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
       .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
     }
 
     /* ═══════════════════════════════════════
        BILINGUAL SUPPORT
-       — content toggled via data-lang on <html>
        ═══════════════════════════════════════ */
     [data-lang="en"] [data-cy],
     [data-lang="cy"] [data-en] {
@@ -847,7 +710,6 @@
       display: initial;
     }
 
-    /* Block-level bilingual elements */
     [data-lang="en"] [data-cy-block],
     [data-lang="cy"] [data-en-block] {
       display: none;
@@ -858,7 +720,6 @@
       display: block;
     }
 
-    /* Flex bilingual elements */
     [data-lang="en"] [data-cy-flex],
     [data-lang="cy"] [data-en-flex] {
       display: none;
@@ -869,7 +730,6 @@
       display: flex;
     }
 
-    /* Grid bilingual elements */
     [data-lang="en"] [data-cy-grid],
     [data-lang="cy"] [data-en-grid] {
       display: none;
@@ -884,185 +744,69 @@
        LIGHT THEME OVERRIDES
        ═══════════════════════════════════════ */
 
-    /* Smooth theme transitions on key sections */
-    .page-hero,
-    .contact,
-    .contact__form-wrap,
-    .expect,
-    .expect-card,
-    .map-section,
+    .index-hero,
+    .cs-grid-section,
+    .cs-card,
     .footer {
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
 
-    /* --- Header --- */
+    /* Header */
     [data-theme="light"] .header {
       background: #ffffff;
       border-bottom-color: var(--slate-200);
     }
-
-    [data-theme="light"] .header__links a {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .header__links a:hover {
-      color: var(--slate-900);
-    }
+    [data-theme="light"] .header__links a { color: var(--slate-600); }
+    [data-theme="light"] .header__links a:hover { color: var(--slate-900); }
+    [data-theme="light"] .header__links a[aria-current="page"] { color: var(--slate-900); }
 
     [data-theme="light"] .lang-toggle,
     [data-theme="light"] .theme-toggle {
       background: var(--slate-100);
     }
-
     [data-theme="light"] .lang-toggle__btn,
     [data-theme="light"] .theme-toggle__btn {
       color: var(--slate-500);
     }
+    [data-theme="light"] .header__logo svg path:not(:first-child) { stroke: var(--slate-900); }
+    [data-theme="light"] .header__logo svg text { fill: var(--slate-600); }
+    [data-theme="light"] .header__logo svg line { stroke: var(--slate-300); }
 
-    [data-theme="light"] .header__logo svg path:not(:first-child) {
-      stroke: var(--slate-900);
-    }
+    /* Hero */
+    [data-theme="light"] .index-hero { background: var(--stone-200); }
+    [data-theme="light"] .index-hero h1 { color: var(--slate-900); }
+    [data-theme="light"] .index-hero__desc { color: var(--slate-600); }
+    [data-theme="light"] .index-hero__pattern { opacity: 0.03; }
 
-    [data-theme="light"] .header__logo svg text {
-      fill: var(--slate-600);
-    }
+    /* Grid section */
+    [data-theme="light"] .cs-grid-section { background: var(--stone-50); }
 
-    [data-theme="light"] .header__logo svg line {
-      stroke: var(--slate-300);
-    }
-
-    /* --- Page Hero --- */
-    [data-theme="light"] .page-hero {
-      background: var(--stone-100);
-    }
-
-    [data-theme="light"] .page-hero__bg::after {
-      background: linear-gradient(
-        to bottom,
-        rgba(248, 246, 241, 0.4) 0%,
-        rgba(248, 246, 241, 0.6) 60%,
-        rgba(248, 246, 241, 0.9) 100%
-      );
-    }
-
-    [data-theme="light"] .page-hero h1 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .page-hero__subtitle {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .page-hero__breadcrumb a {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .page-hero__breadcrumb a:hover {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .page-hero__breadcrumb span.sep {
-      color: var(--slate-400);
-    }
-
-    [data-theme="light"] .page-hero__breadcrumb span.current {
-      color: var(--slate-700);
-    }
-
-    /* --- Contact section --- */
-    [data-theme="light"] .contact {
-      background: white;
-    }
-
-    [data-theme="light"] .contact__form-wrap {
-      background: var(--stone-100);
-      border-color: var(--slate-200);
-    }
-
-    [data-theme="light"] .contact__form-wrap h3 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .form__label {
-      color: var(--slate-700);
-    }
-
-    [data-theme="light"] .form__label .optional {
-      color: var(--slate-400);
-    }
-
-    [data-theme="light"] .form__input,
-    [data-theme="light"] .form__textarea {
+    /* Cards */
+    [data-theme="light"] .cs-card {
       background: white;
       border-color: var(--slate-200);
-      color: var(--slate-900);
+    }
+    [data-theme="light"] .cs-card:hover {
+      border-color: var(--gold-400);
     }
 
-    [data-theme="light"] .form__input::placeholder,
-    [data-theme="light"] .form__textarea::placeholder {
-      color: var(--slate-400);
-    }
-
-    /* --- Expect section --- */
-    [data-theme="light"] .expect {
-      background: var(--stone-50);
-    }
-
-    /* --- Map section --- */
-    [data-theme="light"] .map-section {
-      background: white;
-    }
-
-    /* --- Footer --- */
+    /* Footer */
     [data-theme="light"] .footer {
       background: var(--stone-100);
       color: var(--slate-600);
     }
+    [data-theme="light"] .footer__top { border-bottom-color: var(--slate-200); }
+    [data-theme="light"] .footer__brand svg path:not(:first-child) { stroke: var(--slate-700); }
+    [data-theme="light"] .footer__brand svg text { fill: var(--slate-500); }
+    [data-theme="light"] .footer__brand p { color: var(--slate-600); }
+    [data-theme="light"] .footer__col h4 { color: var(--slate-600); }
+    [data-theme="light"] .footer__col a { color: var(--slate-600); }
+    [data-theme="light"] .footer__col a:hover { color: var(--slate-900); }
+    [data-theme="light"] .footer__bottom { color: var(--slate-500); }
+    [data-theme="light"] .footer__bottom-links a { color: var(--slate-500); }
+    [data-theme="light"] .footer__bottom-links a:hover { color: var(--slate-700); }
 
-    [data-theme="light"] .footer__top {
-      border-bottom-color: var(--slate-200);
-    }
-
-    [data-theme="light"] .footer__brand svg path:not(:first-child) {
-      stroke: var(--slate-700);
-    }
-
-    [data-theme="light"] .footer__brand svg text {
-      fill: var(--slate-500);
-    }
-
-    [data-theme="light"] .footer__brand p {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .footer__col h4 {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .footer__col a {
-      color: var(--slate-600);
-    }
-
-    [data-theme="light"] .footer__col a:hover {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .footer__bottom {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .footer__bottom-links a {
-      color: var(--slate-500);
-    }
-
-    [data-theme="light"] .footer__bottom-links a:hover {
-      color: var(--slate-700);
-    }
-
-    /* Accessibility: darken gold for WCAG AA on light backgrounds */
-    [data-theme="light"] .label--gold {
-      color: var(--gold-600);
-    }
+    [data-theme="light"] .label--gold { color: var(--gold-600); }
   </style>
 </head>
 <body>
@@ -1072,172 +816,147 @@
        ═══════════════════════════════════════ -->
   <header class="header">
     <div class="header__inner">
-      <a href="/" class="header__logo" aria-label="VDB UK Home" data-aria-label-en="VDB UK Home" data-aria-label-cy="Hafan VDB UK">
-        <!-- VDB UK Logo — geometric monogram -->
+      <a href="/" class="header__logo" aria-label="VDB UK Home">
         <svg viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- V chevron mark -->
           <path d="M4 4L16 32L28 4" stroke="#c8283f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- D -->
           <path d="M38 6h8c8 0 14 6 14 14s-6 14-14 14h-8V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
-          <!-- B -->
           <path d="M70 6h7c5 0 8 2.5 8 6.5 0 3-1.5 5-4.5 5.8 3.5 0.6 5.5 3 5.5 6.2 0 4.5-3.5 7.5-9 7.5H70V6z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round"/>
-          <!-- Divider -->
           <line x1="98" y1="10" x2="98" y2="30" stroke="#363a4d" stroke-width="1.5"/>
-          <!-- UK text -->
           <text x="108" y="26" font-family="Outfit, sans-serif" font-size="14" font-weight="600" fill="#8b91a8" letter-spacing="2">UK</text>
         </svg>
       </a>
 
       <nav class="header__nav">
         <ul class="header__links">
-          <li><a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a></li>
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
           <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
-          <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
+          <li><a href="/case-studies/" aria-current="page"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
           <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
+          <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
         </ul>
 
-        <div class="lang-toggle" role="group" aria-label="Language" data-aria-label-en="Language" data-aria-label-cy="Iaith">
-          <button class="lang-toggle__btn lang-toggle__btn--active" data-set-lang="en" aria-label="English" data-aria-label-en="English" data-aria-label-cy="Saesneg">EN</button>
-          <button class="lang-toggle__btn" data-set-lang="cy" aria-label="Cymraeg" data-aria-label-en="Cymraeg" data-aria-label-cy="Cymraeg">CY</button>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn lang-toggle__btn--active" data-set-lang="en" aria-label="English">EN</button>
+          <button class="lang-toggle__btn" data-set-lang="cy" aria-label="Cymraeg">CY</button>
         </div>
 
-        <div class="theme-toggle" role="group" aria-label="Theme" data-aria-label-en="Theme" data-aria-label-cy="Thema">
-          <button class="theme-toggle__btn" data-set-theme="light" aria-label="Light mode" data-aria-label-en="Light mode" data-aria-label-cy="Modd golau">
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button class="theme-toggle__btn" data-set-theme="light" aria-label="Light mode">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           </button>
-          <button class="theme-toggle__btn theme-toggle__btn--active" data-set-theme="dark" aria-label="Dark mode" data-aria-label-en="Dark mode" data-aria-label-cy="Modd tywyll">
+          <button class="theme-toggle__btn theme-toggle__btn--active" data-set-theme="dark" aria-label="Dark mode">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </button>
         </div>
 
         <a href="/contact.html" class="header__cta">
-          <span data-en>Contact Us</span><span data-cy>Cysylltwch &acirc; ni</span>
+          <span data-en>Contact Us</span><span data-cy>Cysylltwch</span>
         </a>
       </nav>
     </div>
   </header>
 
   <!-- ═══════════════════════════════════════
-       PAGE HERO
+       INDEX HERO
        ═══════════════════════════════════════ -->
-  <section class="page-hero">
-    <div class="page-hero__bg"></div>
-    <div class="page-hero__content">
-      <nav class="page-hero__breadcrumb animate-in" aria-label="Breadcrumb" data-aria-label-en="Breadcrumb" data-aria-label-cy="Briwsion bara">
-        <a href="/"><span data-en>Home</span><span data-cy>Hafan</span></a>
-        <span class="sep">/</span>
-        <span class="current"><span data-en>Contact</span><span data-cy>Cyswllt</span></span>
-      </nav>
+  <section class="index-hero">
+    <div class="index-hero__pattern"></div>
+    <div class="index-hero__accent"></div>
+    <div class="index-hero__accent index-hero__accent--2"></div>
+
+    <div class="index-hero__content">
+      <div class="label label--gold animate-in">
+        <span data-en>Strategic Advisory</span>
+        <span data-cy>Ymgynghorol Strategol</span>
+      </div>
 
       <h1 class="animate-in animate-in--delay-1">
-        <span data-en>Get in Touch</span>
-        <span data-cy>Cysylltwch &acirc; Ni</span>
+        <span data-en>Case Studies</span>
+        <span data-cy>Astudiaethau Achos</span>
       </h1>
 
-      <p class="page-hero__subtitle animate-in animate-in--delay-2">
-        <span data-en>Whether you're exploring a new idea, applying for funding, or need a delivery partner &mdash; we'd love to hear from you.</span>
-        <span data-cy>P'un a ydych chi'n archwilio syniad newydd, yn gwneud cais am gyllid, neu angen partner cyflawni &mdash; byddem wrth ein bodd yn clywed gennych.</span>
+      <p class="index-hero__desc animate-in animate-in--delay-2">
+        <span data-en>How we help organisations navigate complex funding, policy, and innovation landscapes &mdash; from government advisory to cross-border cultural collaboration.</span>
+        <span data-cy>Sut rydym yn helpu sefydliadau i lywio tirweddau cyllido, polisi, ac arloesi cymhleth &mdash; o ymgynghorol llywodraeth i gydweithio diwylliannol trawsffiniol.</span>
       </p>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       CONTACT DETAILS + FORM
+       CASE STUDIES GRID
        ═══════════════════════════════════════ -->
-  <section class="contact reveal">
-    <div class="contact__inner">
+  <section class="cs-grid-section reveal">
+    <div class="cs-grid-section__inner">
+      <div class="cs-grid">
 
-      <!-- Left column: details -->
-      <div class="contact__details">
-        <span class="label label--red">
-          <span data-en>Contact details</span>
-          <span data-cy>Manylion cyswllt</span>
-        </span>
-        <h2>
-          <span data-en>Reach out directly</span>
-          <span data-cy>Cysylltwch yn uniongyrchol</span>
-        </h2>
+        <!-- Case Study 1: Devolved Funding Architecture -->
+        <a href="/case-studies/devolved-funding-architecture.html" class="cs-card">
+          <div class="cs-card__image">
+            <img src="/images/casestudy-wales-senedd.jpg" alt="The Senedd building, Cardiff Bay" loading="lazy">
+            <span class="cs-card__badge">
+              <span data-en>Case Study</span>
+              <span data-cy>Astudiaeth Achos</span>
+            </span>
+          </div>
 
-        <!-- Email -->
-        <div class="contact__item">
-          <div class="contact__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div>
-            <div class="contact__item-label">
-              <span data-en>Email</span><span data-cy>E-bost</span>
+          <div class="cs-card__body">
+            <div class="cs-card__tags">
+              <span class="cs-card__tag"><span data-en>Funding Strategy</span><span data-cy>Strategaeth Cyllido</span></span>
+              <span class="cs-card__tag"><span data-en>Programme Management</span><span data-cy>Rheoli Rhaglenni</span></span>
             </div>
-            <div class="contact__item-value">
-              <a href="mailto:hannah@vandenberghuk.com">hannah@vandenberghuk.com</a>
-            </div>
-          </div>
-        </div>
 
-        <!-- LinkedIn -->
-        <div class="contact__item">
-          <div class="contact__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </div>
-          <div>
-            <div class="contact__item-label">LinkedIn</div>
-            <div class="contact__item-value">
-              <a href="https://linkedin.com/company/vandenberghuk" target="_blank" rel="noopener noreferrer">linkedin.com/company/vandenberghuk</a>
+            <h2 class="cs-card__title">
+              <span data-en>Understanding and Navigating the Funding Architecture of a Devolved Economy</span>
+              <span data-cy>Deall a Llywio Pensaern&iuml;aeth Cyllido Economi Ddatganoledig</span>
+            </h2>
+
+            <p class="cs-card__excerpt">
+              <span data-en>Helping Wales navigate complex European funding landscapes across culture, education, and public policy &mdash; connecting policy with delivery and funding knowledge with cultural ambition.</span>
+              <span data-cy>Helpu Cymru i lywio tirweddau cyllido Ewropeaidd cymhleth ar draws diwylliant, addysg, a pholisi cyhoeddus &mdash; cysylltu polisi &acirc; chyflawni a gwybodaeth cyllido ag uchelgais ddiwylliannol.</span>
+            </p>
+
+            <div class="cs-card__meta">
+              <div class="cs-card__meta-item">
+                <span class="cs-card__meta-label"><span data-en>Client</span><span data-cy>Cleient</span></span>
+                <span class="cs-card__meta-value">Arts Council of Wales</span>
+              </div>
+              <div class="cs-card__meta-item">
+                <span class="cs-card__meta-label"><span data-en>Sector</span><span data-cy>Sector</span></span>
+                <span class="cs-card__meta-value"><span data-en>Culture &amp; Public Policy</span><span data-cy>Diwylliant a Pholisi Cyhoeddus</span></span>
+              </div>
             </div>
+
+            <span class="cs-card__link">
+              <span data-en>Read case study</span>
+              <span data-cy>Darllen yr astudiaeth achos</span>
+              <span class="cs-card__link-arrow">&rarr;</span>
+            </span>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       WHAT TO EXPECT
+       CTA BANNER
        ═══════════════════════════════════════ -->
-  <section class="expect reveal">
-    <div class="expect__inner">
-      <div class="expect__header">
-        <span class="label label--gold">
-          <span data-en>What to expect</span>
-          <span data-cy>Beth i'w ddisgwyl</span>
-        </span>
-        <h2>
-          <span data-en>How we work with you</span>
-          <span data-cy>Sut rydym yn gweithio gyda chi</span>
-        </h2>
-      </div>
-
-      <div class="expect__grid">
-        <div class="expect-card">
-          <div class="expect-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="expect-card__title">
-            <span data-en>We respond within 2 working days</span>
-            <span data-cy>Rydym yn ymateb o fewn 2 ddiwrnod gwaith</span>
-          </div>
-        </div>
-
-        <div class="expect-card">
-          <div class="expect-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          </div>
-          <div class="expect-card__title">
-            <span data-en>An initial conversation is always free</span>
-            <span data-cy>Mae sgwrs gychwynnol bob amser yn rhad ac am ddim</span>
-          </div>
-        </div>
-
-        <div class="expect-card">
-          <div class="expect-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div class="expect-card__title">
-            <span data-en>We'll tell you honestly if we're the right fit</span>
-            <span data-cy>Byddwn yn dweud wrthych yn onest a ydym yn addas</span>
-          </div>
-        </div>
-      </div>
+  <section class="cta-banner reveal">
+    <div class="cta-banner__pattern"></div>
+    <div class="cta-banner__inner">
+      <h2>
+        <span data-en>Have a story we should tell together?</span>
+        <span data-cy>Oes gennych stori y dylem ei hadrodd gyda'n gilydd?</span>
+      </h2>
+      <p class="cta-banner__desc">
+        <span data-en>We work with organisations across government, culture, and industry to navigate complexity and deliver impact.</span>
+        <span data-cy>Rydym yn gweithio gyda sefydliadau ar draws llywodraeth, diwylliant, a diwydiant i lywio cymhlethdod a chyflawni effaith.</span>
+      </p>
+      <a href="/contact.html" class="btn btn--white">
+        <span data-en>Get in touch</span>
+        <span data-cy>Cysylltwch &acirc; ni</span>
+        <span class="btn__arrow">&rarr;</span>
+      </a>
     </div>
   </section>
 
@@ -1260,10 +979,7 @@
           </p>
         </div>
         <div class="footer__col">
-          <h4>
-            <span data-en>Capabilities</span>
-            <span data-cy>Galluoedd</span>
-          </h4>
+          <h4><span data-en>Capabilities</span><span data-cy>Galluoedd</span></h4>
           <ul>
             <li><a href="/capabilities/secretariat.html"><span data-en>Secretariat</span><span data-cy>Ysgrifenyddiaeth</span></a></li>
             <li><a href="/capabilities/research.html"><span data-en>Research</span><span data-cy>Ymchwil</span></a></li>
@@ -1273,22 +989,16 @@
           </ul>
         </div>
         <div class="footer__col">
-          <h4>
-            <span data-en>Company</span>
-            <span data-cy>Cwmni</span>
-          </h4>
+          <h4><span data-en>Company</span><span data-cy>Cwmni</span></h4>
           <ul>
-            <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Yngl&#375;n &acirc; VDB</span></a></li>
+            <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Amdanom VDB</span></a></li>
             <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
             <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
             <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4>
-            <span data-en>Contact</span>
-            <span data-cy>Cyswllt</span>
-          </h4>
+          <h4><span data-en>Contact</span><span data-cy>Cyswllt</span></h4>
           <ul>
             <li><a href="mailto:hannah@vandenberghuk.com">hannah@vandenberghuk.com</a></li>
             <li><span data-en>Working across the UK</span><span data-cy>Yn gweithio ledled y DU</span></li>
@@ -1299,9 +1009,9 @@
       <div class="footer__bottom">
         <span>&copy; 2026 VDB UK Ltd. <span data-en>All rights reserved.</span><span data-cy>Cedwir pob hawl.</span></span>
         <div class="footer__bottom-links">
-          <a href="/privacy.html"><span data-en>Privacy</span><span data-cy>Preifatrwydd</span></a>
-          <a href="/accessibility.html"><span data-en>Accessibility</span><span data-cy>Hygyrchedd</span></a>
-          <a href="/cookies.html"><span data-en>Cookies</span><span data-cy>Cwcis</span></a>
+          <a href="/privacy"><span data-en>Privacy</span><span data-cy>Preifatrwydd</span></a>
+          <a href="/accessibility"><span data-en>Accessibility</span><span data-cy>Hygyrchedd</span></a>
+          <a href="/cookies"><span data-en>Cookies</span><span data-cy>Cwcis</span></a>
         </div>
       </div>
     </div>
@@ -1311,32 +1021,9 @@
        SCRIPTS
        ═══════════════════════════════════════ -->
   <script>
-    // ─── Language Toggle ───
+    // Language Toggle
     const html = document.documentElement;
     const langBtns = document.querySelectorAll('[data-set-lang]');
-    const titleElement = document.querySelector('title');
-    const metaDescription = document.querySelector('meta[name="description"]');
-
-    function applyLocalizedMetadata(lang) {
-      if (titleElement) {
-        document.title = lang === 'cy' ? titleElement.dataset.titleCy : titleElement.dataset.titleEn;
-      }
-
-      if (metaDescription) {
-        const description = lang === 'cy' ? metaDescription.dataset.contentCy : metaDescription.dataset.contentEn;
-        metaDescription.setAttribute('content', description);
-      }
-    }
-
-    function applyLocalizedAttributes(lang) {
-      const isWelsh = lang === 'cy';
-
-      document.querySelectorAll('[data-aria-label-en][data-aria-label-cy]').forEach((el) => {
-        el.setAttribute('aria-label', isWelsh ? el.dataset.ariaLabelCy : el.dataset.ariaLabelEn);
-      });
-    }
-
-    // Auto-detect browser language
     const browserLang = navigator.language || navigator.languages?.[0] || 'en';
     const savedLang = localStorage.getItem('vdb-lang');
     const initialLang = savedLang || (browserLang.startsWith('cy') ? 'cy' : 'en');
@@ -1344,21 +1031,17 @@
     function setLang(lang) {
       html.setAttribute('data-lang', lang);
       html.setAttribute('lang', lang);
-      applyLocalizedMetadata(lang);
-      applyLocalizedAttributes(lang);
       localStorage.setItem('vdb-lang', lang);
       langBtns.forEach(btn => {
         btn.classList.toggle('lang-toggle__btn--active', btn.dataset.setLang === lang);
       });
     }
-
     setLang(initialLang);
-
     langBtns.forEach(btn => {
       btn.addEventListener('click', () => setLang(btn.dataset.setLang));
     });
 
-    // ─── Header Background on Scroll ───
+    // Header Background on Scroll
     const header = document.querySelector('.header');
     function updateHeaderScroll() {
       const scrolled = window.scrollY > 50;
@@ -1373,10 +1056,9 @@
     }
     window.addEventListener('scroll', updateHeaderScroll, { passive: true });
 
-    // ─── Theme Toggle ───
+    // Theme Toggle
     const savedTheme = localStorage.getItem('vdb-theme');
     const initialTheme = savedTheme || 'dark';
-
     const themeBtns = document.querySelectorAll('[data-set-theme]');
 
     function setTheme(theme) {
@@ -1387,9 +1069,7 @@
       });
       updateHeaderScroll();
     }
-
     setTheme(initialTheme);
-
     themeBtns.forEach(btn => {
       btn.addEventListener('click', () => setTheme(btn.dataset.setTheme));
     });
@@ -1400,7 +1080,7 @@
       }
     });
 
-    // ─── Scroll Reveal ───
+    // Scroll Reveal
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => el.classList.add('reveal--hidden'));
     const observer = new IntersectionObserver((entries) => {
@@ -1411,19 +1091,7 @@
         }
       });
     }, { threshold: 0.15 });
-
     reveals.forEach(el => observer.observe(el));
-
-    // ─── Smooth Scroll for Anchor Links ───
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
   </script>
 </body>
 </html>
