@@ -700,31 +700,7 @@
       margin-top: var(--space-xs);
     }
 
-    /* ═══════════════════════════════════════
-       OUR TEAM
-       ═══════════════════════════════════════ */
-    .team-statement {
-      padding: var(--space-5xl) 0;
-    }
-
-    .team-statement__inner {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 var(--space-xl);
-      text-align: center;
-    }
-
-    .team-statement__inner h2 {
-      color: white;
-      margin-top: var(--space-sm);
-      margin-bottom: var(--space-xl);
-    }
-
-    .team-statement__inner p {
-      font-size: 1.1rem;
-      color: var(--slate-300);
-      line-height: 1.75;
-    }
+    /* OUR TEAM — see Team Carousel section below */
 
     /* ═══════════════════════════════════════
        WORKING ACROSS THE UK + COMPANY DETAILS
@@ -1120,7 +1096,7 @@
     .track-record,
     .award-card,
     .founder,
-    .team-statement,
+    .team-carousel,
     .footer {
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
@@ -1275,18 +1251,7 @@
       border-top-color: var(--slate-200);
     }
 
-    /* --- Our Team --- */
-    [data-theme="light"] .team-statement {
-      background: var(--stone-100);
-    }
-
-    [data-theme="light"] .team-statement__inner h2 {
-      color: var(--slate-900);
-    }
-
-    [data-theme="light"] .team-statement__inner p {
-      color: var(--slate-600);
-    }
+    /* --- Our Team: see .team-carousel light overrides in carousel section --- */
 
     /* --- UK presence / Company details --- */
     [data-theme="light"] .uk-presence {
@@ -1372,6 +1337,231 @@
       border-color: var(--slate-500);
       color: var(--slate-900);
     }
+
+    /* ═══════════════════════════════════════
+       TEAM CAROUSEL
+       ═══════════════════════════════════════ */
+    .team-carousel {
+      padding: var(--space-5xl) 0 var(--space-4xl);
+      background: var(--slate-900);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .team-carousel::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(212, 160, 23, 0.045) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .team-carousel__header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-carousel__header h2 {
+      color: white;
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .team-carousel__subtitle {
+      font-size: 1.05rem;
+      color: var(--slate-300);
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .team-carousel__track-wrapper {
+      position: relative;
+      mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+
+    .team-carousel__track {
+      display: flex;
+      gap: var(--space-xl);
+      width: max-content;
+      animation: scroll-team 50s linear infinite;
+      padding: var(--space-md) 0;
+    }
+
+    .team-carousel__track:hover,
+    .team-carousel__track:focus-within {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-team {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .team-card {
+      flex-shrink: 0;
+      width: 240px;
+      padding: var(--space-xl) var(--space-lg) var(--space-lg);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      text-align: center;
+      transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+      position: relative;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 160, 23, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .team-card__image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto var(--space-lg);
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.08);
+      transition: border-color 0.35s ease, box-shadow 0.35s ease;
+      position: relative;
+    }
+
+    .team-card:hover .team-card__image {
+      border-color: var(--gold-400);
+      box-shadow: 0 0 24px rgba(212, 160, 23, 0.15);
+    }
+
+    .team-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-card__name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: var(--space-xs);
+    }
+
+    .team-card__role {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-500);
+      margin-bottom: var(--space-md);
+    }
+
+    .team-card__bio {
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      line-height: 1.6;
+    }
+
+    /* ── Team Carousel: Light Theme ── */
+
+    [data-theme="light"] .team-carousel {
+      background: var(--stone-100);
+    }
+
+    [data-theme="light"] .team-carousel::before {
+      background: radial-gradient(ellipse, rgba(200, 40, 63, 0.03) 0%, transparent 70%);
+    }
+
+    [data-theme="light"] .team-carousel__header h2 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .team-carousel__subtitle {
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .team-card {
+      background: white;
+      border-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .team-card:hover {
+      border-color: var(--gold-400);
+      background: white;
+      box-shadow: 0 8px 32px rgba(15, 17, 24, 0.08);
+    }
+
+    [data-theme="light"] .team-card__image {
+      border-color: var(--slate-200);
+    }
+
+    [data-theme="light"] .team-card__name {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .team-card__role {
+      color: var(--gold-600);
+    }
+
+    [data-theme="light"] .team-card__bio {
+      color: var(--slate-600);
+    }
+
+    /* ── Team Carousel: Responsive ── */
+
+    @media (max-width: 768px) {
+      .team-carousel {
+        padding: var(--space-3xl) 0 var(--space-2xl);
+      }
+      .team-card {
+        width: 200px;
+        padding: var(--space-lg) var(--space-md) var(--space-md);
+      }
+      .team-card__image {
+        width: 110px;
+        height: 110px;
+      }
+      .team-card__bio {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ── Team Carousel: Reduced Motion ── */
+
+    @media (prefers-reduced-motion: reduce) {
+      .team-carousel__track {
+        animation: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-left: var(--space-xl);
+        padding-right: var(--space-xl);
+        -webkit-overflow-scrolling: touch;
+      }
+      .team-card {
+        scroll-snap-align: start;
+      }
+      .team-card__bio {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Smooth theme transition for carousel */
+    .team-carousel {
+      transition: background-color 0.3s ease;
+    }
+
   </style>
 </head>
 <body>
@@ -1578,10 +1768,10 @@
         </span>
         <h2>Hannah Van Den Bergh</h2>
 
-        <p data-en-block>Hannah leads VDB across its full breadth of delivery &mdash; from research strategy and funding architecture to science programmes and ESG advisory. Her work sits at the intersection of policy, academia, and industry, drawing on experience that spans sustainability research at the University of Cambridge, climate policy work with the UNFCCC, and financial-services consulting.</p>
+        <p data-en-block>Hannah Van Den Bergh is the Founder and Director of VDB, leading the consultancy across research strategy, funding architecture, science and engineering programmes, and ESG advisory. Her background spans sustainability research with institutions including Cambridge and Imperial, climate-policy work linked to the UNFCCC, and advisory roles across finance, industry, and government. That breadth gives VDB a distinctive ability to connect technical ambition with commercial reality.</p>
         <p data-cy-block>Mae Hannah yn arwain VDB ar draws ei holl ehangder cyflawni &mdash; o strategaeth ymchwil a phensaern&iuml;aeth gyllido i raglenni gwyddoniaeth a chynghori ESG. Mae ei gwaith yn eistedd ar y croestoriad rhwng polisi, academia, a diwydiant, gan dynnu ar brofiad sy'n rhychwantu ymchwil cynaliadwyedd ym Mhrifysgol Caergrawnt, gwaith polisi hinsawdd gyda'r UNFCCC, a ymgynghori gwasanaethau ariannol.</p>
 
-        <p data-en-block>She has designed programmes for organisations including Arts Council Wales, Julie's Bicycle, and C40, and built cross-sector partnerships that have earned recognition from the Earthshot Prize, Terra Carta, Dyson, and Forbes. Today she directs a consultancy that has unlocked over &pound;255 million for UK R&amp;D projects.</p>
+        <p data-en-block>She founded VDB to help organisations turn bold ideas into funded, credible, and scalable programmes. Under her leadership, VDB has unlocked more than &pound;255 million for UK R&amp;D projects, supporting start-ups, universities, corporates, and public bodies to shape stronger business models, build the right partnerships, and bring innovation to market. Hannah is known for combining strategic insight with practical delivery, helping VDB bring clarity, momentum, and trusted leadership to complex environmental and innovation challenges.</p>
         <p data-cy-block>Mae hi wedi dylunio rhaglenni ar gyfer sefydliadau gan gynnwys Cyngor Celfyddydau Cymru, Julie's Bicycle, a C40, ac wedi adeiladu partneriaethau traws-sector sydd wedi ennill cydnabyddiaeth gan Wobr Earthshot, Terra Carta, Dyson, a Forbes. Heddiw mae'n cyfarwyddo ymgynghoriaeth sydd wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau ymchwil a datblygu'r DU.</p>
 
         <div class="founder__stats">
@@ -1612,10 +1802,10 @@
   </section>
 
   <!-- ═══════════════════════════════════════
-       OUR TEAM
+       OUR TEAM — Carousel
        ═══════════════════════════════════════ -->
-  <section class="team-statement section--dark reveal">
-    <div class="team-statement__inner">
+  <section class="team-carousel reveal" aria-label="Our team">
+    <div class="team-carousel__header container">
       <span class="label label--gold">
         <span data-en>Our team</span>
         <span data-cy>Ein t&icirc;m</span>
@@ -1624,10 +1814,258 @@
         <span data-en>The right expertise for every brief</span>
         <span data-cy>Yr arbenigedd cywir ar gyfer pob briff</span>
       </h2>
-      <p>
-        <span data-en>VDB draws on a network of researchers, scientists, engineers, programme managers, and funding strategists. We build each project team around the brief &mdash; matching discipline, sector knowledge, and delivery experience to the challenge at hand.</span>
-        <span data-cy>Mae VDB yn tynnu ar rwydwaith o ymchwilwyr, gwyddonwyr, peirianwyr, rheolwyr rhaglenni, a strategwyr cyllido. Rydym yn adeiladu pob t&icirc;m prosiect o amgylch y briff &mdash; gan gyfateb disgyblaeth, gwybodaeth sector, a phrofiad cyflawni i'r her dan sylw.</span>
+      <p class="team-carousel__subtitle">
+        <span data-en>VDB draws on a network of researchers, scientists, engineers, programme managers, and funding strategists. We build each project team around the brief.</span>
+        <span data-cy>Mae VDB yn tynnu ar rwydwaith o ymchwilwyr, gwyddonwyr, peirianwyr, rheolwyr rhaglenni, a strategwyr cyllido. Rydym yn adeiladu pob t&icirc;m prosiect o amgylch y briff.</span>
       </p>
+    </div>
+
+    <div class="team-carousel__track-wrapper">
+      <div class="team-carousel__track" aria-label="Team members">
+
+        <!-- ── Set 1 ── -->
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-rob.jpg" alt="Rob Reoch" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Rob Reoch</h3>
+          <span class="team-card__role">
+            <span data-en>Financial Strategy &amp; Policy</span>
+            <span data-cy>Strategaeth Ariannol a Pholisi</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>30+ years in global banking and capital markets. Advises on financial risk, regulatory frameworks, and policy interventions for environmental objectives.</span>
+            <span data-cy>Dros 30 mlynedd mewn bancio byd-eang a marchnadoedd cyfalaf. Yn cynghori ar risg ariannol, fframweithiau rheoleiddio, ac ymyriadau polisi ar gyfer amcanion amgylcheddol.</span>
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-lucy.jpg" alt="Lucy Bell-Reeves" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Lucy Bell-Reeves</h3>
+          <span class="team-card__role">
+            <span data-en>Programme &amp; Partnerships</span>
+            <span data-cy>Rhaglen a Phartneriaethau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Builds strategic partnerships and leads delivery teams across complex multi-stakeholder programmes.</span>
+            <span data-cy>Yn adeiladu partneriaethau strategol ac yn arwain timau cyflawni ar draws rhaglenni aml-randdeiliad cymhleth.</span>
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-phil.jpg" alt="Philippa Parry" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Philippa Parry</h3>
+          <span class="team-card__role">
+            <span data-en>Engineering &amp; Process Design</span>
+            <span data-cy>Peirianneg a Dylunio Prosesau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Chemical process engineer specialising in system scale-up, prototyping, and resource-efficient infrastructure design.</span>
+            <span data-cy>Peiriannydd prosesau cemegol yn arbenigo mewn ehangu systemau, prototeipio, a dylunio seilwaith effeithlon o ran adnoddau.</span>
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-joe.jpg" alt="Joe Nunn" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Joe Nunn</h3>
+          <span class="team-card__role">
+            <span data-en>Design &amp; Automation</span>
+            <span data-cy>Dylunio ac Awtomeiddio</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Electrical and automation engineer driving process optimisation, instrumentation, and energy-efficient system design.</span>
+            <span data-cy>Peiriannydd trydanol ac awtomeiddio yn gyrru optimeiddio prosesau, offeryniaeth, a dylunio systemau ynni-effeithlon.</span>
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-oli.jpg" alt="Olivia Wilson" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Olivia Wilson</h3>
+          <span class="team-card__role">
+            <span data-en>Science &amp; Bioprocess</span>
+            <span data-cy>Gwyddoniaeth a Bioprosesau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>R&amp;D scientist with deep expertise in bioprocess development, technoeconomic analysis, and scaling novel innovations.</span>
+            <span data-cy>Gwyddonydd ymchwil a datblygu gydag arbenigedd dwfn mewn datblygu bioprosesau, dadansoddi techno-economaidd, ac ehangu arloesedd newydd.</span>
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-naz.jpg" alt="Nazanin Arafaty" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Nazanin Arafaty</h3>
+          <span class="team-card__role">
+            <span data-en>Agricultural Science</span>
+            <span data-cy>Gwyddor Amaethyddol</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Plant physiologist and soil scientist with published research in regenerative agriculture and low-carbon farming practices.</span>
+            <span data-cy>Ffisiolegydd planhigion a gwyddonydd pridd gydag ymchwil gyhoeddedig mewn amaethyddiaeth adfywiol ac arferion ffermio carbon isel.</span>
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-george.jpg" alt="George Barnsley" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">George Barnsley</h3>
+          <span class="team-card__role">
+            <span data-en>Environmental Research</span>
+            <span data-cy>Ymchwil Amgylcheddol</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Environmental scientist supporting research design, data gathering, and evidence-based analysis across VDB projects.</span>
+            <span data-cy>Gwyddonydd amgylcheddol yn cefnogi dylunio ymchwil, casglu data, a dadansoddi seiliedig ar dystiolaeth ar draws prosiectau VDB.</span>
+          </p>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card__image">
+            <img src="/images/team-steph.jpg" alt="Steph Kerley" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Steph Kerley</h3>
+          <span class="team-card__role">
+            <span data-en>Finance &amp; Claims</span>
+            <span data-cy>Cyllid a Hawliadau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Finance professional managing grant claims, audit trails, and cash-flow for funded innovation projects.</span>
+            <span data-cy>Gweithiwr cyllid proffesiynol yn rheoli hawliadau grant, llwybrau archwilio, a llif arian ar gyfer prosiectau arloesi a ariennir.</span>
+          </p>
+        </article>
+
+        <!-- ── Set 2 (duplicate for seamless loop) ── -->
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-rob.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Rob Reoch</h3>
+          <span class="team-card__role">
+            <span data-en>Financial Strategy &amp; Policy</span>
+            <span data-cy>Strategaeth Ariannol a Pholisi</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>30+ years in global banking and capital markets. Advises on financial risk, regulatory frameworks, and policy interventions for environmental objectives.</span>
+            <span data-cy>Dros 30 mlynedd mewn bancio byd-eang a marchnadoedd cyfalaf. Yn cynghori ar risg ariannol, fframweithiau rheoleiddio, ac ymyriadau polisi ar gyfer amcanion amgylcheddol.</span>
+          </p>
+        </article>
+
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-lucy.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Lucy Bell-Reeves</h3>
+          <span class="team-card__role">
+            <span data-en>Programme &amp; Partnerships</span>
+            <span data-cy>Rhaglen a Phartneriaethau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Builds strategic partnerships and leads delivery teams across complex multi-stakeholder programmes.</span>
+            <span data-cy>Yn adeiladu partneriaethau strategol ac yn arwain timau cyflawni ar draws rhaglenni aml-randdeiliad cymhleth.</span>
+          </p>
+        </article>
+
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-phil.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Philippa Parry</h3>
+          <span class="team-card__role">
+            <span data-en>Engineering &amp; Process Design</span>
+            <span data-cy>Peirianneg a Dylunio Prosesau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Chemical process engineer specialising in system scale-up, prototyping, and resource-efficient infrastructure design.</span>
+            <span data-cy>Peiriannydd prosesau cemegol yn arbenigo mewn ehangu systemau, prototeipio, a dylunio seilwaith effeithlon o ran adnoddau.</span>
+          </p>
+        </article>
+
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-joe.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Joe Nunn</h3>
+          <span class="team-card__role">
+            <span data-en>Design &amp; Automation</span>
+            <span data-cy>Dylunio ac Awtomeiddio</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Electrical and automation engineer driving process optimisation, instrumentation, and energy-efficient system design.</span>
+            <span data-cy>Peiriannydd trydanol ac awtomeiddio yn gyrru optimeiddio prosesau, offeryniaeth, a dylunio systemau ynni-effeithlon.</span>
+          </p>
+        </article>
+
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-oli.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Olivia Wilson</h3>
+          <span class="team-card__role">
+            <span data-en>Science &amp; Bioprocess</span>
+            <span data-cy>Gwyddoniaeth a Bioprosesau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>R&amp;D scientist with deep expertise in bioprocess development, technoeconomic analysis, and scaling novel innovations.</span>
+            <span data-cy>Gwyddonydd ymchwil a datblygu gydag arbenigedd dwfn mewn datblygu bioprosesau, dadansoddi techno-economaidd, ac ehangu arloesedd newydd.</span>
+          </p>
+        </article>
+
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-naz.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Nazanin Arafaty</h3>
+          <span class="team-card__role">
+            <span data-en>Agricultural Science</span>
+            <span data-cy>Gwyddor Amaethyddol</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Plant physiologist and soil scientist with published research in regenerative agriculture and low-carbon farming practices.</span>
+            <span data-cy>Ffisiolegydd planhigion a gwyddonydd pridd gydag ymchwil gyhoeddedig mewn amaethyddiaeth adfywiol ac arferion ffermio carbon isel.</span>
+          </p>
+        </article>
+
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-george.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">George Barnsley</h3>
+          <span class="team-card__role">
+            <span data-en>Environmental Research</span>
+            <span data-cy>Ymchwil Amgylcheddol</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Environmental scientist supporting research design, data gathering, and evidence-based analysis across VDB projects.</span>
+            <span data-cy>Gwyddonydd amgylcheddol yn cefnogi dylunio ymchwil, casglu data, a dadansoddi seiliedig ar dystiolaeth ar draws prosiectau VDB.</span>
+          </p>
+        </article>
+
+        <article class="team-card" aria-hidden="true">
+          <div class="team-card__image">
+            <img src="/images/team-steph.jpg" alt="" loading="lazy" width="140" height="140">
+          </div>
+          <h3 class="team-card__name">Steph Kerley</h3>
+          <span class="team-card__role">
+            <span data-en>Finance &amp; Claims</span>
+            <span data-cy>Cyllid a Hawliadau</span>
+          </span>
+          <p class="team-card__bio">
+            <span data-en>Finance professional managing grant claims, audit trails, and cash-flow for funded innovation projects.</span>
+            <span data-cy>Gweithiwr cyllid proffesiynol yn rheoli hawliadau grant, llwybrau archwilio, a llif arian ar gyfer prosiectau arloesi a ariennir.</span>
+          </p>
+        </article>
+
+      </div>
     </div>
   </section>
 
