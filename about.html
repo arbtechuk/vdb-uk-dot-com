@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-title-en="About VDB — Programme Delivery &amp; Innovation Consultancy" data-title-cy="Yngl&#375;n &acirc; VDB — Ymgynghoriaeth Cyflawni Rhaglenni ac Arloesi">About VDB — Programme Delivery &amp; Innovation Consultancy</title>
-  <meta name="description" content="VDB (VandenberghUK Ltd) is a UK-wide programme delivery and innovation consultancy. Founded in 2019, we've delivered complex programmes and unlocked over &pound;255 million for UK R&amp;D projects." data-content-en="VDB (VandenberghUK Ltd) is a UK-wide programme delivery and innovation consultancy. Founded in 2019, we've delivered complex programmes and unlocked over &pound;255 million for UK R&amp;D projects." data-content-cy="Mae VDB (VandenberghUK Ltd) yn ymgynghoriaeth cyflawni rhaglenni ac arloesi ledled y DU. Ers 2019, rydym wedi cyflawni rhaglenni cymhleth ac wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau ymchwil a datblygu'r DU.">
+  <title data-title-en="About VDB — Multidisciplinary Consultancy" data-title-cy="Yngl&#375;n &acirc; VDB — Ymgynghoriaeth Amlddisgyblaeth">About VDB — Multidisciplinary Consultancy</title>
+  <meta name="description" content="VDB is a multidisciplinary consultancy delivering complex programmes across the UK. Over &pound;255 million unlocked for UK R&amp;D projects across research, funding, science, engineering, and ESG." data-content-en="VDB is a multidisciplinary consultancy delivering complex programmes across the UK. Over &pound;255 million unlocked for UK R&amp;D projects across research, funding, science, engineering, and ESG." data-content-cy="Mae VDB yn ymgynghoriaeth amlddisgyblaeth sy'n cyflawni rhaglenni cymhleth ledled y DU. Dros &pound;255 miliwn wedi'i ddatgloi ar gyfer prosiectau ymchwil a datblygu'r DU ar draws ymchwil, cyllido, gwyddoniaeth, peirianneg, ac ESG.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -565,92 +565,95 @@
     }
 
     /* ═══════════════════════════════════════
-       NPK RECOVERY
+       FOUNDER & DIRECTOR
        ═══════════════════════════════════════ */
-    .vdb-labs {
+    .founder {
       padding: var(--space-5xl) 0;
       background: var(--stone-50);
     }
 
-    .vdb-labs__inner {
+    .founder__inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--space-xl);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.4fr;
       gap: var(--space-4xl);
-      align-items: center;
+      align-items: start;
     }
 
-    .vdb-labs__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-sm);
-      padding: 6px 14px;
-      background: var(--gold-100);
-      color: var(--gold-600);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-radius: 20px;
-      margin-bottom: var(--space-lg);
+    .founder__image-col {
+      position: sticky;
+      top: calc(var(--header-height) + var(--space-xl));
     }
 
-    .vdb-labs__text h2 {
+    .founder__image-col img {
+      border-radius: 16px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    .founder__text h2 {
       color: var(--slate-900);
-      margin-bottom: var(--space-md);
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-xl);
     }
 
-    .vdb-labs__text p {
+    .founder__text p {
       font-size: 1.05rem;
       color: var(--slate-600);
       line-height: 1.75;
       margin-bottom: var(--space-lg);
     }
 
-    .vdb-labs__stats {
+    .founder__stats {
       display: flex;
       gap: var(--space-2xl);
       padding-top: var(--space-lg);
       border-top: 1px solid var(--slate-200);
+      margin-top: var(--space-md);
     }
 
-    .vdb-labs__stat-number {
+    .founder__stat-number {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 700;
       line-height: 1;
       color: var(--gold-500);
     }
 
-    .vdb-labs__stat-label {
+    .founder__stat-label {
       font-size: 0.82rem;
       color: var(--slate-600);
       margin-top: var(--space-xs);
     }
 
-    .vdb-labs__image {
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      aspect-ratio: 4/3;
-      background: var(--slate-200);
+    /* ═══════════════════════════════════════
+       OUR TEAM
+       ═══════════════════════════════════════ */
+    .team-statement {
+      padding: var(--space-5xl) 0;
     }
 
-    .vdb-labs__image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .team-statement__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      text-align: center;
     }
 
-    .vdb-labs__image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #1a3a2a, #2d5a3e);
-      opacity: 0.2;
-      border-radius: 16px;
+    .team-statement__inner h2 {
+      color: white;
+      margin-top: var(--space-sm);
+      margin-bottom: var(--space-xl);
+    }
+
+    .team-statement__inner p {
+      font-size: 1.1rem;
+      color: var(--slate-300);
+      line-height: 1.75;
     }
 
     /* ═══════════════════════════════════════
@@ -889,8 +892,8 @@
       .who-we-are__inner { grid-template-columns: 1fr; }
       .who-we-are__image { max-width: 600px; }
       .awards-grid { grid-template-columns: repeat(2, 1fr); }
-      .vdb-labs__inner { grid-template-columns: 1fr; }
-      .vdb-labs__image { max-width: 600px; }
+      .founder__inner { grid-template-columns: 1fr; }
+      .founder__image-col { position: static; max-width: 400px; }
       .uk-presence__inner { grid-template-columns: 1fr; }
       .company-card { position: static; }
       .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
@@ -899,7 +902,7 @@
     @media (max-width: 768px) {
       .header__links { display: none; }
       .awards-grid { grid-template-columns: 1fr 1fr; }
-      .vdb-labs__stats { flex-direction: column; gap: var(--space-lg); }
+      .founder__stats { flex-direction: column; gap: var(--space-lg); }
       .footer__top { grid-template-columns: 1fr; }
       .page-hero { min-height: 35vh; }
       .page-hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
@@ -965,6 +968,8 @@
     .page-hero,
     .track-record,
     .award-card,
+    .founder,
+    .team-statement,
     .footer {
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
@@ -1094,13 +1099,30 @@
       color: var(--slate-900);
     }
 
-    /* --- NPK Recovery --- */
-    [data-theme="light"] .vdb-labs {
+    /* --- Founder & Director --- */
+    [data-theme="light"] .founder {
       background: white;
     }
 
-    [data-theme="light"] .vdb-labs__stats {
+    [data-theme="light"] .founder__text h2 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .founder__stats {
       border-top-color: var(--slate-200);
+    }
+
+    /* --- Our Team --- */
+    [data-theme="light"] .team-statement {
+      background: var(--stone-100);
+    }
+
+    [data-theme="light"] .team-statement__inner h2 {
+      color: var(--slate-900);
+    }
+
+    [data-theme="light"] .team-statement__inner p {
+      color: var(--slate-600);
     }
 
     /* --- UK presence / Company details --- */
@@ -1260,8 +1282,8 @@
       </h1>
 
       <p class="page-hero__subtitle animate-in animate-in--delay-2">
-        <span data-en>Programme delivery and innovation consultancy working across the UK since 2019.</span>
-        <span data-cy>Ymgynghoriaeth cyflawni rhaglenni ac arloesi sy'n gweithio ledled y DU ers 2019.</span>
+        <span data-en>Multidisciplinary consultancy delivering complex programmes across the UK.</span>
+        <span data-cy>Ymgynghoriaeth amlddisgyblaeth sy'n cyflawni rhaglenni cymhleth ledled y DU.</span>
       </p>
     </div>
   </section>
@@ -1277,15 +1299,15 @@
           <span data-cy>Pwy ydym ni</span>
         </span>
         <h2>
-          <span data-en>Programme delivery and innovation — idea to impact</span>
-          <span data-cy>Cyflawni rhaglenni ac arloesi — o syniad i effaith</span>
+          <span data-en>Whatever the challenge, we deliver it</span>
+          <span data-cy>Beth bynnag yw'r her, rydym yn ei chyflawni</span>
         </h2>
 
-        <p data-en-block>VDB (VandenberghUK Ltd) is an innovation consultancy working across the UK. Founded by Hannah Van Den Bergh in 2019, we've grown from a one-person consultancy to a team that has unlocked over &pound;255 million for UK R&amp;D projects.</p>
-        <p data-cy-block>VDB (VandenberghUK Ltd) yw ymgynghoriaeth arloesi sy'n gweithio ledled y DU. Wedi'i sefydlu gan Hannah Van Den Bergh yn 2019, rydym wedi tyfu o ymgynghoriaeth un person i d&icirc;m sydd wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau ymchwil a datblygu'r DU.</p>
+        <p data-en-block>VDB is a multidisciplinary consultancy that spans research, funding strategy, science and engineering, ESG, and programme delivery. We don't specialise in one discipline &mdash; we assemble the right team for each brief and deliver the outcome.</p>
+        <p data-cy-block>Mae VDB yn ymgynghoriaeth amlddisgyblaeth sy'n cwmpasu ymchwil, strategaeth gyllido, gwyddoniaeth a pheirianneg, ESG, a chyflawni rhaglenni. Nid un ddisgyblaeth yw ein harbenigedd &mdash; rydym yn cydosod y t&icirc;m cywir ar gyfer pob briff ac yn cyflawni'r canlyniad.</p>
 
-        <p data-en-block>We work across the full innovation lifecycle &mdash; from validating an early-stage idea through primary research, to building the consortium and securing funding, to delivering the science and engineering that turns concepts into real-world outcomes.</p>
-        <p data-cy-block>Rydym yn gweithio ar draws cylch bywyd arloesi llawn &mdash; o ddilysu syniad cam cynnar trwy ymchwil gynradd, i adeiladu consortiwm a sicrhau cyllid, i gyflawni'r wyddoniaeth a'r peirianneg sy'n troi cysyniadau yn ganlyniadau byd go iawn.</p>
+        <p data-en-block>Our work crosses cleantech, healthtech, fintech, government, and the cultural sector. We've unlocked over &pound;255 million for UK R&amp;D projects, partnering with organisations from Imperial College London and the University of Cambridge to Defra and Innovate UK.</p>
+        <p data-cy-block>Mae ein gwaith yn croesi technoleg l&acirc;n, technoleg iechyd, technoleg ariannol, llywodraeth, a'r sector diwylliannol. Rydym wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau ymchwil a datblygu'r DU, gan weithio gyda sefydliadau o Goleg Imperial Llundain a Phrifysgol Caergrawnt i Defra ac Innovate UK.</p>
       </div>
 
       <div class="who-we-are__image">
@@ -1371,52 +1393,70 @@
   </section>
 
   <!-- ═══════════════════════════════════════
-       NPK RECOVERY
+       FOUNDER & DIRECTOR
        ═══════════════════════════════════════ -->
-  <section class="vdb-labs reveal">
-    <div class="vdb-labs__inner">
-      <div class="vdb-labs__text">
-        <div class="vdb-labs__badge">
-          <span data-en>Spin-out</span>
-          <span data-cy>Cwmni deillio</span>
-        </div>
+  <section class="founder reveal">
+    <div class="founder__inner">
+      <div class="founder__image-col">
+        <img src="/images/hannah-blouse.jpg" alt="Hannah Van Den Bergh — Founder and Director of VDB" data-alt-en="Hannah Van Den Bergh — Founder and Director of VDB" data-alt-cy="Hannah Van Den Bergh — Sylfaenydd a Chyfarwyddwr VDB" width="896" height="1195" loading="lazy" decoding="async">
+      </div>
+      <div class="founder__text">
         <span class="label label--red">
-          <span data-en>Our first venture</span>
-          <span data-cy>Ein menter gyntaf</span>
+          <span data-en>Founder &amp; Director</span>
+          <span data-cy>Sylfaenydd a Chyfarwyddwr</span>
         </span>
-        <h2>NPK Recovery</h2>
+        <h2>Hannah Van Den Bergh</h2>
 
-        <p data-en-block>In 2023, we created our first spin-out &mdash; NPK Recovery &mdash; to develop sustainable bio-fertiliser from human waste. With 8 scientists and engineers and over &pound;2m in grant funding, NPK Recovery is proof that our model works: validate, develop, build.</p>
-        <p data-cy-block>Yn 2023, cr&euml;wyd ein cwmni deillio cyntaf &mdash; NPK Recovery &mdash; i ddatblygu bio-wrtaith cynaliadwy o wastraff dynol. Gydag 8 gwyddonydd a pheiriannydd a dros &pound;2m o gyllid grant, mae NPK Recovery yn brawf bod ein model yn gweithio: dilysu, datblygu, adeiladu.</p>
+        <p data-en-block>Hannah leads VDB across its full breadth of delivery &mdash; from research strategy and funding architecture to science programmes and ESG advisory. Her work sits at the intersection of policy, academia, and industry, drawing on experience that spans sustainability research at the University of Cambridge, climate policy work with the UNFCCC, and financial-services consulting.</p>
+        <p data-cy-block>Mae Hannah yn arwain VDB ar draws ei holl ehangder cyflawni &mdash; o strategaeth ymchwil a phensaern&iuml;aeth gyllido i raglenni gwyddoniaeth a chynghori ESG. Mae ei gwaith yn eistedd ar y croestoriad rhwng polisi, academia, a diwydiant, gan dynnu ar brofiad sy'n rhychwantu ymchwil cynaliadwyedd ym Mhrifysgol Caergrawnt, gwaith polisi hinsawdd gyda'r UNFCCC, a ymgynghori gwasanaethau ariannol.</p>
 
-        <div class="vdb-labs__stats">
-          <div>
-            <div class="vdb-labs__stat-number">8</div>
-            <div class="vdb-labs__stat-label">
-              <span data-en>Scientists &amp; engineers</span>
-              <span data-cy>Gwyddonwyr a pheirianwyr</span>
+        <p data-en-block>She has designed programmes for organisations including Arts Council Wales, Julie's Bicycle, and C40, and built cross-sector partnerships that have earned recognition from the Earthshot Prize, Terra Carta, Dyson, and Forbes. Today she directs a consultancy that has unlocked over &pound;255 million for UK R&amp;D projects.</p>
+        <p data-cy-block>Mae hi wedi dylunio rhaglenni ar gyfer sefydliadau gan gynnwys Cyngor Celfyddydau Cymru, Julie's Bicycle, a C40, ac wedi adeiladu partneriaethau traws-sector sydd wedi ennill cydnabyddiaeth gan Wobr Earthshot, Terra Carta, Dyson, a Forbes. Heddiw mae'n cyfarwyddo ymgynghoriaeth sydd wedi datgloi dros &pound;255 miliwn ar gyfer prosiectau ymchwil a datblygu'r DU.</p>
+
+        <div class="founder__stats">
+          <div class="founder__stat">
+            <div class="founder__stat-number">&pound;255m+</div>
+            <div class="founder__stat-label">
+              <span data-en>Unlocked for UK R&amp;D</span>
+              <span data-cy>Wedi'i ddatgloi ar gyfer ymchwil a datblygu'r DU</span>
             </div>
           </div>
-          <div>
-            <div class="vdb-labs__stat-number">&pound;2m+</div>
-            <div class="vdb-labs__stat-label">
-              <span data-en>Grant funding secured</span>
-              <span data-cy>Cyllid grant wedi'i sicrhau</span>
+          <div class="founder__stat">
+            <div class="founder__stat-number">UK-wide</div>
+            <div class="founder__stat-label">
+              <span data-en>Research, government &amp; industry</span>
+              <span data-cy>Ymchwil, llywodraeth a diwydiant</span>
             </div>
           </div>
-          <div>
-            <div class="vdb-labs__stat-number">2023</div>
-            <div class="vdb-labs__stat-label">
-              <span data-en>Year founded</span>
-              <span data-cy>Blwyddyn sefydlu</span>
+          <div class="founder__stat">
+            <div class="founder__stat-number">4</div>
+            <div class="founder__stat-label">
+              <span data-en>Major awards &amp; recognitions</span>
+              <span data-cy>Gwobrau a chydnabyddiaethau mawr</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="vdb-labs__image">
-        <img src="/images/vdb-photo-2.jpg" alt="Laboratory glassware with green solutions — NPK Recovery chemical recycling research" data-alt-en="Laboratory glassware with green solutions — NPK Recovery chemical recycling research" data-alt-cy="Gwydrau labordy gyda hydoddiannau gwyrdd — ymchwil ailgylchu cemegol NPK Recovery">
-      </div>
+  <!-- ═══════════════════════════════════════
+       OUR TEAM
+       ═══════════════════════════════════════ -->
+  <section class="team-statement section--dark reveal">
+    <div class="team-statement__inner">
+      <span class="label label--gold">
+        <span data-en>Our team</span>
+        <span data-cy>Ein t&icirc;m</span>
+      </span>
+      <h2>
+        <span data-en>The right expertise for every brief</span>
+        <span data-cy>Yr arbenigedd cywir ar gyfer pob briff</span>
+      </h2>
+      <p>
+        <span data-en>VDB draws on a network of researchers, scientists, engineers, programme managers, and funding strategists. We build each project team around the brief &mdash; matching discipline, sector knowledge, and delivery experience to the challenge at hand.</span>
+        <span data-cy>Mae VDB yn tynnu ar rwydwaith o ymchwilwyr, gwyddonwyr, peirianwyr, rheolwyr rhaglenni, a strategwyr cyllido. Rydym yn adeiladu pob t&icirc;m prosiect o amgylch y briff &mdash; gan gyfateb disgyblaeth, gwybodaeth sector, a phrofiad cyflawni i'r her dan sylw.</span>
+      </p>
     </div>
   </section>
 
@@ -1452,25 +1492,15 @@
           <span class="company-card__value">VandenberghUK Ltd</span>
         </div>
         <div class="company-card__row">
-          <span class="company-card__label">Companies House</span>
-          <span class="company-card__value">#12296613</span>
-        </div>
-        <div class="company-card__row">
-          <span class="company-card__label">
-            <span data-en>Founded</span>
-            <span data-cy>Sefydlwyd</span>
-          </span>
-          <span class="company-card__value">
-            <span data-en>November 2019</span>
-            <span data-cy>Tachwedd 2019</span>
-          </span>
-        </div>
-        <div class="company-card__row">
           <span class="company-card__label">
             <span data-en>Director</span>
             <span data-cy>Cyfarwyddwr</span>
           </span>
           <span class="company-card__value">Hannah Van Den Bergh</span>
+        </div>
+        <div class="company-card__row">
+          <span class="company-card__label">Companies House</span>
+          <span class="company-card__value">#12296613</span>
         </div>
         <div class="company-card__row">
           <span class="company-card__label">
@@ -1480,6 +1510,16 @@
           <span class="company-card__value">
             <span data-en>United Kingdom</span>
             <span data-cy>Y Deyrnas Unedig</span>
+          </span>
+        </div>
+        <div class="company-card__row">
+          <span class="company-card__label">
+            <span data-en>Incorporated</span>
+            <span data-cy>Ymgorfforwyd</span>
+          </span>
+          <span class="company-card__value">
+            <span data-en>November 2019</span>
+            <span data-cy>Tachwedd 2019</span>
           </span>
         </div>
       </aside>
