@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-title-en="Devolved Funding Architecture — Case Study — VDB UK" data-title-cy="Pensaern&iuml;aeth Cyllido Datganoledig — Astudiaeth Achos — VDB UK">Devolved Funding Architecture — Case Study — VDB UK</title>
-  <meta name="description" content="How VDB UK helped Wales navigate complex devolved funding landscapes, advising government and the cultural sector on European funding opportunities." data-content-en="How VDB UK helped Wales navigate complex devolved funding landscapes, advising government and the cultural sector on European funding opportunities." data-content-cy="Sut y helpodd VDB UK Cymru i lywio tirweddau cyllido datganoledig cymhleth, gan gynghori'r llywodraeth a'r sector diwylliannol ar gyfleoedd cyllido Ewropeaidd.">
+  <title data-title-en="Devolved Political Campaigns — Case Study — VDB UK" data-title-cy="Ymgyrchoedd Gwleidyddol Datganoledig — Astudiaeth Achos — VDB UK">Devolved Political Campaigns — Case Study — VDB UK</title>
+  <meta name="description" content="How Hannah Van Den Bergh delivered hands-on political campaign operations across Wales, supporting the Women's Equality Party and the Stronger In / Remain campaign." data-content-en="How Hannah Van Den Bergh delivered hands-on political campaign operations across Wales, supporting the Women's Equality Party and the Stronger In / Remain campaign." data-content-cy="Sut y cyflawnodd Hannah Van Den Bergh weithrediadau ymgyrchoedd gwleidyddol ymarferol ledled Cymru, gan gefnogi Plaid Cydraddoldeb Menywod a'r ymgyrch Stronger In / Remain.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -22,6 +22,7 @@
       --slate-800: #252838;
       --slate-700: #363a4d;
       --slate-600: #4a4f66;
+      --slate-500: #5d6380;
       --slate-400: #8b91a8;
       --slate-300: #b0b5c8;
       --slate-200: #d4d7e3;
@@ -289,6 +290,17 @@
       color: white;
     }
 
+    .btn--white {
+      background: white;
+      color: var(--red-700);
+    }
+
+    .btn--white:hover {
+      background: var(--stone-50);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
     .btn__arrow {
       transition: transform 0.2s;
     }
@@ -313,7 +325,7 @@
     .cs-hero__bg {
       position: absolute;
       inset: 0;
-      background-image: url('/images/casestudy-wales-senedd.jpg');
+      background-image: url('/images/vdb-photo-3.jpg');
       background-size: cover;
       background-position: center;
       opacity: 0.35;
@@ -462,6 +474,22 @@
 
     .cs-context__text p + p {
       margin-top: var(--space-lg);
+    }
+
+    /* Provenance note styling */
+    .cs-provenance {
+      margin-top: var(--space-xl);
+      padding: var(--space-lg) var(--space-xl);
+      background: rgba(212, 160, 23, 0.08);
+      border-left: 3px solid var(--gold-500);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--slate-600);
+    }
+
+    [data-theme="light"] .cs-provenance {
+      background: rgba(212, 160, 23, 0.06);
     }
 
     /* ═══════════════════════════════════════
@@ -822,17 +850,6 @@
       margin: 0 auto var(--space-2xl);
     }
 
-    .btn--white {
-      background: white;
-      color: var(--red-700);
-    }
-
-    .btn--white:hover {
-      background: var(--stone-50);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
     /* ═══════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════ */
@@ -1159,7 +1176,6 @@
       <nav class="header__nav">
         <ul class="header__links">
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
-
           <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
           <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
         </ul>
@@ -1200,7 +1216,7 @@
         <span class="breadcrumb__sep">/</span>
         <a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a>
         <span class="breadcrumb__sep">/</span>
-        <span><span data-en>Devolved Funding Architecture</span><span data-cy>Pensaern&iuml;aeth Cyllido Datganoledig</span></span>
+        <span><span data-en>Devolved Political Campaigns</span><span data-cy>Ymgyrchoedd Gwleidyddol Datganoledig</span></span>
       </nav>
 
       <div class="cs-hero__badge animate-in animate-in--delay-1">
@@ -1209,27 +1225,27 @@
       </div>
 
       <h1 class="animate-in animate-in--delay-2">
-        <span data-en>Understanding and Navigating the Funding Architecture of a Devolved Economy</span>
-        <span data-cy>Deall a Llywio Pensaern&iuml;aeth Cyllido Economi Ddatganoledig</span>
+        <span data-en>Devolved Political Campaign Operations in Wales</span>
+        <span data-cy>Gweithrediadau Ymgyrchoedd Gwleidyddol Datganoledig yng Nghymru</span>
       </h1>
 
       <p class="cs-hero__subtitle animate-in animate-in--delay-3">
-        <span data-en>Helping Wales engage strategically with complex European funding landscapes across culture, education, and public policy.</span>
-        <span data-cy>Helpu Cymru i ymgysylltu'n strategol &acirc; thirweddau cyllido Ewropeaidd cymhleth ar draws diwylliant, addysg, a pholisi cyhoeddus.</span>
+        <span data-en>Hands-on organisation, mobilisation, and bilingual delivery for Welsh political campaigns during a period of exceptional democratic intensity.</span>
+        <span data-cy>Trefnu ymarferol, symbylu, a chyflawni dwyieithog ar gyfer ymgyrchoedd gwleidyddol yng Nghymru yn ystod cyfnod o ddwyster democrataidd eithriadol.</span>
       </p>
 
       <div class="cs-hero__meta animate-in animate-in--delay-4">
         <div class="cs-meta">
-          <span class="cs-meta__label"><span data-en>Client</span><span data-cy>Cleient</span></span>
-          <span class="cs-meta__value">Arts Council of Wales / Wales Arts International</span>
+          <span class="cs-meta__label"><span data-en>Context</span><span data-cy>Cyd-destun</span></span>
+          <span class="cs-meta__value"><span data-en>Personal / Advisory Capacity</span><span data-cy>Capasiti Personol / Cynghorol</span></span>
         </div>
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Sector</span><span data-cy>Sector</span></span>
-          <span class="cs-meta__value"><span data-en>Culture &amp; Public Policy</span><span data-cy>Diwylliant a Pholisi Cyhoeddus</span></span>
+          <span class="cs-meta__value"><span data-en>Politics &amp; Devolved Democracy</span><span data-cy>Gwleidyddiaeth a Democratiaeth Ddatganoledig</span></span>
         </div>
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></span>
-          <span class="cs-meta__value"><span data-en>Funding &amp; Grant Strategy, Programme Management</span><span data-cy>Strategaeth Cyllido a Grantiau, Rheoli Rhaglenni</span></span>
+          <span class="cs-meta__value"><span data-en>Secretariat, Mobilisation, Bilingual Delivery</span><span data-cy>Ysgrifenyddiaeth, Symbylu, Cyflawni Dwyieithog</span></span>
         </div>
       </div>
     </div>
@@ -1246,16 +1262,21 @@
       </div>
 
       <h2>
-        <span data-en>Where culture, policy, and funding intersect</span>
-        <span data-cy>Lle mae diwylliant, polisi, a chyllid yn croestorri</span>
+        <span data-en>Campaigning in a devolved political landscape</span>
+        <span data-cy>Ymgyrchu mewn tirwedd wleidyddol ddatganoledig</span>
       </h2>
 
       <div class="cs-context__text">
-        <p data-en-block>Working with Arts Council of Wales through Wales Arts International, our team operated at the intersection of culture, public policy, and international funding. In a devolved nation, cultural funding is rarely straightforward: opportunities sit across different layers of government, public bodies, local authorities, and international schemes &mdash; each with their own priorities, rules, and timelines.</p>
-        <p data-cy-block>Gan weithio gyda Chyngor Celfyddydau Cymru trwy Gelfyddydau Rhyngwladol Cymru, roedd ein t&icirc;m yn gweithredu ar groesffordd diwylliant, polisi cyhoeddus, a chyllid rhyngwladol. Mewn cenedl ddatganoledig, anaml y mae cyllid diwylliannol yn syml: mae cyfleoedd yn eistedd ar draws gwahanol haenau o lywodraeth, cyrff cyhoeddus, awdurdodau lleol, a chynlluniau rhyngwladol &mdash; pob un &acirc;'u blaenoriaethau, rheolau, ac amserlenni eu hunain.</p>
+        <p data-en-block>Wales in 2015&ndash;2016 saw an unusually concentrated period of democratic activity. The Women's Equality Party was preparing for its inaugural Senedd election campaign, and the EU referendum mobilised cross-party groups across the country. Both required disciplined campaign operations delivered bilingually, at speed, and across multiple locations in Wales.</p>
+        <p data-cy-block>Gwelodd Cymru yn 2015&ndash;2016 gyfnod o weithgarwch democrataidd anghyffredin o ganoledig. Roedd Plaid Cydraddoldeb Menywod yn paratoi ar gyfer ei hymgyrch etholiadol gyntaf i'r Senedd, ac roedd refferendwm yr UE yn symbylu grwpiau trawsbleidiol ar draws y wlad. Roedd y ddau'n gofyn am weithrediadau ymgyrchu disgyblaethol a gyflawnwyd yn ddwyieithog, ar frys, ac ar draws sawl lleoliad yng Nghymru.</p>
 
-        <p data-en-block>Our focus was on making that landscape legible and usable. We advised government, local authorities, and the wider cultural sector on how to understand and engage with European funding opportunities in ways that were both strategic and practical.</p>
-        <p data-cy-block>Roedd ein ffocws ar wneud y dirwedd honno'n ddarllenadwy ac yn ddefnyddiadwy. Buom yn cynghori'r llywodraeth, awdurdodau lleol, a'r sector diwylliannol ehangach ar sut i ddeall ac ymgysylltu &acirc; chyfleoedd cyllido Ewropeaidd mewn ffyrdd a oedd yn strategol ac yn ymarferol.</p>
+        <p data-en-block>The challenge was not ideological &mdash; it was operational. These campaigns needed someone who could organise logistics, coordinate volunteers, manage candidate schedules, produce bilingual materials, and keep activity running consistently on the ground across Wales.</p>
+        <p data-cy-block>Nid her ideolegol oedd hon &mdash; un weithredol ydoedd. Roedd angen rhywun ar yr ymgyrchoedd hyn a allai drefnu logisteg, cydlynu gwirfoddolwyr, rheoli amserlenni ymgeiswyr, cynhyrchu deunyddiau dwyieithog, a chadw gweithgarwch i redeg yn gyson ar lawr gwlad ledled Cymru.</p>
+      </div>
+
+      <div class="cs-provenance">
+        <p data-en-block><strong>Provenance note:</strong> This work was undertaken by Hannah Van Den Bergh in a personal and advisory capacity, prior to the founding of VDB UK. It is included here because the operational and organisational skills demonstrated are directly relevant to the programme delivery and secretariat capabilities that VDB UK offers today.</p>
+        <p data-cy-block><strong>Nodyn tarddiad:</strong> Gwnaethpwyd y gwaith hwn gan Hannah Van Den Bergh mewn capasiti personol a chynghorol, cyn sefydlu VDB UK. Fe'i cynhwysir yma oherwydd bod y sgiliau gweithredol a threfniadol a ddangoswyd yn uniongyrchol berthnasol i'r galluoedd cyflawni rhaglenni ac ysgrifenyddiaeth y mae VDB UK yn eu cynnig heddiw.</p>
       </div>
     </div>
   </section>
@@ -1272,21 +1293,21 @@
         </div>
 
         <h2>
-          <span data-en>Making funding frameworks work for Wales</span>
-          <span data-cy>Gwneud fframweithiau cyllido weithio i Gymru</span>
+          <span data-en>Keeping political campaigns organised and visible on the ground</span>
+          <span data-cy>Cadw ymgyrchoedd gwleidyddol yn drefnus ac yn weladwy ar lawr gwlad</span>
         </h2>
 
-        <p data-en-block>To help Wales navigate a complex devolved funding environment and make better use of major European cultural and education funding schemes.</p>
-        <p data-cy-block>Helpu Cymru i lywio amgylchedd cyllido datganoledig cymhleth a gwneud gwell defnydd o gynlluniau cyllido diwylliannol ac addysgol Ewropeaidd mawr.</p>
+        <p data-en-block>To provide the operational backbone for two distinct political campaigns in Wales &mdash; ensuring that candidate support, event logistics, volunteer coordination, and bilingual public engagement were delivered reliably and at scale.</p>
+        <p data-cy-block>Darparu asgwrn cefn gweithredol ar gyfer dwy ymgyrch wleidyddol wahanol yng Nghymru &mdash; gan sicrhau bod cymorth i ymgeiswyr, logisteg digwyddiadau, cydlynu gwirfoddolwyr, ac ymgysylltiad cyhoeddus dwyieithog yn cael eu cyflawni'n ddibynadwy ac ar raddfa.</p>
 
-        <p data-en-block>This meant translating policy and funding frameworks into real opportunities for public bodies and the arts sector, while strengthening the relationships needed to support future collaboration, investment, and cultural ambition.</p>
-        <p data-cy-block>Roedd hyn yn golygu trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau, gan gryfhau'r perthnasoedd sydd eu hangen i gefnogi cydweithio, buddsoddiad, ac uchelgais ddiwylliannol yn y dyfodol.</p>
+        <p data-en-block>This meant translating political ambition into practical, day-to-day campaign infrastructure: schedules that worked, materials that arrived on time, events that ran smoothly, and a consistent presence across Welsh communities.</p>
+        <p data-cy-block>Roedd hyn yn golygu trosi uchelgais wleidyddol yn seilwaith ymgyrchu ymarferol, beunyddiol: amserlenni a oedd yn gweithio, deunyddiau a gyrhaeddodd ar amser, digwyddiadau a redodd yn esmwyth, a phresenoldeb cyson ar draws cymunedau Cymreig.</p>
       </div>
 
       <div class="cs-objective__highlight">
         <p>
-          <span data-en>Translating policy and funding frameworks into real opportunities for public bodies and the arts sector.</span>
-          <span data-cy>Trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau.</span>
+          <span data-en>Translating political ambition into practical, day-to-day campaign infrastructure that could operate bilingually across Wales.</span>
+          <span data-cy>Trosi uchelgais wleidyddol yn seilwaith ymgyrchu ymarferol, beunyddiol a allai weithredu'n ddwyieithog ledled Cymru.</span>
         </p>
       </div>
     </div>
@@ -1303,8 +1324,8 @@
           <span data-cy>Beth Wnaethon Ni Gyflawni</span>
         </div>
         <h2>
-          <span data-en>Strategic advice at every level</span>
-          <span data-cy>Cyngor strategol ar bob lefel</span>
+          <span data-en>Hands-on campaign operations across Wales</span>
+          <span data-cy>Gweithrediadau ymgyrchu ymarferol ledled Cymru</span>
         </h2>
       </div>
 
@@ -1312,60 +1333,48 @@
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">01</div>
           <h3>
-            <span data-en>Ministerial &amp; Government Advice</span>
-            <span data-cy>Cyngor Gweinidogol a Llywodraeth</span>
+            <span data-en>Women's Equality Party Secretariat</span>
+            <span data-cy>Ysgrifenyddiaeth Plaid Cydraddoldeb Menywod</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Formal advice to ministers, government officials, local authorities, and sector leaders on European funding opportunities &mdash; translating complex policy into clear, actionable guidance.</span>
-            <span data-cy>Cyngor ffurfiol i weinidogion, swyddogion llywodraeth, awdurdodau lleol, ac arweinwyr sector ar gyfleoedd cyllido Ewropeaidd &mdash; trosi polisi cymhleth yn ganllawiau clir a gweithredadwy.</span>
+            <span data-en>Acted as secretariat during the party's inaugural Senedd campaign period, supporting candidates with diary management, event organisation, scheduling, and campaign coordination across Wales.</span>
+            <span data-cy>Gweithredu fel ysgrifenyddiaeth yn ystod cyfnod ymgyrch gyntaf y blaid ar gyfer y Senedd, gan gefnogi ymgeiswyr gyda rheoli dyddiadur, trefnu digwyddiadau, amserlennu, a chydlynu ymgyrchoedd ledled Cymru.</span>
           </p>
         </div>
 
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">02</div>
           <h3>
-            <span data-en>Erasmus+ &amp; Creative Europe Strategy</span>
-            <span data-cy>Strategaeth Erasmus+ a Creative Europe</span>
+            <span data-en>Cross-Party Remain Mobilisation</span>
+            <span data-cy>Symbylu Trawsbleidiol dros Aros</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Strategic guidance on major European schemes including Erasmus+ and Creative Europe, helping organisations understand eligibility, alignment, and positioning within these frameworks.</span>
-            <span data-cy>Arweiniad strategol ar gynlluniau Ewropeaidd mawr gan gynnwys Erasmus+ a Creative Europe, gan helpu sefydliadau i ddeall cymhwysedd, aliniad, a lleoliad o fewn y fframweithiau hyn.</span>
+            <span data-en>Supported a bipartisan group of Welsh MPs during the EU referendum campaign, helping organise local mobilisation, volunteer activity, and public-facing campaign operations across constituencies.</span>
+            <span data-cy>Cefnogi gr&#373;p trawsbleidiol o ASau Cymreig yn ystod ymgyrch refferendwm yr UE, gan helpu i drefnu symbylu lleol, gweithgarwch gwirfoddolwyr, a gweithrediadau ymgyrchu cyhoeddus ar draws etholaethau.</span>
           </p>
         </div>
 
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">03</div>
           <h3>
-            <span data-en>International Relationship Brokering</span>
-            <span data-cy>Broceriaeth Perthnasoedd Rhyngwladol</span>
+            <span data-en>Event Logistics &amp; Ground Campaigns</span>
+            <span data-cy>Logisteg Digwyddiadau ac Ymgyrchoedd ar Lawr Gwlad</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Building connections between Wales and international partners, including collaborations across Celtic and minority-language nations such as Scotland, Cornwall, and the Basque Country.</span>
-            <span data-cy>Adeiladu cysylltiadau rhwng Cymru a phartneriaid rhyngwladol, gan gynnwys cydweithrediadau ar draws cenhedloedd Celtaidd ac ieithoedd lleiafrifol fel yr Alban, Cernyw, a Gwlad y Basg.</span>
-          </p>
-        </div>
-
-        <div class="cs-deliverable">
-          <div class="cs-deliverable__number">04</div>
-          <h3>
-            <span data-en>Place-Based Cultural Ambitions</span>
-            <span data-cy>Uchelgeisiau Diwylliannol Seiliedig ar Le</span>
-          </h3>
-          <p class="cs-deliverable__text">
-            <span data-en>Support for major place-based cultural ambitions, including work connected to Cardiff and Swansea City of Culture bids &mdash; connecting local aspiration with international funding routes.</span>
-            <span data-cy>Cefnogaeth i uchelgeisiau diwylliannol mawr seiliedig ar le, gan gynnwys gwaith yn gysylltiedig &acirc; cheisiadau Dinas Diwylliant Caerdydd ac Abertawe &mdash; cysylltu dyhead lleol &acirc; llwybrau cyllido rhyngwladol.</span>
+            <span data-en>Coordinated hustings, town-centre stands, and ground campaigns &mdash; managing venues, timetables, and the practical details that keep public-facing political activity running smoothly.</span>
+            <span data-cy>Cydlynu hustings, stondinau canol tref, ac ymgyrchoedd ar lawr gwlad &mdash; rheoli lleoliadau, amserlenni, a'r manylion ymarferol sy'n cadw gweithgarwch gwleidyddol cyhoeddus i redeg yn esmwyth.</span>
           </p>
         </div>
 
         <div class="cs-deliverable cs-deliverable--wide">
-          <div class="cs-deliverable__number">05</div>
+          <div class="cs-deliverable__number">04</div>
           <h3>
-            <span data-en>Cross-Sector Funding Interpretation</span>
-            <span data-cy>Dehongliad Cyllido Traws-sector</span>
+            <span data-en>Bilingual Materials &amp; Campaign Merchandise</span>
+            <span data-cy>Deunyddiau Dwyieithog a Nwyddau Ymgyrchu</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Cross-sector interpretation of funding policy, helping organisations understand how to position their projects within a wider public funding architecture &mdash; bridging the gap between what's available and what's achievable.</span>
-            <span data-cy>Dehongliad traws-sector o bolisi cyllido, gan helpu sefydliadau i ddeall sut i leoli eu prosiectau o fewn pensaern&iuml;aeth cyllido cyhoeddus ehangach &mdash; pontio'r bwlch rhwng yr hyn sydd ar gael a'r hyn sy'n gyflawnadwy.</span>
+            <span data-en>Produced and distributed bilingual campaign materials, merchandise, and communications so that activity could engage Welsh-speaking and English-speaking communities equally &mdash; a non-negotiable requirement for political work in Wales.</span>
+            <span data-cy>Cynhyrchu a dosbarthu deunyddiau ymgyrchu dwyieithog, nwyddau, a chyfathrebiadau fel y gallai gweithgarwch ymgysylltu &acirc; chymunedau Cymraeg a Saesneg eu hiaith yn gyfartal &mdash; gofyniad na ellir ei drafod ar gyfer gwaith gwleidyddol yng Nghymru.</span>
           </p>
         </div>
       </div>
@@ -1385,25 +1394,25 @@
       </div>
 
       <h2>
-        <span data-en>Funding is about alignment, not just eligibility</span>
-        <span data-cy>Mae cyllid yn ymwneud ag aliniad, nid cymhwysedd yn unig</span>
+        <span data-en>Political campaigns depend on operational discipline</span>
+        <span data-cy>Mae ymgyrchoedd gwleidyddol yn dibynnu ar ddisgyblaeth weithredol</span>
       </h2>
 
       <div class="cs-why__text">
-        <p data-en-block>In a devolved economy, funding is not just about eligibility &mdash; it is about alignment. Organisations need to understand how local priorities, national strategy, and international frameworks connect. Without that understanding, valuable opportunities can be missed, partnerships can remain underdeveloped, and ambitious projects can struggle to find the right route to support.</p>
-        <p data-cy-block>Mewn economi ddatganoledig, nid yw cyllid yn ymwneud &acirc; chymhwysedd yn unig &mdash; mae'n ymwneud ag aliniad. Mae angen i sefydliadau ddeall sut mae blaenoriaethau lleol, strategaeth genedlaethol, a fframweithiau rhyngwladol yn cysylltu. Heb y ddealltwriaeth honno, gall cyfleoedd gwerthfawr gael eu colli, gall partneriaethau aros heb eu datblygu, a gall prosiectau uchelgeisiol ei chael hi'n anodd dod o hyd i'r llwybr cywir i gefnogaeth.</p>
+        <p data-en-block>In a devolved political landscape, campaigns face a distinctive set of operational challenges. Activity must happen bilingually. It must respect the specific dynamics of Welsh constituencies and communities. And it must be coordinated across multiple locations simultaneously, often with limited resources and tight timelines.</p>
+        <p data-cy-block>Mewn tirwedd wleidyddol ddatganoledig, mae ymgyrchoedd yn wynebu set nodedig o heriau gweithredol. Rhaid i weithgarwch ddigwydd yn ddwyieithog. Rhaid iddo barchu deinameg penodol etholaethau a chymunedau Cymreig. A rhaid ei gydlynu ar draws sawl lleoliad ar yr un pryd, yn aml gydag adnoddau cyfyngedig ac amserlenni tynn.</p>
       </div>
 
       <div class="cs-pullquote">
         <p>
-          <span data-en>Connecting policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity.</span>
-          <span data-cy>Cysylltu polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol.</span>
+          <span data-en>The difference between a visible, credible campaign and a disorganised one is almost always operational &mdash; not ideological.</span>
+          <span data-cy>Y gwahaniaeth rhwng ymgyrch weladwy, gredadwy ac un anhrefnus yw bron bob amser yn weithredol &mdash; nid yn ideolegol.</span>
         </p>
       </div>
 
       <div class="cs-why__text">
-        <p data-en-block>Our work bridged that gap. We connected policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity. Just as importantly, we helped people make confident decisions in a landscape that often feels fragmented or opaque.</p>
-        <p data-cy-block>Pontiodd ein gwaith y bwlch hwnnw. Cysylltwyd polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol. Yr un mor bwysig, fe wnaethom helpu pobl i wneud penderfyniadau hyderus mewn tirwedd sy'n aml yn teimlo'n dameidiog neu'n aneglur.</p>
+        <p data-en-block>The difference between a visible, credible campaign and a disorganised one is almost always operational. Someone has to manage the schedules, book the venues, coordinate the volunteers, prepare the materials, and make sure everything arrives where it needs to be. This work demonstrated that disciplined programme management &mdash; the same capability that drives complex funded projects &mdash; is just as critical in political campaign delivery.</p>
+        <p data-cy-block>Y gwahaniaeth rhwng ymgyrch weladwy, gredadwy ac un anhrefnus yw bron bob amser yn weithredol. Rhaid i rywun reoli'r amserlenni, archebu'r lleoliadau, cydlynu'r gwirfoddolwyr, paratoi'r deunyddiau, a sicrhau bod popeth yn cyrraedd lle mae angen iddo fod. Dangosodd y gwaith hwn fod rheoli rhaglenni disgyblaethol &mdash; yr un gallu sy'n gyrru prosiectau cymhleth a ariennir &mdash; yr un mor hanfodol mewn cyflawni ymgyrchoedd gwleidyddol.</p>
       </div>
     </div>
   </section>
@@ -1419,16 +1428,16 @@
       </div>
 
       <h2>
-        <span data-en>From reactive to strategic</span>
-        <span data-cy>O adweithiol i strategol</span>
+        <span data-en>Operational discipline for public-facing campaigns</span>
+        <span data-cy>Disgyblaeth weithredol ar gyfer ymgyrchoedd sy'n wynebu'r cyhoedd</span>
       </h2>
 
       <div class="cs-outcome__text">
-        <p data-en-block>This engagement strengthened Wales' ability to engage strategically with complex funding systems rather than respond to them passively. It improved funding readiness, informed decision-making at multiple levels, and helped create the conditions for stronger cross-border cultural collaboration.</p>
-        <p data-cy-block>Cryfhaodd yr ymgysylltiad hwn allu Cymru i ymgysylltu'n strategol &acirc; systemau cyllido cymhleth yn hytrach nag ymateb iddynt yn oddefol. Gwellodd barodrwydd cyllido, llywiodd wneud penderfyniadau ar sawl lefel, a helpodd greu'r amodau ar gyfer cydweithio diwylliannol trawsffiniol cryfach.</p>
+        <p data-en-block>Campaign activity was coordinated consistently across multiple locations in Wales. Candidates received structured support. Events ran on schedule. Bilingual materials reached communities in both Welsh and English. Cross-party coordination &mdash; often the hardest part of multi-stakeholder political work &mdash; was maintained throughout.</p>
+        <p data-cy-block>Cafodd gweithgarwch ymgyrchu ei gydlynu'n gyson ar draws sawl lleoliad yng Nghymru. Derbyniodd ymgeiswyr gefnogaeth strwythuredig. Rhedodd digwyddiadau ar amser. Cyrhaeddodd deunyddiau dwyieithog gymunedau yn y Gymraeg a'r Saesneg. Cynhaliwyd cydlynu trawsbleidiol &mdash; yn aml y rhan anoddaf o waith gwleidyddol aml-randdeiliad &mdash; drwyddi draw.</p>
 
-        <p data-en-block>The lasting value was not only in individual funding conversations, but in building a clearer, more confident understanding of how a devolved nation can work within a layered international funding environment &mdash; and use that understanding to advance cultural, civic, and strategic goals.</p>
-        <p data-cy-block>Nid yn unig mewn sgyrsiau cyllido unigol yr oedd y gwerth parhaol, ond wrth adeiladu dealltwriaeth gliriach, fwy hyderus o sut y gall cenedl ddatganoledig weithio o fewn amgylchedd cyllido rhyngwladol haenog &mdash; a defnyddio'r ddealltwriaeth honno i hyrwyddo nodau diwylliannol, dinesig, a strategol.</p>
+        <p data-en-block>The lasting value of this experience is the proof that the operational and organisational disciplines needed for political campaign delivery &mdash; secretariat functions, event logistics, bilingual communications, volunteer coordination &mdash; are the same disciplines that underpin effective programme management in any complex, multi-stakeholder environment.</p>
+        <p data-cy-block>Gwerth parhaol y profiad hwn yw'r prawf bod y disgyblaethau gweithredol a threfniadol sydd eu hangen ar gyfer cyflawni ymgyrchoedd gwleidyddol &mdash; swyddogaethau ysgrifenyddiaeth, logisteg digwyddiadau, cyfathrebiadau dwyieithog, cydlynu gwirfoddolwyr &mdash; yr un disgyblaethau sy'n sail i reoli rhaglenni effeithiol mewn unrhyw amgylchedd cymhleth, aml-randdeiliad.</p>
       </div>
 
       <div class="cs-outcome__takeaway">
@@ -1437,8 +1446,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Improved funding readiness across the sector</span>
-            <span data-cy>Gwell parodrwydd cyllido ar draws y sector</span>
+            <span data-en>Consistent campaign activity across Wales</span>
+            <span data-cy>Gweithgarwch ymgyrchu cyson ledled Cymru</span>
           </div>
         </div>
 
@@ -1447,8 +1456,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Stronger cross-border cultural collaboration</span>
-            <span data-cy>Cydweithio diwylliannol trawsffiniol cryfach</span>
+            <span data-en>Bilingual delivery as standard practice</span>
+            <span data-cy>Cyflawni dwyieithog fel arfer safonol</span>
           </div>
         </div>
 
@@ -1457,8 +1466,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Confident decision-making at all levels</span>
-            <span data-cy>Gwneud penderfyniadau hyderus ar bob lefel</span>
+            <span data-en>Cross-party coordination under pressure</span>
+            <span data-cy>Cydlynu trawsbleidiol dan bwysau</span>
           </div>
         </div>
       </div>
@@ -1476,32 +1485,20 @@
           <span data-cy>Galluoedd Cysylltiedig</span>
         </div>
         <h2>
-          <span data-en>How we delivered this</span>
-          <span data-cy>Sut gwnaethon ni gyflawni hyn</span>
+          <span data-en>How this experience applies today</span>
+          <span data-cy>Sut mae'r profiad hwn yn berthnasol heddiw</span>
         </h2>
       </div>
 
       <div class="related__grid">
-        <a href="/capabilities/funding.html" class="related-card">
-          <h3>
-            <span data-en>Funding &amp; Grant Strategy</span>
-            <span data-cy>Strategaeth Cyllido a Grantiau</span>
-          </h3>
-          <p class="related-card__desc">
-            <span data-en>Navigating complex funding landscapes and securing strategic investment.</span>
-            <span data-cy>Llywio tirweddau cyllido cymhleth a sicrhau buddsoddiad strategol.</span>
-          </p>
-          <span class="related-card__arrow">&rarr;</span>
-        </a>
-
         <a href="/capabilities/secretariat.html" class="related-card">
           <h3>
             <span data-en>Secretariat &amp; Programme Management</span>
             <span data-cy>Ysgrifenyddiaeth a Rheoli Rhaglenni</span>
           </h3>
           <p class="related-card__desc">
-            <span data-en>Governance, coordination, and institutional continuity for complex programmes.</span>
-            <span data-cy>Llywodraethu, cydlynu, a pharhad sefydliadol ar gyfer rhaglenni cymhleth.</span>
+            <span data-en>Operational support, scheduling, and moving parts managed under pressure &mdash; the same discipline that kept campaigns running.</span>
+            <span data-cy>Cymorth gweithredol, amserlennu, a rhannau symudol wedi'u rheoli dan bwysau &mdash; yr un ddisgyblaeth a gadwodd ymgyrchoedd i redeg.</span>
           </p>
           <span class="related-card__arrow">&rarr;</span>
         </a>
@@ -1512,8 +1509,20 @@
             <span data-cy>Ymchwil ac Arloesi</span>
           </h3>
           <p class="related-card__desc">
-            <span data-en>Evidence-based insights that inform strategy and unlock opportunity.</span>
-            <span data-cy>Mewnwelediadau seiliedig ar dystiolaeth sy'n llywio strategaeth ac yn datgloi cyfle.</span>
+            <span data-en>Understanding institutions, audiences, and stakeholder dynamics in devolved policy environments.</span>
+            <span data-cy>Deall sefydliadau, cynulleidfaoedd, a deinameg rhanddeiliaid mewn amgylcheddau polisi datganoledig.</span>
+          </p>
+          <span class="related-card__arrow">&rarr;</span>
+        </a>
+
+        <a href="/capabilities/esg.html" class="related-card">
+          <h3>
+            <span data-en>ESG &amp; Sustainability</span>
+            <span data-cy>ESG a Chynaliadwyedd</span>
+          </h3>
+          <p class="related-card__desc">
+            <span data-en>Public engagement, bilingual communications, and stakeholder coordination for values-driven programmes.</span>
+            <span data-cy>Ymgysylltu cyhoeddus, cyfathrebiadau dwyieithog, a chydlynu rhanddeiliaid ar gyfer rhaglenni sy'n cael eu gyrru gan werthoedd.</span>
           </p>
           <span class="related-card__arrow">&rarr;</span>
         </a>
@@ -1528,16 +1537,16 @@
     <div class="cta-banner__pattern"></div>
     <div class="cta-banner__inner">
       <h2>
-        <span data-en>Navigating complex funding landscapes?</span>
-        <span data-cy>Llywio tirweddau cyllido cymhleth?</span>
+        <span data-en>Need disciplined programme delivery?</span>
+        <span data-cy>Angen cyflawni rhaglenni disgyblaethol?</span>
       </h2>
       <p class="cta-banner__desc">
-        <span data-en>We help organisations understand, align, and act on funding opportunities at every level.</span>
-        <span data-cy>Rydym yn helpu sefydliadau i ddeall, alinio, a gweithredu ar gyfleoedd cyllido ar bob lefel.</span>
+        <span data-en>Whether it's campaign operations, multi-stakeholder coordination, or bilingual programme management &mdash; we can help.</span>
+        <span data-cy>P'un a yw'n weithrediadau ymgyrchu, cydlynu aml-randdeiliad, neu reoli rhaglenni dwyieithog &mdash; gallwn helpu.</span>
       </p>
       <a href="/contact.html" class="btn btn--white">
-        <span data-en>Get in touch</span>
-        <span data-cy>Cysylltwch &acirc; ni</span>
+        <span data-en>Discuss your programme</span>
+        <span data-cy>Trafodwch eich rhaglen</span>
         <span class="btn__arrow">&rarr;</span>
       </a>
     </div>
@@ -1575,7 +1584,6 @@
           <h4><span data-en>Company</span><span data-cy>Cwmni</span></h4>
           <ul>
             <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Yngl&#x0177;n &acirc; VDB</span></a></li>
-  
             <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
             <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
           </ul>

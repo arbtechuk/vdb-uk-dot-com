@@ -1,0 +1,79 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "VDB UK Home" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e10]
+  - generic [ref=e39]:
+    - navigation "Breadcrumb" [ref=e40]:
+      - link "Home" [ref=e41] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e42]: /
+      - generic [ref=e43]: About
+    - heading "About VDB" [level=1] [ref=e44]
+    - paragraph [ref=e45]: Multidisciplinary consultancy delivering complex programmes across the UK.
+  - generic [ref=e47]:
+    - generic [ref=e48]:
+      - generic [ref=e49]: Who we are
+      - heading "Whatever the challenge, we deliver it" [level=2] [ref=e50]
+      - paragraph [ref=e51]: VDB is a multidisciplinary consultancy that spans research, funding strategy, science and engineering, ESG, and programme delivery. We don't specialise in one discipline — we assemble the right team for each brief and deliver the outcome.
+      - paragraph [ref=e52]: Our work crosses cleantech, healthtech, fintech, government, and the cultural sector. We've unlocked over £255 million for UK R&D projects, partnering with organisations from Imperial College London and the University of Cambridge to Defra and Innovate UK.
+    - img "The VDB team" [ref=e54]
+  - generic [ref=e57]:
+    - generic [ref=e58]:
+      - generic [ref=e59]: Track record
+      - heading "Recognised at the highest level" [level=2] [ref=e60]
+    - generic [ref=e61]:
+      - generic [ref=e62]
+      - generic [ref=e69]
+      - generic [ref=e75]
+      - generic [ref=e85]
+    - paragraph [ref=e95]:
+      - text: We've partnered with
+      - strong [ref=e96]: Imperial College London
+      - text: ", the"
+      - strong [ref=e97]: University of Cambridge
+      - text: ","
+      - strong [ref=e98]: Defra
+      - text: ","
+      - strong [ref=e99]: Innovate UK
+      - text: ", the"
+      - strong [ref=e100]: Forestry Commission
+      - text: ", and leading UK enterprises like"
+      - strong [ref=e101]: Cranswick
+      - text: .
+  - generic [ref=e103]:
+    - img "Hannah Van Den Bergh — Founder and Director of VDB" [ref=e105]
+    - generic [ref=e106]:
+      - generic [ref=e107]: Founder & Director
+      - heading "Hannah Van Den Bergh" [level=2] [ref=e108]
+      - paragraph [ref=e109]: Hannah leads VDB across its full breadth of delivery — from research strategy and funding architecture to science programmes and ESG advisory. Her work sits at the intersection of policy, academia, and industry, drawing on experience that spans sustainability research at the University of Cambridge, climate policy work with the UNFCCC, and financial-services consulting.
+      - paragraph [ref=e110]: She has designed programmes for organisations including Arts Council Wales, Julie's Bicycle, and C40, and built cross-sector partnerships that have earned recognition from the Earthshot Prize, Terra Carta, Dyson, and Forbes. Today she directs a consultancy that has unlocked over £255 million for UK R&D projects.
+      - generic [ref=e111]
+  - generic [ref=e122]:
+    - generic [ref=e123]: Our team
+    - heading "The right expertise for every brief" [level=2] [ref=e124]
+    - paragraph [ref=e125]: VDB draws on a network of researchers, scientists, engineers, programme managers, and funding strategists. We build each project team around the brief — matching discipline, sector knowledge, and delivery experience to the challenge at hand.
+  - generic [ref=e127]:
+    - generic [ref=e128]:
+      - generic [ref=e129]: Where we work
+      - heading "Working across the UK" [level=2] [ref=e130]
+      - paragraph [ref=e131]: We work with partners across the UK — from universities and research institutes to government bodies and industry innovators — connecting world-class research with the funding and delivery expertise to turn ideas into impact.
+    - complementary [ref=e132]:
+      - heading "Company Details" [level=3] [ref=e133]
+      - generic [ref=e134]
+      - generic [ref=e137]
+      - generic [ref=e140]
+      - generic [ref=e143]
+      - generic [ref=e146]
+  - generic [ref=e151]:
+    - heading "Work with us" [level=2] [ref=e152]
+    - paragraph [ref=e153]: Whether you're exploring a new idea, applying for funding, or need a delivery partner — we'd love to hear from you.
+    - link "Get in touch →" [ref=e154] [cursor=pointer]:
+      - /url: /contact.html
+      - generic [ref=e155]: Get in touch
+      - generic [ref=e156]: →
+  - contentinfo [ref=e157]:
+    - generic [ref=e158]:
+      - generic [ref=e159]
+      - generic [ref=e199]

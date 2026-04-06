@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-title-en="Devolved Funding Architecture — Case Study — VDB UK" data-title-cy="Pensaern&iuml;aeth Cyllido Datganoledig — Astudiaeth Achos — VDB UK">Devolved Funding Architecture — Case Study — VDB UK</title>
-  <meta name="description" content="How VDB UK helped Wales navigate complex devolved funding landscapes, advising government and the cultural sector on European funding opportunities." data-content-en="How VDB UK helped Wales navigate complex devolved funding landscapes, advising government and the cultural sector on European funding opportunities." data-content-cy="Sut y helpodd VDB UK Cymru i lywio tirweddau cyllido datganoledig cymhleth, gan gynghori'r llywodraeth a'r sector diwylliannol ar gyfleoedd cyllido Ewropeaidd.">
+  <title data-title-en="GripAble SqueezAble Programme Delivery — Case Study — VDB UK" data-title-cy="Cyflawni Rhaglen GripAble SqueezAble — Astudiaeth Achos — VDB UK">GripAble SqueezAble Programme Delivery — Case Study — VDB UK</title>
+  <meta name="description" content="How VDB UK delivered programme management for the SqueezAble paediatric rehab device — an £800k Innovate UK-funded collaboration between GripAble, Imperial College London, and NHS partners." data-content-en="How VDB UK delivered programme management for the SqueezAble paediatric rehab device — an £800k Innovate UK-funded collaboration between GripAble, Imperial College London, and NHS partners." data-content-cy="Sut y cyflawnodd VDB UK reoli rhaglenni ar gyfer dyfais adsefydlu pediatrig SqueezAble — cydweithrediad gwerth £800k a ariennir gan Innovate UK rhwng GripAble, Coleg Imperial Llundain, a phartneriaid y GIG.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -289,6 +289,17 @@
       color: white;
     }
 
+    .btn--white {
+      background: white;
+      color: var(--red-700);
+    }
+
+    .btn--white:hover {
+      background: var(--stone-50);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
     .btn__arrow {
       transition: transform 0.2s;
     }
@@ -313,7 +324,7 @@
     .cs-hero__bg {
       position: absolute;
       inset: 0;
-      background-image: url('/images/casestudy-wales-senedd.jpg');
+      background-image: url('/images/project-gripable-device.jpg');
       background-size: cover;
       background-position: center;
       opacity: 0.35;
@@ -709,6 +720,46 @@
       line-height: 1.5;
     }
 
+    /* Metrics row within takeaways */
+    .cs-outcome__metrics {
+      margin-top: var(--space-2xl);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-md);
+    }
+
+    .cs-metric {
+      text-align: center;
+      padding: var(--space-lg) var(--space-sm);
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .cs-metric:hover {
+      border-color: var(--slate-300);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .cs-metric__number {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: var(--space-xs);
+    }
+
+    .cs-metric:nth-child(odd) .cs-metric__number { color: var(--gold-500); }
+    .cs-metric:nth-child(even) .cs-metric__number { color: var(--red-500); }
+
+    .cs-metric__label {
+      font-size: 0.78rem;
+      color: var(--slate-600);
+      line-height: 1.4;
+    }
+
     /* ═══════════════════════════════════════
        RELATED CAPABILITIES
        ═══════════════════════════════════════ */
@@ -822,17 +873,6 @@
       margin: 0 auto var(--space-2xl);
     }
 
-    .btn--white {
-      background: white;
-      color: var(--red-700);
-    }
-
-    .btn--white:hover {
-      background: var(--stone-50);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
     /* ═══════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════ */
@@ -943,6 +983,7 @@
       .cs-deliverables__grid { grid-template-columns: 1fr; }
       .cs-deliverable--wide { grid-column: auto; }
       .cs-outcome__takeaway { grid-template-columns: 1fr; }
+      .cs-outcome__metrics { grid-template-columns: repeat(3, 1fr); }
       .related__grid { grid-template-columns: 1fr; }
       .footer__top { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
     }
@@ -951,12 +992,14 @@
       .header__links { display: none; }
       .cs-hero { min-height: 40vh; }
       .cs-hero__meta { flex-direction: column; gap: var(--space-md); }
+      .cs-outcome__metrics { grid-template-columns: repeat(2, 1fr); }
       .footer__top { grid-template-columns: 1fr; }
       .footer__bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
     }
 
     @media (max-width: 480px) {
       .cs-hero h1 { font-size: 1.8rem; }
+      .cs-outcome__metrics { grid-template-columns: 1fr; }
     }
 
     /* ═══════════════════════════════════════
@@ -1015,6 +1058,7 @@
     .cs-why,
     .cs-outcome,
     .cs-takeaway,
+    .cs-metric,
     .related,
     .related-card,
     .footer {
@@ -1097,6 +1141,7 @@
     /* Outcome */
     [data-theme="light"] .cs-outcome { background: var(--stone-50); }
     [data-theme="light"] .cs-outcome__text { color: var(--slate-700); }
+    [data-theme="light"] .cs-metric { background: white; }
 
     /* Related */
     [data-theme="light"] .related { background: var(--stone-100); }
@@ -1159,7 +1204,6 @@
       <nav class="header__nav">
         <ul class="header__links">
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
-
           <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
           <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
         </ul>
@@ -1200,7 +1244,7 @@
         <span class="breadcrumb__sep">/</span>
         <a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a>
         <span class="breadcrumb__sep">/</span>
-        <span><span data-en>Devolved Funding Architecture</span><span data-cy>Pensaern&iuml;aeth Cyllido Datganoledig</span></span>
+        <span>GripAble</span>
       </nav>
 
       <div class="cs-hero__badge animate-in animate-in--delay-1">
@@ -1209,27 +1253,31 @@
       </div>
 
       <h1 class="animate-in animate-in--delay-2">
-        <span data-en>Understanding and Navigating the Funding Architecture of a Devolved Economy</span>
-        <span data-cy>Deall a Llywio Pensaern&iuml;aeth Cyllido Economi Ddatganoledig</span>
+        <span data-en>Multi-Partner MedTech Programme Delivery for Paediatric Rehabilitation</span>
+        <span data-cy>Cyflawni Rhaglen MedTech Aml-Bartner ar gyfer Adsefydlu Pediatrig</span>
       </h1>
 
       <p class="cs-hero__subtitle animate-in animate-in--delay-3">
-        <span data-en>Helping Wales engage strategically with complex European funding landscapes across culture, education, and public policy.</span>
-        <span data-cy>Helpu Cymru i ymgysylltu'n strategol &acirc; thirweddau cyllido Ewropeaidd cymhleth ar draws diwylliant, addysg, a pholisi cyhoeddus.</span>
+        <span data-en>Coordinating an Innovate UK-funded collaboration between GripAble, Imperial College London, and NHS clinical partners to develop the SqueezAble device for children with cerebral palsy.</span>
+        <span data-cy>Cydlynu cydweithrediad a ariennir gan Innovate UK rhwng GripAble, Coleg Imperial Llundain, a phartneriaid clinigol y GIG i ddatblygu'r ddyfais SqueezAble ar gyfer plant &acirc; pharlys yr ymennydd.</span>
       </p>
 
       <div class="cs-hero__meta animate-in animate-in--delay-4">
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Client</span><span data-cy>Cleient</span></span>
-          <span class="cs-meta__value">Arts Council of Wales / Wales Arts International</span>
+          <span class="cs-meta__value">GripAble Ltd</span>
         </div>
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Sector</span><span data-cy>Sector</span></span>
-          <span class="cs-meta__value"><span data-en>Culture &amp; Public Policy</span><span data-cy>Diwylliant a Pholisi Cyhoeddus</span></span>
+          <span class="cs-meta__value"><span data-en>MedTech &amp; Rehabilitation</span><span data-cy>MedTech ac Adsefydlu</span></span>
         </div>
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></span>
-          <span class="cs-meta__value"><span data-en>Funding &amp; Grant Strategy, Programme Management</span><span data-cy>Strategaeth Cyllido a Grantiau, Rheoli Rhaglenni</span></span>
+          <span class="cs-meta__value"><span data-en>Programme Management, Partner Coordination, Grant Delivery</span><span data-cy>Rheoli Rhaglenni, Cydlynu Partneriaid, Cyflawni Grantiau</span></span>
+        </div>
+        <div class="cs-meta">
+          <span class="cs-meta__label"><span data-en>Funding</span><span data-cy>Cyllid</span></span>
+          <span class="cs-meta__value">&pound;800k Innovate UK BMC</span>
         </div>
       </div>
     </div>
@@ -1246,16 +1294,16 @@
       </div>
 
       <h2>
-        <span data-en>Where culture, policy, and funding intersect</span>
-        <span data-cy>Lle mae diwylliant, polisi, a chyllid yn croestorri</span>
+        <span data-en>An Imperial spinout scaling smart rehabilitation</span>
+        <span data-cy>Cwmni deillio Imperial yn ehangu adsefydlu clyfar</span>
       </h2>
 
       <div class="cs-context__text">
-        <p data-en-block>Working with Arts Council of Wales through Wales Arts International, our team operated at the intersection of culture, public policy, and international funding. In a devolved nation, cultural funding is rarely straightforward: opportunities sit across different layers of government, public bodies, local authorities, and international schemes &mdash; each with their own priorities, rules, and timelines.</p>
-        <p data-cy-block>Gan weithio gyda Chyngor Celfyddydau Cymru trwy Gelfyddydau Rhyngwladol Cymru, roedd ein t&icirc;m yn gweithredu ar groesffordd diwylliant, polisi cyhoeddus, a chyllid rhyngwladol. Mewn cenedl ddatganoledig, anaml y mae cyllid diwylliannol yn syml: mae cyfleoedd yn eistedd ar draws gwahanol haenau o lywodraeth, cyrff cyhoeddus, awdurdodau lleol, a chynlluniau rhyngwladol &mdash; pob un &acirc;'u blaenoriaethau, rheolau, ac amserlenni eu hunain.</p>
+        <p data-en-block>GripAble, a spinout from Imperial College London, had developed a smart handheld rehabilitation device already deployed in over 350 healthcare locations across the UK. The device was transforming how clinicians delivered upper-limb rehabilitation, combining soft-sensor technology with gamified therapy to improve patient engagement and outcomes.</p>
+        <p data-cy-block>Roedd GripAble, cwmni deillio o Goleg Imperial Llundain, wedi datblygu dyfais adsefydlu llaw glyfar a oedd eisoes wedi'i defnyddio mewn dros 350 o leoliadau gofal iechyd ledled y DU. Roedd y ddyfais yn trawsnewid sut roedd clinigwyr yn cyflawni adsefydlu aelodau uchaf, gan gyfuno technoleg synhwyrydd meddal &acirc; therapi wedi'i gamio i wella ymgysylltiad a chanlyniadau cleifion.</p>
 
-        <p data-en-block>Our focus was on making that landscape legible and usable. We advised government, local authorities, and the wider cultural sector on how to understand and engage with European funding opportunities in ways that were both strategic and practical.</p>
-        <p data-cy-block>Roedd ein ffocws ar wneud y dirwedd honno'n ddarllenadwy ac yn ddefnyddiadwy. Buom yn cynghori'r llywodraeth, awdurdodau lleol, a'r sector diwylliannol ehangach ar sut i ddeall ac ymgysylltu &acirc; chyfleoedd cyllido Ewropeaidd mewn ffyrdd a oedd yn strategol ac yn ymarferol.</p>
+        <p data-en-block>Winning an &pound;800k Innovate UK Biomedical Catalyst grant opened the door to developing SqueezAble &mdash; a next-generation soft-sensor device designed specifically for children with cerebral palsy. But delivering a grant-funded, multi-partner R&amp;D programme involving a startup, a world-class university lab, and NHS clinical teams required a different kind of expertise: structured programme management that could hold the complexity together.</p>
+        <p data-cy-block>Roedd ennill grant Catalydd Biofeddygol Innovate UK gwerth &pound;800k yn agor y drws i ddatblygu SqueezAble &mdash; dyfais synhwyrydd meddal y genhedlaeth nesaf wedi'i chynllunio'n benodol ar gyfer plant &acirc; pharlys yr ymennydd. Ond roedd cyflawni rhaglen ymchwil a datblygu aml-bartner a ariennir gan grant yn cynnwys cwmni cychwyn, labordy prifysgol o'r radd flaenaf, a thimau clinigol y GIG yn gofyn am fath gwahanol o arbenigedd: rheoli rhaglenni strwythuredig a allai ddal y cymhlethdod at ei gilydd.</p>
       </div>
     </div>
   </section>
@@ -1272,21 +1320,21 @@
         </div>
 
         <h2>
-          <span data-en>Making funding frameworks work for Wales</span>
-          <span data-cy>Gwneud fframweithiau cyllido weithio i Gymru</span>
+          <span data-en>Delivering a grant-funded medtech programme on time and on track</span>
+          <span data-cy>Cyflawni rhaglen medtech a ariennir gan grant ar amser ac ar y trywydd iawn</span>
         </h2>
 
-        <p data-en-block>To help Wales navigate a complex devolved funding environment and make better use of major European cultural and education funding schemes.</p>
-        <p data-cy-block>Helpu Cymru i lywio amgylchedd cyllido datganoledig cymhleth a gwneud gwell defnydd o gynlluniau cyllido diwylliannol ac addysgol Ewropeaidd mawr.</p>
+        <p data-en-block>VDB UK was brought in to provide programme management for the SqueezAble project &mdash; coordinating delivery across GripAble's product team, Imperial College's Department of Bioengineering, and NHS clinical partners.</p>
+        <p data-cy-block>Daeth VDB UK i mewn i ddarparu rheoli rhaglenni ar gyfer prosiect SqueezAble &mdash; cydlynu cyflawni ar draws t&icirc;m cynnyrch GripAble, Adran Biobeirianeg Coleg Imperial, a phartneriaid clinigol y GIG.</p>
 
-        <p data-en-block>This meant translating policy and funding frameworks into real opportunities for public bodies and the arts sector, while strengthening the relationships needed to support future collaboration, investment, and cultural ambition.</p>
-        <p data-cy-block>Roedd hyn yn golygu trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau, gan gryfhau'r perthnasoedd sydd eu hangen i gefnogi cydweithio, buddsoddiad, ac uchelgais ddiwylliannol yn y dyfodol.</p>
+        <p data-en-block>The challenge was not just technical. It was about aligning different institutional cultures, managing funder expectations, and ensuring that an ambitious research programme maintained the pace and rigour needed to meet Innovate UK milestones &mdash; while keeping the end user, children with cerebral palsy, at the centre of every decision.</p>
+        <p data-cy-block>Nid her dechnegol yn unig oedd hon. Roedd yn ymwneud ag alinio diwylliannau sefydliadol gwahanol, rheoli disgwyliadau cyllidwyr, a sicrhau bod rhaglen ymchwil uchelgeisiol yn cynnal y cyflymder a'r trylwyredd sydd eu hangen i gwrdd &acirc; cherrig milltir Innovate UK &mdash; tra'n cadw'r defnyddiwr terfynol, plant &acirc; pharlys yr ymennydd, yng nghanol pob penderfyniad.</p>
       </div>
 
       <div class="cs-objective__highlight">
         <p>
-          <span data-en>Translating policy and funding frameworks into real opportunities for public bodies and the arts sector.</span>
-          <span data-cy>Trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau.</span>
+          <span data-en>Holding complexity together: aligning a startup, a university lab, and NHS clinical teams around a shared programme of grant-funded R&amp;D.</span>
+          <span data-cy>Dal cymhlethdod at ei gilydd: alinio cwmni cychwyn, labordy prifysgol, a thimau clinigol y GIG o amgylch rhaglen a rennir o ymchwil a datblygu a ariennir gan grant.</span>
         </p>
       </div>
     </div>
@@ -1303,8 +1351,8 @@
           <span data-cy>Beth Wnaethon Ni Gyflawni</span>
         </div>
         <h2>
-          <span data-en>Strategic advice at every level</span>
-          <span data-cy>Cyngor strategol ar bob lefel</span>
+          <span data-en>End-to-end programme delivery across three partners</span>
+          <span data-cy>Cyflawni rhaglenni o'r dechrau i'r diwedd ar draws tri phartner</span>
         </h2>
       </div>
 
@@ -1312,60 +1360,60 @@
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">01</div>
           <h3>
-            <span data-en>Ministerial &amp; Government Advice</span>
-            <span data-cy>Cyngor Gweinidogol a Llywodraeth</span>
+            <span data-en>Programme &amp; Milestone Management</span>
+            <span data-cy>Rheoli Rhaglenni a Cherrig Milltir</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Formal advice to ministers, government officials, local authorities, and sector leaders on European funding opportunities &mdash; translating complex policy into clear, actionable guidance.</span>
-            <span data-cy>Cyngor ffurfiol i weinidogion, swyddogion llywodraeth, awdurdodau lleol, ac arweinwyr sector ar gyfleoedd cyllido Ewropeaidd &mdash; trosi polisi cymhleth yn ganllawiau clir a gweithredadwy.</span>
+            <span data-en>Managed the full SqueezAble programme across GripAble, Imperial College's Department of Bioengineering, and NHS clinical partners. Tracked technical milestones, coordinated workstreams, and compiled progress reports for Innovate UK &mdash; ensuring compliance and deliverable tracking throughout the &pound;800k grant lifecycle.</span>
+            <span data-cy>Rheoli rhaglen SqueezAble lawn ar draws GripAble, Adran Biobeirianeg Coleg Imperial, a phartneriaid clinigol y GIG. Tracio cerrig milltir technegol, cydlynu ffrydiau gwaith, a llunio adroddiadau cynnydd ar gyfer Innovate UK &mdash; sicrhau cydymffurfiaeth ac olrhain cyflawniadau trwy gydol cylch oes y grant gwerth &pound;800k.</span>
           </p>
         </div>
 
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">02</div>
           <h3>
-            <span data-en>Erasmus+ &amp; Creative Europe Strategy</span>
-            <span data-cy>Strategaeth Erasmus+ a Creative Europe</span>
+            <span data-en>Multi-Partner Coordination</span>
+            <span data-cy>Cydlynu Aml-Bartner</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Strategic guidance on major European schemes including Erasmus+ and Creative Europe, helping organisations understand eligibility, alignment, and positioning within these frameworks.</span>
-            <span data-cy>Arweiniad strategol ar gynlluniau Ewropeaidd mawr gan gynnwys Erasmus+ a Creative Europe, gan helpu sefydliadau i ddeall cymhwysedd, aliniad, a lleoliad o fewn y fframweithiau hyn.</span>
+            <span data-en>Facilitated collaboration between Dr Firat Guder's research group (soft-sensor technology at Imperial) and GripAble's product team. Managed clinical input from Imperial College Healthcare NHS Trust and coordinated occupational therapy expertise &mdash; bridging the gap between academic research, commercial product development, and frontline clinical need.</span>
+            <span data-cy>Hwyluso cydweithrediad rhwng gr&#373;p ymchwil Dr Firat Guder (technoleg synhwyrydd meddal yn Imperial) a th&icirc;m cynnyrch GripAble. Rheoli mewnbwn clinigol o Ymddiriedolaeth GIG Gofal Iechyd Coleg Imperial a chydlynu arbenigedd therapi galwedigaethol &mdash; pontio'r bwlch rhwng ymchwil academaidd, datblygu cynnyrch masnachol, ac angen clinigol rheng flaen.</span>
           </p>
         </div>
 
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">03</div>
           <h3>
-            <span data-en>International Relationship Brokering</span>
-            <span data-cy>Broceriaeth Perthnasoedd Rhyngwladol</span>
+            <span data-en>Funder Communications &amp; Reporting</span>
+            <span data-cy>Cyfathrebu ag Arianwyr ac Adrodd</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Building connections between Wales and international partners, including collaborations across Celtic and minority-language nations such as Scotland, Cornwall, and the Basque Country.</span>
-            <span data-cy>Adeiladu cysylltiadau rhwng Cymru a phartneriaid rhyngwladol, gan gynnwys cydweithrediadau ar draws cenhedloedd Celtaidd ac ieithoedd lleiafrifol fel yr Alban, Cernyw, a Gwlad y Basg.</span>
+            <span data-en>Maintained ongoing funder relationship with Innovate UK. Prepared and submitted milestone reports, managed budget spend tracking, and handled escalation processes &mdash; keeping the programme on solid footing with its primary funding body.</span>
+            <span data-cy>Cynnal perthynas barhaus &acirc;'r cyllidwr gydag Innovate UK. Paratoi a chyflwyno adroddiadau cerrig milltir, rheoli olrhain gwariant cyllideb, a thrin prosesau uwchgyfeirio &mdash; cadw'r rhaglen ar sylfaen gadarn gyda'i phrif gorff cyllido.</span>
           </p>
         </div>
 
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">04</div>
           <h3>
-            <span data-en>Place-Based Cultural Ambitions</span>
-            <span data-cy>Uchelgeisiau Diwylliannol Seiliedig ar Le</span>
+            <span data-en>Risk &amp; Budget Governance</span>
+            <span data-cy>Llywodraethu Risg a Chyllideb</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Support for major place-based cultural ambitions, including work connected to Cardiff and Swansea City of Culture bids &mdash; connecting local aspiration with international funding routes.</span>
-            <span data-cy>Cefnogaeth i uchelgeisiau diwylliannol mawr seiliedig ar le, gan gynnwys gwaith yn gysylltiedig &acirc; cheisiadau Dinas Diwylliant Caerdydd ac Abertawe &mdash; cysylltu dyhead lleol &acirc; llwybrau cyllido rhyngwladol.</span>
+            <span data-en>Maintained a risk register and escalation framework across the consortium. Monitored budget allocation and spend against Innovate UK requirements, ensuring that resources were deployed effectively and that any emerging risks were identified and addressed early.</span>
+            <span data-cy>Cynnal cofrestr risg a fframwaith uwchgyfeirio ar draws y consortiwm. Monitro dyraniad cyllideb a gwariant yn erbyn gofynion Innovate UK, gan sicrhau bod adnoddau'n cael eu defnyddio'n effeithiol a bod unrhyw risgiau sy'n dod i'r amlwg yn cael eu nodi a'u mynd i'r afael &acirc; nhw'n gynnar.</span>
           </p>
         </div>
 
         <div class="cs-deliverable cs-deliverable--wide">
           <div class="cs-deliverable__number">05</div>
           <h3>
-            <span data-en>Cross-Sector Funding Interpretation</span>
-            <span data-cy>Dehongliad Cyllido Traws-sector</span>
+            <span data-en>Clinical Integration &amp; User-Centred Focus</span>
+            <span data-cy>Integreiddio Clinigol a Ffocws ar y Defnyddiwr</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Cross-sector interpretation of funding policy, helping organisations understand how to position their projects within a wider public funding architecture &mdash; bridging the gap between what's available and what's achievable.</span>
-            <span data-cy>Dehongliad traws-sector o bolisi cyllido, gan helpu sefydliadau i ddeall sut i leoli eu prosiectau o fewn pensaern&iuml;aeth cyllido cyhoeddus ehangach &mdash; pontio'r bwlch rhwng yr hyn sydd ar gael a'r hyn sy'n gyflawnadwy.</span>
+            <span data-en>Ensured that clinical insight from NHS occupational therapists and rehabilitation specialists remained central to the development process. Coordinated user testing and clinical feedback loops so that SqueezAble was shaped by the people who would use it &mdash; therapists and children alike.</span>
+            <span data-cy>Sicrhau bod mewnwelediad clinigol gan therapyddion galwedigaethol ac arbenigwyr adsefydlu'r GIG yn parhau'n ganolog i'r broses ddatblygu. Cydlynu profion defnyddwyr a dolenni adborth clinigol fel bod SqueezAble yn cael ei lunio gan y bobl a fyddai'n ei ddefnyddio &mdash; therapyddion a phlant fel ei gilydd.</span>
           </p>
         </div>
       </div>
@@ -1385,25 +1433,25 @@
       </div>
 
       <h2>
-        <span data-en>Funding is about alignment, not just eligibility</span>
-        <span data-cy>Mae cyllid yn ymwneud ag aliniad, nid cymhwysedd yn unig</span>
+        <span data-en>Grant-funded medtech needs more than good science</span>
+        <span data-cy>Mae medtech a ariennir gan grantiau angen mwy na gwyddoniaeth dda</span>
       </h2>
 
       <div class="cs-why__text">
-        <p data-en-block>In a devolved economy, funding is not just about eligibility &mdash; it is about alignment. Organisations need to understand how local priorities, national strategy, and international frameworks connect. Without that understanding, valuable opportunities can be missed, partnerships can remain underdeveloped, and ambitious projects can struggle to find the right route to support.</p>
-        <p data-cy-block>Mewn economi ddatganoledig, nid yw cyllid yn ymwneud &acirc; chymhwysedd yn unig &mdash; mae'n ymwneud ag aliniad. Mae angen i sefydliadau ddeall sut mae blaenoriaethau lleol, strategaeth genedlaethol, a fframweithiau rhyngwladol yn cysylltu. Heb y ddealltwriaeth honno, gall cyfleoedd gwerthfawr gael eu colli, gall partneriaethau aros heb eu datblygu, a gall prosiectau uchelgeisiol ei chael hi'n anodd dod o hyd i'r llwybr cywir i gefnogaeth.</p>
+        <p data-en-block>Multi-partner medtech programmes carry a particular kind of risk. The science may be excellent, the clinical need proven, the funding secured &mdash; but without structured programme delivery, even the most promising collaborations can lose momentum, miss milestones, or fail to translate research into real-world impact.</p>
+        <p data-cy-block>Mae rhaglenni medtech aml-bartner yn cario math penodol o risg. Gall y wyddoniaeth fod yn rhagorol, yr angen clinigol wedi'i brofi, y cyllid wedi'i sicrhau &mdash; ond heb gyflawni rhaglenni strwythuredig, gall hyd yn oed y cydweithrediadau mwyaf addawol golli momentwm, methu cerrig milltir, neu fethu &acirc; throsi ymchwil yn effaith byd go iawn.</p>
       </div>
 
       <div class="cs-pullquote">
         <p>
-          <span data-en>Connecting policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity.</span>
-          <span data-cy>Cysylltu polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol.</span>
+          <span data-en>The difference between a funded project and a delivered one is programme management that holds the complexity together &mdash; across institutions, disciplines, and timelines.</span>
+          <span data-cy>Y gwahaniaeth rhwng prosiect a ariennir ac un a gyflawnir yw rheoli rhaglenni sy'n dal y cymhlethdod at ei gilydd &mdash; ar draws sefydliadau, disgyblaethau, ac amserlenni.</span>
         </p>
       </div>
 
       <div class="cs-why__text">
-        <p data-en-block>Our work bridged that gap. We connected policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity. Just as importantly, we helped people make confident decisions in a landscape that often feels fragmented or opaque.</p>
-        <p data-cy-block>Pontiodd ein gwaith y bwlch hwnnw. Cysylltwyd polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol. Yr un mor bwysig, fe wnaethom helpu pobl i wneud penderfyniadau hyderus mewn tirwedd sy'n aml yn teimlo'n dameidiog neu'n aneglur.</p>
+        <p data-en-block>Our work ensured that GripAble's SqueezAble programme stayed on track: milestones were met, partners remained aligned, funder requirements were satisfied, and clinical insight informed every stage. We brought the programme management discipline that allowed good science to become a viable, impactful product.</p>
+        <p data-cy-block>Sicrhaodd ein gwaith fod rhaglen SqueezAble GripAble yn aros ar y trywydd iawn: cwrddwyd &acirc; cherrig milltir, arhosodd partneriaid yn alinedig, bodlonwyd gofynion cyllidwyr, ac roedd mewnwelediad clinigol yn llywio pob cam. Daeth&acirc;m &acirc;'r ddisgyblaeth rheoli rhaglenni a ganiataodd i wyddoniaeth dda ddod yn gynnyrch hyfyw ac effeithiol.</p>
       </div>
     </div>
   </section>
@@ -1419,16 +1467,54 @@
       </div>
 
       <h2>
-        <span data-en>From reactive to strategic</span>
-        <span data-cy>O adweithiol i strategol</span>
+        <span data-en>From funded project to global medtech platform</span>
+        <span data-cy>O brosiect a ariennir i lwyfan medtech byd-eang</span>
       </h2>
 
       <div class="cs-outcome__text">
-        <p data-en-block>This engagement strengthened Wales' ability to engage strategically with complex funding systems rather than respond to them passively. It improved funding readiness, informed decision-making at multiple levels, and helped create the conditions for stronger cross-border cultural collaboration.</p>
-        <p data-cy-block>Cryfhaodd yr ymgysylltiad hwn allu Cymru i ymgysylltu'n strategol &acirc; systemau cyllido cymhleth yn hytrach nag ymateb iddynt yn oddefol. Gwellodd barodrwydd cyllido, llywiodd wneud penderfyniadau ar sawl lefel, a helpodd greu'r amodau ar gyfer cydweithio diwylliannol trawsffiniol cryfach.</p>
+        <p data-en-block>The SqueezAble programme was delivered successfully, with all Innovate UK milestones met and the grant fully executed. But the impact went far beyond the funded project itself. GripAble went on to raise an $11M Series A round, expand into the US market through a partnership with Medline, and reach over 50% of UK stroke care pathways.</p>
+        <p data-cy-block>Cyflawnwyd rhaglen SqueezAble yn llwyddiannus, gyda holl gerrig milltir Innovate UK wedi'u cwrdd a'r grant wedi'i weithredu'n llawn. Ond aeth yr effaith ymhell y tu hwnt i'r prosiect a ariennir ei hun. Aeth GripAble ymlaen i godi rownd Cyfres A o $11M, ehangu i farchnad yr Unol Daleithiau trwy bartneriaeth &acirc; Medline, a chyrraedd dros 50% o lwybrau gofal str&ocirc;c y DU.</p>
 
-        <p data-en-block>The lasting value was not only in individual funding conversations, but in building a clearer, more confident understanding of how a devolved nation can work within a layered international funding environment &mdash; and use that understanding to advance cultural, civic, and strategic goals.</p>
-        <p data-cy-block>Nid yn unig mewn sgyrsiau cyllido unigol yr oedd y gwerth parhaol, ond wrth adeiladu dealltwriaeth gliriach, fwy hyderus o sut y gall cenedl ddatganoledig weithio o fewn amgylchedd cyllido rhyngwladol haenog &mdash; a defnyddio'r ddealltwriaeth honno i hyrwyddo nodau diwylliannol, dinesig, a strategol.</p>
+        <p data-en-block>The structured programme management that VDB UK provided during the critical early phase helped establish the operational rigour and credibility that supported GripAble's subsequent growth &mdash; from a funded research collaboration to a globally recognised rehabilitation technology company.</p>
+        <p data-cy-block>Helpodd y rheoli rhaglenni strwythuredig a ddarparwyd gan VDB UK yn ystod y cyfnod cynnar hanfodol i sefydlu'r trylwyredd gweithredol a'r hygrededd a gefnogodd dwf dilynol GripAble &mdash; o gydweithrediad ymchwil a ariennir i gwmni technoleg adsefydlu a gydnabyddir yn fyd-eang.</p>
+      </div>
+
+      <div class="cs-outcome__metrics">
+        <div class="cs-metric">
+          <div class="cs-metric__number">&pound;800k</div>
+          <div class="cs-metric__label">
+            <span data-en>Innovate UK BMC grant delivered</span>
+            <span data-cy>Grant BMC Innovate UK wedi'i gyflawni</span>
+          </div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__number">350+</div>
+          <div class="cs-metric__label">
+            <span data-en>Healthcare locations</span>
+            <span data-cy>Lleoliadau gofal iechyd</span>
+          </div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__number">$11M</div>
+          <div class="cs-metric__label">
+            <span data-en>Series A raised</span>
+            <span data-cy>Cyfres A wedi'i godi</span>
+          </div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__number">US</div>
+          <div class="cs-metric__label">
+            <span data-en>Expansion via Medline</span>
+            <span data-cy>Ehangu trwy Medline</span>
+          </div>
+        </div>
+        <div class="cs-metric">
+          <div class="cs-metric__number">50%+</div>
+          <div class="cs-metric__label">
+            <span data-en>of UK stroke care pathways reached</span>
+            <span data-cy>o lwybrau gofal str&ocirc;c y DU a gyrhaeddwyd</span>
+          </div>
+        </div>
       </div>
 
       <div class="cs-outcome__takeaway">
@@ -1437,8 +1523,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Improved funding readiness across the sector</span>
-            <span data-cy>Gwell parodrwydd cyllido ar draws y sector</span>
+            <span data-en>All Innovate UK milestones met on schedule</span>
+            <span data-cy>Holl gerrig milltir Innovate UK wedi'u cwrdd ar amser</span>
           </div>
         </div>
 
@@ -1447,8 +1533,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Stronger cross-border cultural collaboration</span>
-            <span data-cy>Cydweithio diwylliannol trawsffiniol cryfach</span>
+            <span data-en>Foundation laid for $11M raise and US expansion</span>
+            <span data-cy>Sylfaen wedi'i gosod ar gyfer codi $11M ac ehangu i'r UDA</span>
           </div>
         </div>
 
@@ -1457,8 +1543,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Confident decision-making at all levels</span>
-            <span data-cy>Gwneud penderfyniadau hyderus ar bob lefel</span>
+            <span data-en>Three-partner consortium aligned and delivering</span>
+            <span data-cy>Consortiwm tri phartner wedi'i alinio ac yn cyflawni</span>
           </div>
         </div>
       </div>
@@ -1482,18 +1568,6 @@
       </div>
 
       <div class="related__grid">
-        <a href="/capabilities/funding.html" class="related-card">
-          <h3>
-            <span data-en>Funding &amp; Grant Strategy</span>
-            <span data-cy>Strategaeth Cyllido a Grantiau</span>
-          </h3>
-          <p class="related-card__desc">
-            <span data-en>Navigating complex funding landscapes and securing strategic investment.</span>
-            <span data-cy>Llywio tirweddau cyllido cymhleth a sicrhau buddsoddiad strategol.</span>
-          </p>
-          <span class="related-card__arrow">&rarr;</span>
-        </a>
-
         <a href="/capabilities/secretariat.html" class="related-card">
           <h3>
             <span data-en>Secretariat &amp; Programme Management</span>
@@ -1517,6 +1591,18 @@
           </p>
           <span class="related-card__arrow">&rarr;</span>
         </a>
+
+        <a href="/capabilities/science.html" class="related-card">
+          <h3>
+            <span data-en>Science &amp; Engineering</span>
+            <span data-cy>Gwyddoniaeth a Pheirianneg</span>
+          </h3>
+          <p class="related-card__desc">
+            <span data-en>Technical rigour and scientific expertise for deep-tech and medtech programmes.</span>
+            <span data-cy>Trylwyredd technegol ac arbenigedd gwyddonol ar gyfer rhaglenni technoleg ddwfn a medtech.</span>
+          </p>
+          <span class="related-card__arrow">&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1528,12 +1614,12 @@
     <div class="cta-banner__pattern"></div>
     <div class="cta-banner__inner">
       <h2>
-        <span data-en>Navigating complex funding landscapes?</span>
-        <span data-cy>Llywio tirweddau cyllido cymhleth?</span>
+        <span data-en>Delivering a medtech or multi-partner programme?</span>
+        <span data-cy>Cyflawni rhaglen medtech neu aml-bartner?</span>
       </h2>
       <p class="cta-banner__desc">
-        <span data-en>We help organisations understand, align, and act on funding opportunities at every level.</span>
-        <span data-cy>Rydym yn helpu sefydliadau i ddeall, alinio, a gweithredu ar gyfleoedd cyllido ar bob lefel.</span>
+        <span data-en>We help teams coordinate complex grant-funded programmes across academia, industry, and the NHS.</span>
+        <span data-cy>Rydym yn helpu timau i gydlynu rhaglenni cymhleth a ariennir gan grantiau ar draws academia, diwydiant, a'r GIG.</span>
       </p>
       <a href="/contact.html" class="btn btn--white">
         <span data-en>Get in touch</span>
@@ -1575,7 +1661,6 @@
           <h4><span data-en>Company</span><span data-cy>Cwmni</span></h4>
           <ul>
             <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Yngl&#x0177;n &acirc; VDB</span></a></li>
-  
             <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
             <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
           </ul>

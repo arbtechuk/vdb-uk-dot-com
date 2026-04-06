@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-title-en="Devolved Funding Architecture — Case Study — VDB UK" data-title-cy="Pensaern&iuml;aeth Cyllido Datganoledig — Astudiaeth Achos — VDB UK">Devolved Funding Architecture — Case Study — VDB UK</title>
-  <meta name="description" content="How VDB UK helped Wales navigate complex devolved funding landscapes, advising government and the cultural sector on European funding opportunities." data-content-en="How VDB UK helped Wales navigate complex devolved funding landscapes, advising government and the cultural sector on European funding opportunities." data-content-cy="Sut y helpodd VDB UK Cymru i lywio tirweddau cyllido datganoledig cymhleth, gan gynghori'r llywodraeth a'r sector diwylliannol ar gyfleoedd cyllido Ewropeaidd.">
+  <title data-title-en="Wales Nutrient Recovery Research — Case Study — VDB UK" data-title-cy="Ymchwil Adfer Maethynnau yng Nghymru — Astudiaeth Achos — VDB UK">Wales Nutrient Recovery Research — Case Study — VDB UK</title>
+  <meta name="description" content="How VDB UK led consultation-driven research across South Wales to shape practical nutrient recovery opportunities at the intersection of farming economics, environmental pressure, and innovation." data-content-en="How VDB UK led consultation-driven research across South Wales to shape practical nutrient recovery opportunities at the intersection of farming economics, environmental pressure, and innovation." data-content-cy="Sut yr arweiniodd VDB UK ymchwil wedi'i llywio gan ymgynghoriad ledled De Cymru i lunio cyfleoedd ymarferol ar gyfer adfer maethynnau ar groestoriad economeg ffermio, pwysau amgylcheddol, ac arloesedd.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -22,6 +22,7 @@
       --slate-800: #252838;
       --slate-700: #363a4d;
       --slate-600: #4a4f66;
+      --slate-500: #5d6380;
       --slate-400: #8b91a8;
       --slate-300: #b0b5c8;
       --slate-200: #d4d7e3;
@@ -289,6 +290,17 @@
       color: white;
     }
 
+    .btn--white {
+      background: white;
+      color: var(--red-700);
+    }
+
+    .btn--white:hover {
+      background: var(--stone-50);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
     .btn__arrow {
       transition: transform 0.2s;
     }
@@ -313,7 +325,7 @@
     .cs-hero__bg {
       position: absolute;
       inset: 0;
-      background-image: url('/images/casestudy-wales-senedd.jpg');
+      background-image: url('/images/project-npk-festival.jpg');
       background-size: cover;
       background-position: center;
       opacity: 0.35;
@@ -822,17 +834,6 @@
       margin: 0 auto var(--space-2xl);
     }
 
-    .btn--white {
-      background: white;
-      color: var(--red-700);
-    }
-
-    .btn--white:hover {
-      background: var(--stone-50);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
     /* ═══════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════ */
@@ -1159,7 +1160,6 @@
       <nav class="header__nav">
         <ul class="header__links">
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
-
           <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
           <li><a href="/about.html"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
         </ul>
@@ -1200,7 +1200,7 @@
         <span class="breadcrumb__sep">/</span>
         <a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a>
         <span class="breadcrumb__sep">/</span>
-        <span><span data-en>Devolved Funding Architecture</span><span data-cy>Pensaern&iuml;aeth Cyllido Datganoledig</span></span>
+        <span><span data-en>Wales Nutrient Recovery</span><span data-cy>Adfer Maethynnau yng Nghymru</span></span>
       </nav>
 
       <div class="cs-hero__badge animate-in animate-in--delay-1">
@@ -1209,27 +1209,27 @@
       </div>
 
       <h1 class="animate-in animate-in--delay-2">
-        <span data-en>Understanding and Navigating the Funding Architecture of a Devolved Economy</span>
-        <span data-cy>Deall a Llywio Pensaern&iuml;aeth Cyllido Economi Ddatganoledig</span>
+        <span data-en>Consultation-Led Nutrient Recovery Research Across South Wales</span>
+        <span data-cy>Ymchwil Adfer Maethynnau wedi'i Llywio gan Ymgynghoriad Ledled De Cymru</span>
       </h1>
 
       <p class="cs-hero__subtitle animate-in animate-in--delay-3">
-        <span data-en>Helping Wales engage strategically with complex European funding landscapes across culture, education, and public policy.</span>
-        <span data-cy>Helpu Cymru i ymgysylltu'n strategol &acirc; thirweddau cyllido Ewropeaidd cymhleth ar draws diwylliant, addysg, a pholisi cyhoeddus.</span>
+        <span data-en>Shaping practical nutrient recovery opportunities at the intersection of farming economics, environmental pressure, and science-informed innovation.</span>
+        <span data-cy>Llunio cyfleoedd ymarferol ar gyfer adfer maethynnau ar groestoriad economeg ffermio, pwysau amgylcheddol, ac arloesedd wedi'i lywio gan wyddoniaeth.</span>
       </p>
 
       <div class="cs-hero__meta animate-in animate-in--delay-4">
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Client</span><span data-cy>Cleient</span></span>
-          <span class="cs-meta__value">Arts Council of Wales / Wales Arts International</span>
+          <span class="cs-meta__value">VDB UK / NPK Recovery</span>
         </div>
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Sector</span><span data-cy>Sector</span></span>
-          <span class="cs-meta__value"><span data-en>Culture &amp; Public Policy</span><span data-cy>Diwylliant a Pholisi Cyhoeddus</span></span>
+          <span class="cs-meta__value"><span data-en>Agriculture &amp; Sustainability</span><span data-cy>Amaethyddiaeth a Chynaliadwyedd</span></span>
         </div>
         <div class="cs-meta">
           <span class="cs-meta__label"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></span>
-          <span class="cs-meta__value"><span data-en>Funding &amp; Grant Strategy, Programme Management</span><span data-cy>Strategaeth Cyllido a Grantiau, Rheoli Rhaglenni</span></span>
+          <span class="cs-meta__value"><span data-en>Science &amp; Engineering, ESG, Research &amp; Innovation</span><span data-cy>Gwyddoniaeth a Pheirianneg, ESG, Ymchwil ac Arloesi</span></span>
         </div>
       </div>
     </div>
@@ -1246,16 +1246,16 @@
       </div>
 
       <h2>
-        <span data-en>Where culture, policy, and funding intersect</span>
-        <span data-cy>Lle mae diwylliant, polisi, a chyllid yn croestorri</span>
+        <span data-en>A farming sector under pressure, looking for practical answers</span>
+        <span data-cy>Sector ffermio dan bwysau, yn chwilio am atebion ymarferol</span>
       </h2>
 
       <div class="cs-context__text">
-        <p data-en-block>Working with Arts Council of Wales through Wales Arts International, our team operated at the intersection of culture, public policy, and international funding. In a devolved nation, cultural funding is rarely straightforward: opportunities sit across different layers of government, public bodies, local authorities, and international schemes &mdash; each with their own priorities, rules, and timelines.</p>
-        <p data-cy-block>Gan weithio gyda Chyngor Celfyddydau Cymru trwy Gelfyddydau Rhyngwladol Cymru, roedd ein t&icirc;m yn gweithredu ar groesffordd diwylliant, polisi cyhoeddus, a chyllid rhyngwladol. Mewn cenedl ddatganoledig, anaml y mae cyllid diwylliannol yn syml: mae cyfleoedd yn eistedd ar draws gwahanol haenau o lywodraeth, cyrff cyhoeddus, awdurdodau lleol, a chynlluniau rhyngwladol &mdash; pob un &acirc;'u blaenoriaethau, rheolau, ac amserlenni eu hunain.</p>
+        <p data-en-block>Across South Wales, farmers face rising fertiliser costs, tightening environmental regulations, and growing uncertainty about the long-term viability of conventional nutrient inputs. At the same time, significant volumes of recoverable nutrients &mdash; nitrogen, phosphorus, and potassium &mdash; pass through agricultural and industrial waste streams without being captured or reused.</p>
+        <p data-cy-block>Ar draws De Cymru, mae ffermwyr yn wynebu costau gwrtaith cynyddol, rheoliadau amgylcheddol llymach, ac ansicrwydd cynyddol am hyfywedd hirdymor mewnbynnau maethynnau confensiynol. Ar yr un pryd, mae cyfeintiau sylweddol o faethynnau adferadwy &mdash; nitrogen, ffosfforws, a photasiwm &mdash; yn mynd trwy ffrydiau gwastraff amaethyddol a diwydiannol heb gael eu dal na'u hailddefnyddio.</p>
 
-        <p data-en-block>Our focus was on making that landscape legible and usable. We advised government, local authorities, and the wider cultural sector on how to understand and engage with European funding opportunities in ways that were both strategic and practical.</p>
-        <p data-cy-block>Roedd ein ffocws ar wneud y dirwedd honno'n ddarllenadwy ac yn ddefnyddiadwy. Buom yn cynghori'r llywodraeth, awdurdodau lleol, a'r sector diwylliannol ehangach ar sut i ddeall ac ymgysylltu &acirc; chyfleoedd cyllido Ewropeaidd mewn ffyrdd a oedd yn strategol ac yn ymarferol.</p>
+        <p data-en-block>This was not a theoretical problem. It was a practical one &mdash; felt daily by the farming community and recognised by public bodies including the Welsh Government, Net Zero Industry Wales, and Natural Resources Wales. What was missing was a grounded, consultation-led evidence base to connect the environmental science with the economic and operational realities on the ground.</p>
+        <p data-cy-block>Nid problem ddamcaniaethol oedd hon. Roedd yn broblem ymarferol &mdash; a deimlwyd yn ddyddiol gan y gymuned ffermio ac a gydnabuwyd gan gyrff cyhoeddus gan gynnwys Llywodraeth Cymru, Net Zero Industry Wales, a Cyfoeth Naturiol Cymru. Yr hyn a oedd ar goll oedd sylfaen dystiolaeth gadarn, wedi'i llywio gan ymgynghoriad, i gysylltu'r wyddoniaeth amgylcheddol &acirc;'r realiti economaidd a gweithredol ar lawr gwlad.</p>
       </div>
     </div>
   </section>
@@ -1272,21 +1272,21 @@
         </div>
 
         <h2>
-          <span data-en>Making funding frameworks work for Wales</span>
-          <span data-cy>Gwneud fframweithiau cyllido weithio i Gymru</span>
+          <span data-en>Understanding the real case for nutrient recovery</span>
+          <span data-cy>Deall yr achos go iawn dros adfer maethynnau</span>
         </h2>
 
-        <p data-en-block>To help Wales navigate a complex devolved funding environment and make better use of major European cultural and education funding schemes.</p>
-        <p data-cy-block>Helpu Cymru i lywio amgylchedd cyllido datganoledig cymhleth a gwneud gwell defnydd o gynlluniau cyllido diwylliannol ac addysgol Ewropeaidd mawr.</p>
+        <p data-en-block>Our objective was to build a credible, field-grounded evidence base for nutrient recovery in a real agricultural landscape &mdash; not from a lab bench, but from the farms, stakeholders, and policy bodies who would need to act on it.</p>
+        <p data-cy-block>Ein hamcan oedd adeiladu sylfaen dystiolaeth gredadwy, wedi'i gwreiddio yn y maes, ar gyfer adfer maethynnau mewn tirwedd amaethyddol go iawn &mdash; nid o fainc labordy, ond o'r ffermydd, rhanddeiliaid, a chyrff polisi a fyddai angen gweithredu arno.</p>
 
-        <p data-en-block>This meant translating policy and funding frameworks into real opportunities for public bodies and the arts sector, while strengthening the relationships needed to support future collaboration, investment, and cultural ambition.</p>
-        <p data-cy-block>Roedd hyn yn golygu trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau, gan gryfhau'r perthnasoedd sydd eu hangen i gefnogi cydweithio, buddsoddiad, ac uchelgais ddiwylliannol yn y dyfodol.</p>
+        <p data-en-block>This meant engaging directly with farmers to understand their constraints, working with government and industry bodies to align with policy priorities, and combining consultation findings with analytical, science-based thinking to shape realistic recovery opportunities.</p>
+        <p data-cy-block>Roedd hyn yn golygu ymgysylltu'n uniongyrchol &acirc; ffermwyr i ddeall eu cyfyngiadau, gweithio gyda chyrff llywodraeth a diwydiant i alinio &acirc; blaenoriaethau polisi, a chyfuno canfyddiadau'r ymgynghoriad &acirc; meddwl dadansoddol wedi'i lywio gan wyddoniaeth i lunio cyfleoedd adfer realistig.</p>
       </div>
 
       <div class="cs-objective__highlight">
         <p>
-          <span data-en>Translating policy and funding frameworks into real opportunities for public bodies and the arts sector.</span>
-          <span data-cy>Trosi fframweithiau polisi a chyllido yn gyfleoedd go iawn i gyrff cyhoeddus a'r sector celfyddydau.</span>
+          <span data-en>Combining field consultation with science-based analysis to shape nutrient recovery opportunities rooted in commercial and environmental realities.</span>
+          <span data-cy>Cyfuno ymgynghoriad maes &acirc; dadansoddiad wedi'i lywio gan wyddoniaeth i lunio cyfleoedd adfer maethynnau wedi'u gwreiddio mewn realiti masnachol ac amgylcheddol.</span>
         </p>
       </div>
     </div>
@@ -1303,8 +1303,8 @@
           <span data-cy>Beth Wnaethon Ni Gyflawni</span>
         </div>
         <h2>
-          <span data-en>Strategic advice at every level</span>
-          <span data-cy>Cyngor strategol ar bob lefel</span>
+          <span data-en>Consultation, engagement, and science-informed framing</span>
+          <span data-cy>Ymgynghori, ymgysylltu, a fframio wedi'i lywio gan wyddoniaeth</span>
         </h2>
       </div>
 
@@ -1312,60 +1312,48 @@
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">01</div>
           <h3>
-            <span data-en>Ministerial &amp; Government Advice</span>
-            <span data-cy>Cyngor Gweinidogol a Llywodraeth</span>
+            <span data-en>Farmer Consultation Across South Wales</span>
+            <span data-cy>Ymgynghori &acirc; Ffermwyr Ledled De Cymru</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Formal advice to ministers, government officials, local authorities, and sector leaders on European funding opportunities &mdash; translating complex policy into clear, actionable guidance.</span>
-            <span data-cy>Cyngor ffurfiol i weinidogion, swyddogion llywodraeth, awdurdodau lleol, ac arweinwyr sector ar gyfleoedd cyllido Ewropeaidd &mdash; trosi polisi cymhleth yn ganllawiau clir a gweithredadwy.</span>
+            <span data-en>We engaged farmers from Pembrokeshire through to Usk, gathering first-hand insight into the practical challenges around nutrient procurement, fertiliser costs, and what workable change would look like on the ground.</span>
+            <span data-cy>Ymgysylltwyd &acirc; ffermwyr o Benfro i Wysg, gan gasglu mewnwelediad uniongyrchol i'r heriau ymarferol sy'n ymwneud &acirc; chaffael maethynnau, costau gwrtaith, a sut y byddai newid ymarferol yn edrych ar lawr gwlad.</span>
           </p>
         </div>
 
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">02</div>
           <h3>
-            <span data-en>Erasmus+ &amp; Creative Europe Strategy</span>
-            <span data-cy>Strategaeth Erasmus+ a Creative Europe</span>
+            <span data-en>Public Body &amp; Policy Engagement</span>
+            <span data-cy>Ymgysylltu &acirc; Chyrff Cyhoeddus a Pholisi</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Strategic guidance on major European schemes including Erasmus+ and Creative Europe, helping organisations understand eligibility, alignment, and positioning within these frameworks.</span>
-            <span data-cy>Arweiniad strategol ar gynlluniau Ewropeaidd mawr gan gynnwys Erasmus+ a Creative Europe, gan helpu sefydliadau i ddeall cymhwysedd, aliniad, a lleoliad o fewn y fframweithiau hyn.</span>
+            <span data-en>We worked closely with the Welsh Government, Net Zero Industry Wales, and Natural Resources Wales to connect field-level insight with policy, environmental, and industry agendas &mdash; ensuring our findings aligned with the priorities that matter.</span>
+            <span data-cy>Gweithiwyd yn agos gyda Llywodraeth Cymru, Net Zero Industry Wales, a Cyfoeth Naturiol Cymru i gysylltu mewnwelediad o'r maes &acirc; blaenlenni polisi, amgylcheddol, a diwydiannol &mdash; gan sicrhau bod ein canfyddiadau'n alinio &acirc;'r blaenoriaethau sy'n bwysig.</span>
           </p>
         </div>
 
         <div class="cs-deliverable">
           <div class="cs-deliverable__number">03</div>
           <h3>
-            <span data-en>International Relationship Brokering</span>
-            <span data-cy>Broceriaeth Perthnasoedd Rhyngwladol</span>
+            <span data-en>Bilingual Engagement Materials</span>
+            <span data-cy>Deunyddiau Ymgysylltu Dwyieithog</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Building connections between Wales and international partners, including collaborations across Celtic and minority-language nations such as Scotland, Cornwall, and the Basque Country.</span>
-            <span data-cy>Adeiladu cysylltiadau rhwng Cymru a phartneriaid rhyngwladol, gan gynnwys cydweithrediadau ar draws cenhedloedd Celtaidd ac ieithoedd lleiafrifol fel yr Alban, Cernyw, a Gwlad y Basg.</span>
-          </p>
-        </div>
-
-        <div class="cs-deliverable">
-          <div class="cs-deliverable__number">04</div>
-          <h3>
-            <span data-en>Place-Based Cultural Ambitions</span>
-            <span data-cy>Uchelgeisiau Diwylliannol Seiliedig ar Le</span>
-          </h3>
-          <p class="cs-deliverable__text">
-            <span data-en>Support for major place-based cultural ambitions, including work connected to Cardiff and Swansea City of Culture bids &mdash; connecting local aspiration with international funding routes.</span>
-            <span data-cy>Cefnogaeth i uchelgeisiau diwylliannol mawr seiliedig ar le, gan gynnwys gwaith yn gysylltiedig &acirc; cheisiadau Dinas Diwylliant Caerdydd ac Abertawe &mdash; cysylltu dyhead lleol &acirc; llwybrau cyllido rhyngwladol.</span>
+            <span data-en>We produced bilingual materials designed for effective engagement with the Welsh agricultural sector &mdash; building trust and accessibility with farming communities and stakeholders across both languages.</span>
+            <span data-cy>Cynhyrchwyd deunyddiau dwyieithog wedi'u cynllunio ar gyfer ymgysylltu effeithiol &acirc;'r sector amaethyddol yng Nghymru &mdash; adeiladu ymddiriedaeth a hygyrchedd gyda chymunedau ffermio a rhanddeiliaid ar draws y ddwy iaith.</span>
           </p>
         </div>
 
         <div class="cs-deliverable cs-deliverable--wide">
-          <div class="cs-deliverable__number">05</div>
+          <div class="cs-deliverable__number">04</div>
           <h3>
-            <span data-en>Cross-Sector Funding Interpretation</span>
-            <span data-cy>Dehongliad Cyllido Traws-sector</span>
+            <span data-en>Science-Informed Solution Design</span>
+            <span data-cy>Dylunio Atebion wedi'i Lywio gan Wyddoniaeth</span>
           </h3>
           <p class="cs-deliverable__text">
-            <span data-en>Cross-sector interpretation of funding policy, helping organisations understand how to position their projects within a wider public funding architecture &mdash; bridging the gap between what's available and what's achievable.</span>
-            <span data-cy>Dehongliad traws-sector o bolisi cyllido, gan helpu sefydliadau i ddeall sut i leoli eu prosiectau o fewn pensaern&iuml;aeth cyllido cyhoeddus ehangach &mdash; pontio'r bwlch rhwng yr hyn sydd ar gael a'r hyn sy'n gyflawnadwy.</span>
+            <span data-en>We combined consultation findings with analytical, science-based thinking to shape realistic nutrient recovery opportunities &mdash; grounded in both commercial viability and environmental responsibility. The output was not a theoretical report, but a practical evidence base for future action.</span>
+            <span data-cy>Cyfunwyd canfyddiadau'r ymgynghoriad &acirc; meddwl dadansoddol wedi'i lywio gan wyddoniaeth i lunio cyfleoedd realistig ar gyfer adfer maethynnau &mdash; wedi'u gwreiddio mewn hyfywedd masnachol a chyfrifoldeb amgylcheddol. Nid adroddiad damcaniaethol oedd y canlyniad, ond sylfaen dystiolaeth ymarferol ar gyfer gweithredu yn y dyfodol.</span>
           </p>
         </div>
       </div>
@@ -1385,25 +1373,25 @@
       </div>
 
       <h2>
-        <span data-en>Funding is about alignment, not just eligibility</span>
-        <span data-cy>Mae cyllid yn ymwneud ag aliniad, nid cymhwysedd yn unig</span>
+        <span data-en>Nutrient recovery needs ground truth, not just good science</span>
+        <span data-cy>Mae adfer maethynnau angen gwirionedd y maes, nid gwyddoniaeth dda yn unig</span>
       </h2>
 
       <div class="cs-why__text">
-        <p data-en-block>In a devolved economy, funding is not just about eligibility &mdash; it is about alignment. Organisations need to understand how local priorities, national strategy, and international frameworks connect. Without that understanding, valuable opportunities can be missed, partnerships can remain underdeveloped, and ambitious projects can struggle to find the right route to support.</p>
-        <p data-cy-block>Mewn economi ddatganoledig, nid yw cyllid yn ymwneud &acirc; chymhwysedd yn unig &mdash; mae'n ymwneud ag aliniad. Mae angen i sefydliadau ddeall sut mae blaenoriaethau lleol, strategaeth genedlaethol, a fframweithiau rhyngwladol yn cysylltu. Heb y ddealltwriaeth honno, gall cyfleoedd gwerthfawr gael eu colli, gall partneriaethau aros heb eu datblygu, a gall prosiectau uchelgeisiol ei chael hi'n anodd dod o hyd i'r llwybr cywir i gefnogaeth.</p>
+        <p data-en-block>There is no shortage of research into nutrient recovery as a concept. What has been consistently missing is the connection between that science and the lived experience of the people expected to adopt it. Farmers will not change established practices based on laboratory findings alone &mdash; they need to see that the economics work, that the logistics are practical, and that the risk is manageable.</p>
+        <p data-cy-block>Nid oes prinder ymchwil i adfer maethynnau fel cysyniad. Yr hyn sydd wedi bod ar goll yn gyson yw'r cysylltiad rhwng y wyddoniaeth honno a phrofiad byw'r bobl a ddisgwylir i'w fabwysiadu. Ni fydd ffermwyr yn newid arferion sefydledig ar sail canfyddiadau labordy yn unig &mdash; mae angen iddynt weld bod yr economeg yn gweithio, bod y logisteg yn ymarferol, a bod y risg yn rheoliadwy.</p>
       </div>
 
       <div class="cs-pullquote">
         <p>
-          <span data-en>Connecting policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity.</span>
-          <span data-cy>Cysylltu polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol.</span>
+          <span data-en>Connecting environmental science with farming economics, field-level consultation with policy engagement, and analytical rigour with practical reality.</span>
+          <span data-cy>Cysylltu gwyddoniaeth amgylcheddol ag economeg ffermio, ymgynghoriad lefel maes ag ymgysylltu polisi, a thrylwyredd dadansoddol &acirc; realiti ymarferol.</span>
         </p>
       </div>
 
       <div class="cs-why__text">
-        <p data-en-block>Our work bridged that gap. We connected policy with delivery, funding knowledge with cultural ambition, and public institutions with international opportunity. Just as importantly, we helped people make confident decisions in a landscape that often feels fragmented or opaque.</p>
-        <p data-cy-block>Pontiodd ein gwaith y bwlch hwnnw. Cysylltwyd polisi &acirc; chyflawni, gwybodaeth cyllido ag uchelgais ddiwylliannol, a sefydliadau cyhoeddus &acirc; chyfle rhyngwladol. Yr un mor bwysig, fe wnaethom helpu pobl i wneud penderfyniadau hyderus mewn tirwedd sy'n aml yn teimlo'n dameidiog neu'n aneglur.</p>
+        <p data-en-block>Our work bridged that gap. By combining direct farmer consultation with stakeholder engagement and science-informed framing, we produced an evidence base that was both technically credible and operationally grounded. That combination is what turns a good idea into a viable pathway.</p>
+        <p data-cy-block>Pontiodd ein gwaith y bwlch hwnnw. Trwy gyfuno ymgynghoriad uniongyrchol &acirc; ffermwyr ag ymgysylltu &acirc; rhanddeiliaid a fframio wedi'i lywio gan wyddoniaeth, cynhyrchwyd sylfaen dystiolaeth a oedd yn gredadwy'n dechnegol ac wedi'i gwreiddio'n weithredol. Y cyfuniad hwnnw sy'n troi syniad da yn llwybr hyfyw.</p>
       </div>
     </div>
   </section>
@@ -1419,16 +1407,16 @@
       </div>
 
       <h2>
-        <span data-en>From reactive to strategic</span>
-        <span data-cy>O adweithiol i strategol</span>
+        <span data-en>Grounded evidence for future nutrient recovery solutions</span>
+        <span data-cy>Tystiolaeth gadarn ar gyfer datrysiadau adfer maethynnau yn y dyfodol</span>
       </h2>
 
       <div class="cs-outcome__text">
-        <p data-en-block>This engagement strengthened Wales' ability to engage strategically with complex funding systems rather than respond to them passively. It improved funding readiness, informed decision-making at multiple levels, and helped create the conditions for stronger cross-border cultural collaboration.</p>
-        <p data-cy-block>Cryfhaodd yr ymgysylltiad hwn allu Cymru i ymgysylltu'n strategol &acirc; systemau cyllido cymhleth yn hytrach nag ymateb iddynt yn oddefol. Gwellodd barodrwydd cyllido, llywiodd wneud penderfyniadau ar sawl lefel, a helpodd greu'r amodau ar gyfer cydweithio diwylliannol trawsffiniol cryfach.</p>
+        <p data-en-block>This engagement produced a consultation-led evidence base spanning the full breadth of South Wales &mdash; from Pembrokeshire to Usk. It established strong working relationships with Welsh Government, Natural Resources Wales, and Net Zero Industry Wales, and created bilingual materials that supported more effective engagement with the farming community.</p>
+        <p data-cy-block>Cynhyrchodd yr ymgysylltiad hwn sylfaen dystiolaeth wedi'i llywio gan ymgynghoriad yn rhychwantu lled llawn De Cymru &mdash; o Benfro i Wysg. Sefydlodd berthnasoedd gwaith cryf &acirc; Llywodraeth Cymru, Cyfoeth Naturiol Cymru, a Net Zero Industry Wales, a chreu deunyddiau dwyieithog a gefnogodd ymgysylltiad mwy effeithiol &acirc;'r gymuned ffermio.</p>
 
-        <p data-en-block>The lasting value was not only in individual funding conversations, but in building a clearer, more confident understanding of how a devolved nation can work within a layered international funding environment &mdash; and use that understanding to advance cultural, civic, and strategic goals.</p>
-        <p data-cy-block>Nid yn unig mewn sgyrsiau cyllido unigol yr oedd y gwerth parhaol, ond wrth adeiladu dealltwriaeth gliriach, fwy hyderus o sut y gall cenedl ddatganoledig weithio o fewn amgylchedd cyllido rhyngwladol haenog &mdash; a defnyddio'r ddealltwriaeth honno i hyrwyddo nodau diwylliannol, dinesig, a strategol.</p>
+        <p data-en-block>Most importantly, the project demonstrated that nutrient recovery is not just a scientific proposition &mdash; it is a practical opportunity with real commercial and environmental foundations. The evidence base we built provides a credible starting point for future investment, policy development, and process-driven solution design in the Welsh agricultural sector.</p>
+        <p data-cy-block>Yn bwysicaf oll, dangosodd y prosiect nad yw adfer maethynnau yn gynnig gwyddonol yn unig &mdash; mae'n gyfle ymarferol gyda sylfeini masnachol ac amgylcheddol go iawn. Mae'r sylfaen dystiolaeth a adeiladwyd gennym yn darparu man cychwyn credadwy ar gyfer buddsoddiad yn y dyfodol, datblygu polisi, a dylunio atebion wedi'i yrru gan broses yn y sector amaethyddol yng Nghymru.</p>
       </div>
 
       <div class="cs-outcome__takeaway">
@@ -1437,8 +1425,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Improved funding readiness across the sector</span>
-            <span data-cy>Gwell parodrwydd cyllido ar draws y sector</span>
+            <span data-en>Evidence base spanning South Wales, Pembrokeshire to Usk</span>
+            <span data-cy>Sylfaen dystiolaeth yn rhychwantu De Cymru, Penfro i Wysg</span>
           </div>
         </div>
 
@@ -1447,8 +1435,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Stronger cross-border cultural collaboration</span>
-            <span data-cy>Cydweithio diwylliannol trawsffiniol cryfach</span>
+            <span data-en>Strong engagement with Welsh Government and public bodies</span>
+            <span data-cy>Ymgysylltiad cryf &acirc; Llywodraeth Cymru a chyrff cyhoeddus</span>
           </div>
         </div>
 
@@ -1457,8 +1445,8 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="cs-takeaway__text">
-            <span data-en>Confident decision-making at all levels</span>
-            <span data-cy>Gwneud penderfyniadau hyderus ar bob lefel</span>
+            <span data-en>Credible foundation for future investment and solution design</span>
+            <span data-cy>Sylfaen gredadwy ar gyfer buddsoddiad a dylunio atebion yn y dyfodol</span>
           </div>
         </div>
       </div>
@@ -1482,38 +1470,38 @@
       </div>
 
       <div class="related__grid">
+        <a href="/capabilities/science.html" class="related-card">
+          <h3>
+            <span data-en>Science &amp; Engineering</span>
+            <span data-cy>Gwyddoniaeth a Pheirianneg</span>
+          </h3>
+          <p class="related-card__desc">
+            <span data-en>Analytical and technical thinking applied to complex environmental and industrial questions.</span>
+            <span data-cy>Meddwl dadansoddol a thechnegol yn cael ei gymhwyso i gwestiynau amgylcheddol a diwydiannol cymhleth.</span>
+          </p>
+          <span class="related-card__arrow">&rarr;</span>
+        </a>
+
+        <a href="/capabilities/esg.html" class="related-card">
+          <h3>
+            <span data-en>ESG &amp; Sustainability</span>
+            <span data-cy>ESG a Chynaliadwyedd</span>
+          </h3>
+          <p class="related-card__desc">
+            <span data-en>Sustainability strategy grounded in evidence, stakeholder engagement, and environmental responsibility.</span>
+            <span data-cy>Strategaeth cynaliadwyedd wedi'i gwreiddio mewn tystiolaeth, ymgysylltu &acirc; rhanddeiliaid, a chyfrifoldeb amgylcheddol.</span>
+          </p>
+          <span class="related-card__arrow">&rarr;</span>
+        </a>
+
         <a href="/capabilities/funding.html" class="related-card">
           <h3>
             <span data-en>Funding &amp; Grant Strategy</span>
             <span data-cy>Strategaeth Cyllido a Grantiau</span>
           </h3>
           <p class="related-card__desc">
-            <span data-en>Navigating complex funding landscapes and securing strategic investment.</span>
-            <span data-cy>Llywio tirweddau cyllido cymhleth a sicrhau buddsoddiad strategol.</span>
-          </p>
-          <span class="related-card__arrow">&rarr;</span>
-        </a>
-
-        <a href="/capabilities/secretariat.html" class="related-card">
-          <h3>
-            <span data-en>Secretariat &amp; Programme Management</span>
-            <span data-cy>Ysgrifenyddiaeth a Rheoli Rhaglenni</span>
-          </h3>
-          <p class="related-card__desc">
-            <span data-en>Governance, coordination, and institutional continuity for complex programmes.</span>
-            <span data-cy>Llywodraethu, cydlynu, a pharhad sefydliadol ar gyfer rhaglenni cymhleth.</span>
-          </p>
-          <span class="related-card__arrow">&rarr;</span>
-        </a>
-
-        <a href="/capabilities/research.html" class="related-card">
-          <h3>
-            <span data-en>Research &amp; Innovation</span>
-            <span data-cy>Ymchwil ac Arloesi</span>
-          </h3>
-          <p class="related-card__desc">
-            <span data-en>Evidence-based insights that inform strategy and unlock opportunity.</span>
-            <span data-cy>Mewnwelediadau seiliedig ar dystiolaeth sy'n llywio strategaeth ac yn datgloi cyfle.</span>
+            <span data-en>Navigating complex funding landscapes and building the evidence base to secure strategic investment.</span>
+            <span data-cy>Llywio tirweddau cyllido cymhleth ac adeiladu'r sylfaen dystiolaeth i sicrhau buddsoddiad strategol.</span>
           </p>
           <span class="related-card__arrow">&rarr;</span>
         </a>
@@ -1528,12 +1516,12 @@
     <div class="cta-banner__pattern"></div>
     <div class="cta-banner__inner">
       <h2>
-        <span data-en>Navigating complex funding landscapes?</span>
-        <span data-cy>Llywio tirweddau cyllido cymhleth?</span>
+        <span data-en>Working on a sustainability or science challenge?</span>
+        <span data-cy>Yn gweithio ar her cynaliadwyedd neu wyddoniaeth?</span>
       </h2>
       <p class="cta-banner__desc">
-        <span data-en>We help organisations understand, align, and act on funding opportunities at every level.</span>
-        <span data-cy>Rydym yn helpu sefydliadau i ddeall, alinio, a gweithredu ar gyfleoedd cyllido ar bob lefel.</span>
+        <span data-en>We bring consultation, analytical rigour, and stakeholder engagement to complex environmental and innovation projects.</span>
+        <span data-cy>Rydym yn dod ag ymgynghori, trylwyredd dadansoddol, ac ymgysylltu &acirc; rhanddeiliaid i brosiectau amgylcheddol ac arloesi cymhleth.</span>
       </p>
       <a href="/contact.html" class="btn btn--white">
         <span data-en>Get in touch</span>
@@ -1575,7 +1563,6 @@
           <h4><span data-en>Company</span><span data-cy>Cwmni</span></h4>
           <ul>
             <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Yngl&#x0177;n &acirc; VDB</span></a></li>
-  
             <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
             <li><a href="/contact.html"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
           </ul>

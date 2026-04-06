@@ -33,7 +33,7 @@ The `secrets.env` file (gitignored) contains `VPS_IP` for SSH access.
 
 ```
 /
-├── index.html                          # Homepage (DONE)
+├── index.html                          # Homepage
 ├── about.html                          # About VDB
 ├── contact.html                        # Contact page
 ├── capabilities/
@@ -41,15 +41,21 @@ The `secrets.env` file (gitignored) contains `VPS_IP` for SSH access.
 │   ├── research.html                   # Research & Innovation
 │   ├── funding.html                    # Funding & Grant Strategy
 │   ├── science.html                    # Science & Engineering
-│   └── esg.html                        # ESG & Sustainability
-├── projects/
-│   ├── npk-recovery.html               # NPK Recovery / VDB Labs project
-│   ├── gripable.html                   # GripAble / SqueezAble project
-│   ├── plus-x-innovation.html          # Plus X Innovation project
-│   └── blakbear.html                   # BlakBear project
+│   ├── esg.html                        # ESG & Sustainability
+│   └── translation.html               # Translation & Welsh Language
 ├── case-studies/
-│   ├── index.html                      # Case Studies landing page
-│   └── devolved-funding-architecture.html  # Wales/ACW funding case study
+│   ├── index.html                      # Case Studies catalogue (all 10)
+│   ├── devolved-funding-architecture.html  # Wales/ACW funding
+│   ├── npk-recovery.html              # NPK Recovery circular economy
+│   ├── gripable.html                   # GripAble/SqueezAble MedTech
+│   ├── plus-x-innovation.html         # Plus X hardware accelerator
+│   ├── blakbear.html                   # BlakBear food-waste sensors
+│   ├── lga-funding-analysis.html      # LGA funding analysis
+│   ├── wales-nutrient-recovery.html   # Wales nutrient recovery
+│   ├── wales-bilingual-organisations.html  # Bilingual governance
+│   ├── devolved-political-campaigns.html   # Political campaigns
+│   └── cambridge-sustainability-research.html  # Cambridge research
+├── projects/                           # Legacy redirects only — all point to /case-studies/
 ├── images/                             # All site images
 ├── docs/plans/                         # Build plans and content specs
 ├── docker-compose.yml                  # VPS container config

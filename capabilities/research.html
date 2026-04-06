@@ -577,7 +577,7 @@
     }
 
     /* ═══════════════════════════════════════
-       RELATED PROJECTS
+       CASE STUDIES
        ═══════════════════════════════════════ */
     .related {
       padding: var(--space-5xl) 0;
@@ -605,7 +605,7 @@
       gap: var(--space-lg);
     }
 
-    .project-card {
+    .related-card {
       display: grid;
       grid-template-columns: 200px 1fr;
       background: white;
@@ -615,13 +615,13 @@
       transition: all 0.3s ease;
     }
 
-    .project-card:hover {
+    .related-card:hover {
       border-color: var(--slate-300);
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(0,0,0,0.06);
     }
 
-    .project-card__image {
+    .related-card__image {
       background: var(--slate-200);
       min-height: 180px;
       display: flex;
@@ -635,7 +635,7 @@
       overflow: hidden;
     }
 
-    .project-card__image::after {
+    .related-card__image::after {
       content: '';
       position: absolute;
       inset: 0;
@@ -644,10 +644,10 @@
       z-index: 1;
     }
 
-    .project-card:nth-child(1) .project-card__image::after { background: linear-gradient(135deg, #1a2a3a, #2d4a5e); opacity: 0.35; }
-    .project-card:nth-child(2) .project-card__image::after { background: linear-gradient(135deg, #2a1a3a, #4a2d5e); opacity: 0.35; }
+    .related-card:nth-child(1) .related-card__image::after { background: linear-gradient(135deg, #1a2a3a, #2d4a5e); opacity: 0.35; }
+    .related-card:nth-child(2) .related-card__image::after { background: linear-gradient(135deg, #2a1a3a, #4a2d5e); opacity: 0.35; }
 
-    .project-card__image span {
+    .related-card__image span {
       position: relative;
       z-index: 2;
       color: var(--slate-300);
@@ -658,13 +658,13 @@
       padding: var(--space-md);
     }
 
-    .project-card__body {
+    .related-card__body {
       padding: var(--space-xl);
       display: flex;
       flex-direction: column;
     }
 
-    .project-card__partner {
+    .related-card__partner {
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.08em;
@@ -673,7 +673,7 @@
       margin-bottom: var(--space-sm);
     }
 
-    .project-card__title {
+    .related-card__title {
       font-family: var(--font-display);
       font-size: 1.2rem;
       font-weight: 600;
@@ -682,14 +682,14 @@
       line-height: 1.3;
     }
 
-    .project-card__desc {
+    .related-card__desc {
       font-size: 0.88rem;
       color: var(--slate-600);
       line-height: 1.6;
       flex: 1;
     }
 
-    .project-card__link {
+    .related-card__link {
       margin-top: var(--space-md);
       padding-top: var(--space-md);
       border-top: 1px solid var(--slate-100);
@@ -702,7 +702,7 @@
       transition: gap 0.2s;
     }
 
-    .project-card:hover .project-card__link { gap: 10px; }
+    .related-card:hover .related-card__link { gap: 10px; }
 
     /* ═══════════════════════════════════════
        CTA BANNER
@@ -921,8 +921,8 @@
 
     @media (max-width: 768px) {
       .header__links { display: none; }
-      .project-card { grid-template-columns: 1fr; }
-      .project-card__image { min-height: 120px; }
+      .related-card { grid-template-columns: 1fr; }
+      .related-card__image { min-height: 120px; }
       .footer__top { grid-template-columns: 1fr; }
     }
 
@@ -1235,7 +1235,6 @@
         <ul class="header__links">
           <li><a href="/#capabilities"><span data-en>Capabilities</span><span data-cy>Galluoedd</span></a></li>
           <li><a href="/#approach"><span data-en>Our Approach</span><span data-cy>Ein Dull</span></a></li>
-          <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
           <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
           <li><a href="/#about"><span data-en>About</span><span data-cy>Amdanom</span></a></li>
         </ul>
@@ -1484,14 +1483,14 @@
   </section>
 
   <!-- ═══════════════════════════════════════
-       RELATED PROJECTS
+       CASE STUDIES
        ═══════════════════════════════════════ -->
   <section class="related reveal">
     <div class="related__inner">
       <div class="related__header">
         <span class="label label--gold">
-          <span data-en>Related Projects</span>
-          <span data-cy>Prosiectau Cysylltiedig</span>
+          <span data-en>Case Studies</span>
+          <span data-cy>Astudiaethau Achos</span>
         </span>
         <h2>
           <span data-en>Research in action</span>
@@ -1500,42 +1499,42 @@
       </div>
 
       <div class="related__grid">
-        <a href="/projects/gripable.html" class="project-card">
-          <div class="project-card__image">
+        <a href="/case-studies/gripable.html" class="related-card">
+          <div class="related-card__image">
             <img src="/images/project-gripable-device.jpg" alt="GripAble handheld rehabilitation device with soft-sensor technology" data-alt-en="GripAble handheld rehabilitation device with soft-sensor technology" data-alt-cy="Dyfais adsefydlu llaw GripAble gyda thechnoleg synhwyrydd meddal" loading="lazy">
           </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">GripAble / Imperial College</div>
-            <div class="project-card__title">
+          <div class="related-card__body">
+            <div class="related-card__partner">GripAble / Imperial College</div>
+            <div class="related-card__title">
               <span data-en>SqueezAble feasibility research</span>
               <span data-cy>Ymchwil dichonoldeb SqueezAble</span>
             </div>
-            <p class="project-card__desc">
+            <p class="related-card__desc">
               <span data-en>Human-centred research and feasibility study for a paediatric rehabilitation device, now deployed across 350+ healthcare locations.</span>
               <span data-cy>Ymchwil sy'n canolbwyntio ar bobl ac astudiaeth ddichonoldeb ar gyfer dyfais adsefydlu pediatrig, sydd bellach wedi'i defnyddio mewn dros 350 o leoliadau gofal iechyd.</span>
             </p>
-            <div class="project-card__link">
-              <span data-en>View project</span><span data-cy>Gweld prosiect</span> <span class="btn__arrow">&rarr;</span>
+            <div class="related-card__link">
+              <span data-en>View case study</span><span data-cy>Gweld astudiaeth achos</span> <span class="btn__arrow">&rarr;</span>
             </div>
           </div>
         </a>
 
-        <a href="/projects/plus-x-innovation.html" class="project-card">
-          <div class="project-card__image">
+        <a href="/case-studies/plus-x-innovation.html" class="related-card">
+          <div class="related-card__image">
             <img src="/images/project-plusx-hub.jpg" alt="Plus X Innovation hub interior with hardware prototyping facilities" data-alt-en="Plus X Innovation hub interior with hardware prototyping facilities" data-alt-cy="Y tu mewn i hyb Plus X Innovation gyda chyfleusterau prototeipio caledwedd" loading="lazy">
           </div>
-          <div class="project-card__body">
-            <div class="project-card__partner">Plus X Innovation</div>
-            <div class="project-card__title">
+          <div class="related-card__body">
+            <div class="related-card__partner">Plus X Innovation</div>
+            <div class="related-card__title">
               <span data-en>Accelerator programme research</span>
               <span data-cy>Ymchwil rhaglen gyflymydd</span>
             </div>
-            <p class="project-card__desc">
+            <p class="related-card__desc">
               <span data-en>Research and design for a leading UK hardware accelerator. 69 companies supported, &pound;180m raised by portfolio companies.</span>
               <span data-cy>Ymchwil a dylunio ar gyfer cyflymydd caledwedd blaenllaw yn y DU. 69 cwmni wedi'u cefnogi, &pound;180m wedi'i godi gan gwmn&iuml;au portffolio.</span>
             </p>
-            <div class="project-card__link">
-              <span data-en>View project</span><span data-cy>Gweld prosiect</span> <span class="btn__arrow">&rarr;</span>
+            <div class="related-card__link">
+              <span data-en>View case study</span><span data-cy>Gweld astudiaeth achos</span> <span class="btn__arrow">&rarr;</span>
             </div>
           </div>
         </a>
@@ -1603,7 +1602,6 @@
           </h4>
           <ul>
             <li><a href="/about.html"><span data-en>About VDB</span><span data-cy>Yngl&#x0177;n &acirc; VDB</span></a></li>
-            <li><a href="/#projects"><span data-en>Projects</span><span data-cy>Prosiectau</span></a></li>
             <li><a href="/case-studies/"><span data-en>Case Studies</span><span data-cy>Astudiaethau Achos</span></a></li>
             <li><a href="/#contact"><span data-en>Contact</span><span data-cy>Cyswllt</span></a></li>
           </ul>
